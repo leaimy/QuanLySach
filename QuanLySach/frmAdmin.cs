@@ -26,5 +26,23 @@ namespace QuanLySach
         {
 
         }
+
+        private void btnCreateBook_Click(object sender, EventArgs e)
+        {
+            var frm = new frmThemSach();
+            frm.ShowDialog();
+        }
+
+        private void btnCreateCategory_Click(object sender, EventArgs e)
+        {
+            var frm = new frmThemLoai();
+            frm.ShowDialog();
+        }
+
+        private void btnCreateStaff_Click(object sender, EventArgs e)
+        {
+            var frm = new frmThemNhanVien();
+            frm.ShowDialog();
+        }
     }
 }

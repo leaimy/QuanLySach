@@ -16,5 +16,11 @@ namespace QuanLySach
         {
             InitializeComponent();
         }
+
+        private void btnCreateCategory_Click(object sender, EventArgs e)
+        {
+            var frm = new frmThemLoai();
+            frm.ShowDialog();
+        }
     }
 }

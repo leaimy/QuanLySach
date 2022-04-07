@@ -16,7 +16,7 @@ namespace QuanLySach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmQuanLySach());
+            Application.Run(new frmSach());
         }
     }
 }

@@ -16,5 +16,22 @@ namespace QuanLySach
         {
             InitializeComponent();
         }
+
+        private void tsmAdmin_Click(object sender, EventArgs e)
+        {
+            var frm = new frmQuanLySach();
+            frm.ShowDialog();
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            var frm = new frmBill();
+            frm.ShowDialog();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

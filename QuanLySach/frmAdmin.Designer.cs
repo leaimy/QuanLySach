@@ -51,6 +51,7 @@ namespace QuanLySach
             this.dtgvHoaDon = new System.Windows.Forms.DataGridView();
             this.tpSach = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCreateBook = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,31 +64,26 @@ namespace QuanLySach
             this.panel6 = new System.Windows.Forms.Panel();
             this.dtgvSach = new System.Windows.Forms.DataGridView();
             this.tpLoaiSach = new System.Windows.Forms.TabPage();
-            this.tpNhanVien = new System.Windows.Forms.TabPage();
-            this.tpThongKe = new System.Windows.Forms.TabPage();
-            this.gbTop5kh = new System.Windows.Forms.GroupBox();
-            this.dgvTop5kh = new System.Windows.Forms.DataGridView();
-            this.gbDoanhthubanhangtungthang = new System.Windows.Forms.GroupBox();
-            this.dgvDoanhthutungthang = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvTop5spbc = new System.Windows.Forms.DataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtTenLoai = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnResetLoaiSach = new System.Windows.Forms.Button();
+            this.btnCreateCategory = new System.Windows.Forms.Button();
             this.btnLocLoaiSach = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.dtgvLoaiSach = new System.Windows.Forms.DataGridView();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.tpNhanVien = new System.Windows.Forms.TabPage();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.cbChiNhanhNV = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnResetNV = new System.Windows.Forms.Button();
+            this.btnCreateStaff = new System.Windows.Forms.Button();
             this.btnLocNV = new System.Windows.Forms.Button();
             this.panel18 = new System.Windows.Forms.Panel();
             this.mtbSĐTNV = new System.Windows.Forms.MaskedTextBox();
@@ -98,6 +94,10 @@ namespace QuanLySach
             this.label16 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.dtgvNV = new System.Windows.Forms.DataGridView();
+            this.tpThongKeSanPham = new System.Windows.Forms.TabPage();
+            this.tpThongKeDoanhThu = new System.Windows.Forms.TabPage();
+            this.tpThongKeNhanVien = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tcAdmin.SuspendLayout();
             this.tpHoaDon.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -114,25 +114,19 @@ namespace QuanLySach
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSach)).BeginInit();
             this.tpLoaiSach.SuspendLayout();
-            this.tpNhanVien.SuspendLayout();
-            this.tpThongKe.SuspendLayout();
-            this.gbTop5kh.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTop5kh)).BeginInit();
-            this.gbDoanhthubanhangtungthang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhthutungthang)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTop5spbc)).BeginInit();
             this.panel9.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLoaiSach)).BeginInit();
-            this.panel12.SuspendLayout();
+            this.tpNhanVien.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
+            this.tpThongKeSanPham.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -141,7 +135,9 @@ namespace QuanLySach
             this.tcAdmin.Controls.Add(this.tpSach);
             this.tcAdmin.Controls.Add(this.tpLoaiSach);
             this.tcAdmin.Controls.Add(this.tpNhanVien);
-            this.tcAdmin.Controls.Add(this.tpThongKe);
+            this.tcAdmin.Controls.Add(this.tpThongKeSanPham);
+            this.tcAdmin.Controls.Add(this.tpThongKeDoanhThu);
+            this.tcAdmin.Controls.Add(this.tpThongKeNhanVien);
             this.tcAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcAdmin.Location = new System.Drawing.Point(0, 0);
             this.tcAdmin.Name = "tcAdmin";
@@ -154,10 +150,10 @@ namespace QuanLySach
             // 
             this.tpHoaDon.Controls.Add(this.panel13);
             this.tpHoaDon.Controls.Add(this.panel11);
-            this.tpHoaDon.Location = new System.Drawing.Point(4, 31);
+            this.tpHoaDon.Location = new System.Drawing.Point(4, 26);
             this.tpHoaDon.Name = "tpHoaDon";
             this.tpHoaDon.Padding = new System.Windows.Forms.Padding(3);
-            this.tpHoaDon.Size = new System.Drawing.Size(1056, 646);
+            this.tpHoaDon.Size = new System.Drawing.Size(1056, 651);
             this.tpHoaDon.TabIndex = 1;
             this.tpHoaDon.Text = "Hoá Đơn";
             this.tpHoaDon.UseVisualStyleBackColor = true;
@@ -188,9 +184,9 @@ namespace QuanLySach
             // cbChiNhanh
             // 
             this.cbChiNhanh.FormattingEnabled = true;
-            this.cbChiNhanh.Location = new System.Drawing.Point(109, 5);
+            this.cbChiNhanh.Location = new System.Drawing.Point(101, 5);
             this.cbChiNhanh.Name = "cbChiNhanh";
-            this.cbChiNhanh.Size = new System.Drawing.Size(210, 30);
+            this.cbChiNhanh.Size = new System.Drawing.Size(218, 25);
             this.cbChiNhanh.TabIndex = 1;
             // 
             // label21
@@ -198,7 +194,7 @@ namespace QuanLySach
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(10, 9);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(93, 22);
+            this.label21.Size = new System.Drawing.Size(74, 17);
             this.label21.TabIndex = 0;
             this.label21.Text = "Chi nhánh";
             // 
@@ -237,9 +233,9 @@ namespace QuanLySach
             // 
             this.dtpNgayMua.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayMua.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayMua.Location = new System.Drawing.Point(107, 5);
+            this.dtpNgayMua.Location = new System.Drawing.Point(90, 5);
             this.dtpNgayMua.Name = "dtpNgayMua";
-            this.dtpNgayMua.Size = new System.Drawing.Size(212, 29);
+            this.dtpNgayMua.Size = new System.Drawing.Size(229, 25);
             this.dtpNgayMua.TabIndex = 1;
             // 
             // label20
@@ -247,7 +243,7 @@ namespace QuanLySach
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(10, 9);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(93, 22);
+            this.label20.Size = new System.Drawing.Size(72, 17);
             this.label20.TabIndex = 0;
             this.label20.Text = "Ngày Mua";
             // 
@@ -265,7 +261,7 @@ namespace QuanLySach
             this.mtbSĐT.Location = new System.Drawing.Point(101, 5);
             this.mtbSĐT.Mask = "0000.000.000";
             this.mtbSĐT.Name = "mtbSĐT";
-            this.mtbSĐT.Size = new System.Drawing.Size(218, 29);
+            this.mtbSĐT.Size = new System.Drawing.Size(218, 25);
             this.mtbSĐT.TabIndex = 1;
             // 
             // label7
@@ -273,7 +269,7 @@ namespace QuanLySach
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(10, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 22);
+            this.label7.Size = new System.Drawing.Size(62, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "SĐT KH";
             // 
@@ -291,7 +287,7 @@ namespace QuanLySach
             this.cbTenNV.FormattingEnabled = true;
             this.cbTenNV.Location = new System.Drawing.Point(90, 5);
             this.cbTenNV.Name = "cbTenNV";
-            this.cbTenNV.Size = new System.Drawing.Size(229, 30);
+            this.cbTenNV.Size = new System.Drawing.Size(229, 25);
             this.cbTenNV.TabIndex = 1;
             // 
             // label18
@@ -299,7 +295,7 @@ namespace QuanLySach
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(10, 9);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(74, 22);
+            this.label18.Size = new System.Drawing.Size(56, 17);
             this.label18.TabIndex = 0;
             this.label18.Text = "Tên NV";
             // 
@@ -308,7 +304,7 @@ namespace QuanLySach
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(82, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 22);
+            this.label6.Size = new System.Drawing.Size(0, 17);
             this.label6.TabIndex = 0;
             // 
             // panel11
@@ -335,16 +331,17 @@ namespace QuanLySach
             // 
             this.tpSach.Controls.Add(this.panel1);
             this.tpSach.Controls.Add(this.panel6);
-            this.tpSach.Location = new System.Drawing.Point(4, 31);
+            this.tpSach.Location = new System.Drawing.Point(4, 26);
             this.tpSach.Name = "tpSach";
             this.tpSach.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSach.Size = new System.Drawing.Size(1056, 646);
+            this.tpSach.Size = new System.Drawing.Size(1056, 651);
             this.tpSach.TabIndex = 2;
             this.tpSach.Text = "Sách";
             this.tpSach.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnCreateBook);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.btnResetSach);
             this.panel1.Controls.Add(this.btnLocSach);
@@ -354,6 +351,18 @@ namespace QuanLySach
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1040, 137);
             this.panel1.TabIndex = 4;
+            // 
+            // btnCreateBook
+            // 
+            this.btnCreateBook.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateBook.Location = new System.Drawing.Point(826, 22);
+            this.btnCreateBook.Name = "btnCreateBook";
+            this.btnCreateBook.Size = new System.Drawing.Size(118, 37);
+            this.btnCreateBook.TabIndex = 6;
+            this.btnCreateBook.Text = "Thêm mới";
+            this.btnCreateBook.UseVisualStyleBackColor = false;
+            this.btnCreateBook.Click += new System.EventHandler(this.btnCreateBook_Click);
             // 
             // panel4
             // 
@@ -368,7 +377,7 @@ namespace QuanLySach
             // 
             this.textBox1.Location = new System.Drawing.Point(120, 6);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(229, 29);
+            this.textBox1.Size = new System.Drawing.Size(229, 25);
             this.textBox1.TabIndex = 1;
             // 
             // label3
@@ -376,7 +385,7 @@ namespace QuanLySach
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(10, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 22);
+            this.label3.Size = new System.Drawing.Size(71, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Tên Sách";
             // 
@@ -416,7 +425,7 @@ namespace QuanLySach
             this.cbLoaiSach.FormattingEnabled = true;
             this.cbLoaiSach.Location = new System.Drawing.Point(120, 5);
             this.cbLoaiSach.Name = "cbLoaiSach";
-            this.cbLoaiSach.Size = new System.Drawing.Size(229, 30);
+            this.cbLoaiSach.Size = new System.Drawing.Size(229, 25);
             this.cbLoaiSach.TabIndex = 1;
             // 
             // label4
@@ -424,7 +433,7 @@ namespace QuanLySach
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(10, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 22);
+            this.label4.Size = new System.Drawing.Size(73, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "Loại Sách";
             // 
@@ -433,7 +442,7 @@ namespace QuanLySach
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(205, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 22);
+            this.label5.Size = new System.Drawing.Size(0, 17);
             this.label5.TabIndex = 0;
             // 
             // panel6
@@ -460,123 +469,53 @@ namespace QuanLySach
             // 
             this.tpLoaiSach.Controls.Add(this.panel9);
             this.tpLoaiSach.Controls.Add(this.panel14);
-            this.tpLoaiSach.Location = new System.Drawing.Point(4, 31);
+            this.tpLoaiSach.Location = new System.Drawing.Point(4, 26);
             this.tpLoaiSach.Name = "tpLoaiSach";
             this.tpLoaiSach.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLoaiSach.Size = new System.Drawing.Size(1056, 646);
+            this.tpLoaiSach.Size = new System.Drawing.Size(1056, 651);
             this.tpLoaiSach.TabIndex = 3;
             this.tpLoaiSach.Text = "Loại Sách";
             this.tpLoaiSach.UseVisualStyleBackColor = true;
             this.tpLoaiSach.Click += new System.EventHandler(this.tpLoaiSach_Click);
-            // 
-            // tpNhanVien
-            // 
-            this.tpNhanVien.Controls.Add(this.panel15);
-            this.tpNhanVien.Controls.Add(this.panel22);
-            this.tpNhanVien.Location = new System.Drawing.Point(4, 31);
-            this.tpNhanVien.Name = "tpNhanVien";
-            this.tpNhanVien.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNhanVien.Size = new System.Drawing.Size(1056, 646);
-            this.tpNhanVien.TabIndex = 4;
-            this.tpNhanVien.Text = "Nhân Viên";
-            this.tpNhanVien.UseVisualStyleBackColor = true;
-            // 
-            // tpThongKe
-            // 
-            this.tpThongKe.Controls.Add(this.gbTop5kh);
-            this.tpThongKe.Controls.Add(this.gbDoanhthubanhangtungthang);
-            this.tpThongKe.Controls.Add(this.groupBox3);
-            this.tpThongKe.Location = new System.Drawing.Point(4, 31);
-            this.tpThongKe.Name = "tpThongKe";
-            this.tpThongKe.Padding = new System.Windows.Forms.Padding(3);
-            this.tpThongKe.Size = new System.Drawing.Size(1056, 646);
-            this.tpThongKe.TabIndex = 6;
-            this.tpThongKe.Text = "Thống kê";
-            this.tpThongKe.UseVisualStyleBackColor = true;
-            // 
-            // gbTop5kh
-            // 
-            this.gbTop5kh.Controls.Add(this.dgvTop5kh);
-            this.gbTop5kh.Location = new System.Drawing.Point(563, 6);
-            this.gbTop5kh.Name = "gbTop5kh";
-            this.gbTop5kh.Size = new System.Drawing.Size(485, 271);
-            this.gbTop5kh.TabIndex = 2;
-            this.gbTop5kh.TabStop = false;
-            this.gbTop5kh.Text = "Top 5 khách hàng có số lần mua hàng nhiều nhất";
-            // 
-            // dgvTop5kh
-            // 
-            this.dgvTop5kh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTop5kh.BackgroundColor = System.Drawing.Color.White;
-            this.dgvTop5kh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTop5kh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTop5kh.Location = new System.Drawing.Point(3, 25);
-            this.dgvTop5kh.Name = "dgvTop5kh";
-            this.dgvTop5kh.ReadOnly = true;
-            this.dgvTop5kh.RowHeadersWidth = 51;
-            this.dgvTop5kh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTop5kh.Size = new System.Drawing.Size(479, 243);
-            this.dgvTop5kh.TabIndex = 0;
-            // 
-            // gbDoanhthubanhangtungthang
-            // 
-            this.gbDoanhthubanhangtungthang.Controls.Add(this.dgvDoanhthutungthang);
-            this.gbDoanhthubanhangtungthang.Location = new System.Drawing.Point(3, 292);
-            this.gbDoanhthubanhangtungthang.Name = "gbDoanhthubanhangtungthang";
-            this.gbDoanhthubanhangtungthang.Size = new System.Drawing.Size(1050, 353);
-            this.gbDoanhthubanhangtungthang.TabIndex = 2;
-            this.gbDoanhthubanhangtungthang.TabStop = false;
-            this.gbDoanhthubanhangtungthang.Text = "Doanh thu bán hàng từng tháng";
-            // 
-            // dgvDoanhthutungthang
-            // 
-            this.dgvDoanhthutungthang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDoanhthutungthang.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDoanhthutungthang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDoanhthutungthang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDoanhthutungthang.Location = new System.Drawing.Point(3, 25);
-            this.dgvDoanhthutungthang.Name = "dgvDoanhthutungthang";
-            this.dgvDoanhthutungthang.ReadOnly = true;
-            this.dgvDoanhthutungthang.RowHeadersWidth = 51;
-            this.dgvDoanhthutungthang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDoanhthutungthang.Size = new System.Drawing.Size(1044, 325);
-            this.dgvDoanhthutungthang.TabIndex = 0;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dgvTop5spbc);
-            this.groupBox3.Location = new System.Drawing.Point(6, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(530, 271);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Top 5 sản phẩm bán chạy";
-            // 
-            // dgvTop5spbc
-            // 
-            this.dgvTop5spbc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTop5spbc.BackgroundColor = System.Drawing.Color.White;
-            this.dgvTop5spbc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTop5spbc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTop5spbc.Location = new System.Drawing.Point(3, 25);
-            this.dgvTop5spbc.Name = "dgvTop5spbc";
-            this.dgvTop5spbc.ReadOnly = true;
-            this.dgvTop5spbc.RowHeadersWidth = 51;
-            this.dgvTop5spbc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTop5spbc.Size = new System.Drawing.Size(524, 243);
-            this.dgvTop5spbc.TabIndex = 0;
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.panel12);
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Controls.Add(this.btnResetLoaiSach);
+            this.panel9.Controls.Add(this.btnCreateCategory);
             this.panel9.Controls.Add(this.btnLocLoaiSach);
             this.panel9.Controls.Add(this.label14);
             this.panel9.Location = new System.Drawing.Point(8, 5);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1040, 137);
             this.panel9.TabIndex = 6;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.comboBox2);
+            this.panel12.Controls.Add(this.label10);
+            this.panel12.Location = new System.Drawing.Point(179, 78);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(375, 39);
+            this.panel12.TabIndex = 6;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(143, 5);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(229, 25);
+            this.comboBox2.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(10, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 17);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Parent";
             // 
             // panel10
             // 
@@ -591,7 +530,7 @@ namespace QuanLySach
             // 
             this.txtTenLoai.Location = new System.Drawing.Point(143, 6);
             this.txtTenLoai.Name = "txtTenLoai";
-            this.txtTenLoai.Size = new System.Drawing.Size(229, 29);
+            this.txtTenLoai.Size = new System.Drawing.Size(229, 25);
             this.txtTenLoai.TabIndex = 1;
             // 
             // label9
@@ -599,7 +538,7 @@ namespace QuanLySach
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(10, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(132, 22);
+            this.label9.Size = new System.Drawing.Size(102, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "Tên Loại Sách";
             // 
@@ -613,6 +552,18 @@ namespace QuanLySach
             this.btnResetLoaiSach.TabIndex = 5;
             this.btnResetLoaiSach.Text = "Đặt lại bộ lọc";
             this.btnResetLoaiSach.UseVisualStyleBackColor = false;
+            // 
+            // btnCreateCategory
+            // 
+            this.btnCreateCategory.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateCategory.Location = new System.Drawing.Point(881, 25);
+            this.btnCreateCategory.Name = "btnCreateCategory";
+            this.btnCreateCategory.Size = new System.Drawing.Size(118, 37);
+            this.btnCreateCategory.TabIndex = 4;
+            this.btnCreateCategory.Text = "Thêm mới";
+            this.btnCreateCategory.UseVisualStyleBackColor = false;
+            this.btnCreateCategory.Click += new System.EventHandler(this.btnCreateCategory_Click);
             // 
             // btnLocLoaiSach
             // 
@@ -630,7 +581,7 @@ namespace QuanLySach
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(226, 20);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(0, 22);
+            this.label14.Size = new System.Drawing.Size(0, 17);
             this.label14.TabIndex = 0;
             // 
             // panel14
@@ -653,36 +604,23 @@ namespace QuanLySach
             this.dtgvLoaiSach.Size = new System.Drawing.Size(1034, 488);
             this.dtgvLoaiSach.TabIndex = 0;
             // 
-            // panel12
+            // tpNhanVien
             // 
-            this.panel12.Controls.Add(this.comboBox2);
-            this.panel12.Controls.Add(this.label10);
-            this.panel12.Location = new System.Drawing.Point(179, 78);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(375, 39);
-            this.panel12.TabIndex = 6;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(143, 5);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(229, 30);
-            this.comboBox2.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(10, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 22);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Parent";
+            this.tpNhanVien.Controls.Add(this.panel15);
+            this.tpNhanVien.Controls.Add(this.panel22);
+            this.tpNhanVien.Location = new System.Drawing.Point(4, 26);
+            this.tpNhanVien.Name = "tpNhanVien";
+            this.tpNhanVien.Padding = new System.Windows.Forms.Padding(3);
+            this.tpNhanVien.Size = new System.Drawing.Size(1056, 651);
+            this.tpNhanVien.TabIndex = 4;
+            this.tpNhanVien.Text = "Nhân Viên";
+            this.tpNhanVien.UseVisualStyleBackColor = true;
             // 
             // panel15
             // 
             this.panel15.Controls.Add(this.panel16);
             this.panel15.Controls.Add(this.btnResetNV);
+            this.panel15.Controls.Add(this.btnCreateStaff);
             this.panel15.Controls.Add(this.btnLocNV);
             this.panel15.Controls.Add(this.panel18);
             this.panel15.Controls.Add(this.panel20);
@@ -696,7 +634,7 @@ namespace QuanLySach
             // 
             this.panel16.Controls.Add(this.cbChiNhanhNV);
             this.panel16.Controls.Add(this.label11);
-            this.panel16.Location = new System.Drawing.Point(86, 80);
+            this.panel16.Location = new System.Drawing.Point(54, 89);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(322, 39);
             this.panel16.TabIndex = 3;
@@ -704,9 +642,9 @@ namespace QuanLySach
             // cbChiNhanhNV
             // 
             this.cbChiNhanhNV.FormattingEnabled = true;
-            this.cbChiNhanhNV.Location = new System.Drawing.Point(109, 5);
+            this.cbChiNhanhNV.Location = new System.Drawing.Point(90, 5);
             this.cbChiNhanhNV.Name = "cbChiNhanhNV";
-            this.cbChiNhanhNV.Size = new System.Drawing.Size(210, 30);
+            this.cbChiNhanhNV.Size = new System.Drawing.Size(229, 25);
             this.cbChiNhanhNV.TabIndex = 1;
             // 
             // label11
@@ -714,7 +652,7 @@ namespace QuanLySach
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(10, 9);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 22);
+            this.label11.Size = new System.Drawing.Size(74, 17);
             this.label11.TabIndex = 0;
             this.label11.Text = "Chi nhánh";
             // 
@@ -722,18 +660,30 @@ namespace QuanLySach
             // 
             this.btnResetNV.BackColor = System.Drawing.Color.Transparent;
             this.btnResetNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetNV.Location = new System.Drawing.Point(826, 80);
+            this.btnResetNV.Location = new System.Drawing.Point(742, 89);
             this.btnResetNV.Name = "btnResetNV";
             this.btnResetNV.Size = new System.Drawing.Size(118, 37);
             this.btnResetNV.TabIndex = 5;
             this.btnResetNV.Text = "Đặt lại bộ lọc";
             this.btnResetNV.UseVisualStyleBackColor = false;
             // 
+            // btnCreateStaff
+            // 
+            this.btnCreateStaff.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateStaff.Location = new System.Drawing.Point(886, 31);
+            this.btnCreateStaff.Name = "btnCreateStaff";
+            this.btnCreateStaff.Size = new System.Drawing.Size(118, 37);
+            this.btnCreateStaff.TabIndex = 4;
+            this.btnCreateStaff.Text = "Thêm mới";
+            this.btnCreateStaff.UseVisualStyleBackColor = false;
+            this.btnCreateStaff.Click += new System.EventHandler(this.btnCreateStaff_Click);
+            // 
             // btnLocNV
             // 
             this.btnLocNV.BackColor = System.Drawing.Color.Transparent;
             this.btnLocNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocNV.Location = new System.Drawing.Point(826, 21);
+            this.btnLocNV.Location = new System.Drawing.Point(742, 30);
             this.btnLocNV.Name = "btnLocNV";
             this.btnLocNV.Size = new System.Drawing.Size(118, 37);
             this.btnLocNV.TabIndex = 4;
@@ -744,7 +694,7 @@ namespace QuanLySach
             // 
             this.panel18.Controls.Add(this.mtbSĐTNV);
             this.panel18.Controls.Add(this.label13);
-            this.panel18.Location = new System.Drawing.Point(423, 20);
+            this.panel18.Location = new System.Drawing.Point(391, 29);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(322, 39);
             this.panel18.TabIndex = 3;
@@ -754,7 +704,7 @@ namespace QuanLySach
             this.mtbSĐTNV.Location = new System.Drawing.Point(101, 5);
             this.mtbSĐTNV.Mask = "0000.000.000";
             this.mtbSĐTNV.Name = "mtbSĐTNV";
-            this.mtbSĐTNV.Size = new System.Drawing.Size(218, 29);
+            this.mtbSĐTNV.Size = new System.Drawing.Size(218, 25);
             this.mtbSĐTNV.TabIndex = 1;
             // 
             // label13
@@ -762,7 +712,7 @@ namespace QuanLySach
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(10, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(80, 22);
+            this.label13.Size = new System.Drawing.Size(61, 17);
             this.label13.TabIndex = 0;
             this.label13.Text = "SĐT NV";
             // 
@@ -770,7 +720,7 @@ namespace QuanLySach
             // 
             this.panel20.Controls.Add(this.cbChucVu);
             this.panel20.Controls.Add(this.label15);
-            this.panel20.Location = new System.Drawing.Point(86, 20);
+            this.panel20.Location = new System.Drawing.Point(54, 29);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(322, 39);
             this.panel20.TabIndex = 2;
@@ -780,7 +730,7 @@ namespace QuanLySach
             this.cbChucVu.FormattingEnabled = true;
             this.cbChucVu.Location = new System.Drawing.Point(90, 5);
             this.cbChucVu.Name = "cbChucVu";
-            this.cbChucVu.Size = new System.Drawing.Size(229, 30);
+            this.cbChucVu.Size = new System.Drawing.Size(229, 25);
             this.cbChucVu.TabIndex = 1;
             // 
             // label15
@@ -788,7 +738,7 @@ namespace QuanLySach
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(10, 9);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(81, 22);
+            this.label15.Size = new System.Drawing.Size(64, 17);
             this.label15.TabIndex = 0;
             this.label15.Text = "Chức vụ";
             // 
@@ -797,7 +747,7 @@ namespace QuanLySach
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(82, 20);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(0, 22);
+            this.label16.Size = new System.Drawing.Size(0, 17);
             this.label16.TabIndex = 0;
             // 
             // panel22
@@ -820,9 +770,48 @@ namespace QuanLySach
             this.dtgvNV.Size = new System.Drawing.Size(1034, 488);
             this.dtgvNV.TabIndex = 0;
             // 
+            // tpThongKeSanPham
+            // 
+            this.tpThongKeSanPham.Controls.Add(this.groupBox1);
+            this.tpThongKeSanPham.Location = new System.Drawing.Point(4, 26);
+            this.tpThongKeSanPham.Name = "tpThongKeSanPham";
+            this.tpThongKeSanPham.Padding = new System.Windows.Forms.Padding(3);
+            this.tpThongKeSanPham.Size = new System.Drawing.Size(1056, 651);
+            this.tpThongKeSanPham.TabIndex = 6;
+            this.tpThongKeSanPham.Text = "Thống kê sản phẩm";
+            this.tpThongKeSanPham.UseVisualStyleBackColor = true;
+            // 
+            // tpThongKeDoanhThu
+            // 
+            this.tpThongKeDoanhThu.Location = new System.Drawing.Point(4, 26);
+            this.tpThongKeDoanhThu.Name = "tpThongKeDoanhThu";
+            this.tpThongKeDoanhThu.Padding = new System.Windows.Forms.Padding(3);
+            this.tpThongKeDoanhThu.Size = new System.Drawing.Size(1056, 651);
+            this.tpThongKeDoanhThu.TabIndex = 7;
+            this.tpThongKeDoanhThu.Text = "Thống kê doanh thu";
+            this.tpThongKeDoanhThu.UseVisualStyleBackColor = true;
+            // 
+            // tpThongKeNhanVien
+            // 
+            this.tpThongKeNhanVien.Location = new System.Drawing.Point(4, 26);
+            this.tpThongKeNhanVien.Name = "tpThongKeNhanVien";
+            this.tpThongKeNhanVien.Size = new System.Drawing.Size(1056, 651);
+            this.tpThongKeNhanVien.TabIndex = 8;
+            this.tpThongKeNhanVien.Text = "Thống kê nhân viên";
+            this.tpThongKeNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(8, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1040, 221);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh sách sản phẩm bán chạy";
+            // 
             // frmQuanLySach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 681);
             this.Controls.Add(this.tcAdmin);
@@ -854,22 +843,15 @@ namespace QuanLySach
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSach)).EndInit();
             this.tpLoaiSach.ResumeLayout(false);
-            this.tpNhanVien.ResumeLayout(false);
-            this.tpThongKe.ResumeLayout(false);
-            this.gbTop5kh.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTop5kh)).EndInit();
-            this.gbDoanhthubanhangtungthang.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhthutungthang)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTop5spbc)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLoaiSach)).EndInit();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
+            this.tpNhanVien.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.panel16.ResumeLayout(false);
@@ -880,6 +862,7 @@ namespace QuanLySach
             this.panel20.PerformLayout();
             this.panel22.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).EndInit();
+            this.tpThongKeSanPham.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -892,13 +875,6 @@ namespace QuanLySach
         private System.Windows.Forms.TabPage tpNhanVien;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TabPage tpThongKe;
-        private System.Windows.Forms.GroupBox gbTop5kh;
-        private System.Windows.Forms.DataGridView dgvTop5kh;
-        private System.Windows.Forms.GroupBox gbDoanhthubanhangtungthang;
-        private System.Windows.Forms.DataGridView dgvDoanhthutungthang;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgvTop5spbc;
         private System.Windows.Forms.DataGridView dtgvHoaDon;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel29;
@@ -932,9 +908,6 @@ namespace QuanLySach
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox txtTenLoai;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnResetLoaiSach;
         private System.Windows.Forms.Button btnLocLoaiSach;
         private System.Windows.Forms.Label label14;
@@ -955,6 +928,16 @@ namespace QuanLySach
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.DataGridView dtgvNV;
+        private System.Windows.Forms.Button btnCreateBook;
+        private System.Windows.Forms.Button btnCreateCategory;
+        private System.Windows.Forms.Button btnCreateStaff;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.TextBox txtTenLoai;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TabPage tpThongKeSanPham;
+        private System.Windows.Forms.TabPage tpThongKeDoanhThu;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TabPage tpThongKeNhanVien;
     }
 }
 
