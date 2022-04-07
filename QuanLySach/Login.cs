@@ -28,9 +28,9 @@ namespace QuanLySach
 
         private void btnLocHD_Click(object sender, EventArgs e)
         {
-            var userName = txtLoginName.Text;
-            var password = txtPassword.Text;
-            var branch = cbChiNhanh.SelectedText;
+            string userName = txtLoginName.Text;
+            string password = txtPassword.Text;
+            string branch = cbChiNhanh.SelectedText;
 
             if (branch == "Chi nhánh 01")
             {
