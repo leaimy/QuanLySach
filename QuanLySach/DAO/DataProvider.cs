@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLySach.App;
+using QuanLySach.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -11,7 +13,11 @@ namespace QuanLySach.DAO
     internal class DataProvider
     {
 		private static DataProvider _instance;
-		private readonly string connectionSTR;
+		private string connectionSTR;
+
+		private ChiNhanhEnum branch;
+		private string loginName;
+		private string password;
 
 		public static DataProvider Instance
 		{
@@ -25,10 +31,18 @@ namespace QuanLySach.DAO
 			}
 		}
 
-		private DataProvider()
-		{
-			connectionSTR = "Data Source=.;Initial Catalog=QL_ShopQuanAo;Integrated Security=True";
-		}
+		private DataProvider() { } 
+		public void InitConnectionString(ChiNhanhEnum branch, string loginName, string password)
+        {
+			this.branch = branch;
+			this.loginName = loginName;
+			this.password = password;
+
+			connectionSTR = $"Data Source=DALATHUB\\QLSACH1;Initial Catalog=QLSACH;User uid={loginName}; password={password}";
+
+			if (branch == ChiNhanhEnum.CN_2)
+				connectionSTR = $"Data Source=DALATHUB\\QLSACH2;Initial Catalog=QLSACH;User uid={loginName}; password={password}";
+        }
 
 		public DataTable ExecuteQuery(string query, object[] parameter = null)
 		{
