@@ -325,9 +325,9 @@ namespace QuanLySach
             this.lblTongTienCuoiCung.ForeColor = System.Drawing.Color.DeepPink;
             this.lblTongTienCuoiCung.Location = new System.Drawing.Point(637, 35);
             this.lblTongTienCuoiCung.Name = "lblTongTienCuoiCung";
-            this.lblTongTienCuoiCung.Size = new System.Drawing.Size(72, 18);
+            this.lblTongTienCuoiCung.Size = new System.Drawing.Size(16, 18);
             this.lblTongTienCuoiCung.TabIndex = 19;
-            this.lblTongTienCuoiCung.Text = "2.500.015";
+            this.lblTongTienCuoiCung.Text = "0";
             // 
             // lblTongTien
             // 
@@ -336,9 +336,9 @@ namespace QuanLySach
             this.lblTongTien.ForeColor = System.Drawing.Color.DeepPink;
             this.lblTongTien.Location = new System.Drawing.Point(103, 35);
             this.lblTongTien.Name = "lblTongTien";
-            this.lblTongTien.Size = new System.Drawing.Size(60, 18);
+            this.lblTongTien.Size = new System.Drawing.Size(16, 18);
             this.lblTongTien.TabIndex = 18;
-            this.lblTongTien.Text = "300.000";
+            this.lblTongTien.Text = "0";
             // 
             // label3
             // 
@@ -369,11 +369,17 @@ namespace QuanLySach
             // 
             // nmGiamGia
             // 
+            this.nmGiamGia.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.nmGiamGia.Location = new System.Drawing.Point(393, 32);
             this.nmGiamGia.Name = "nmGiamGia";
             this.nmGiamGia.Size = new System.Drawing.Size(59, 25);
             this.nmGiamGia.TabIndex = 12;
             this.nmGiamGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nmGiamGia.ValueChanged += new System.EventHandler(this.nmGiamGia_ValueChanged);
             // 
             // label5
             // 
@@ -441,6 +447,11 @@ namespace QuanLySach
             // txtProductQuantity
             // 
             this.txtProductQuantity.Location = new System.Drawing.Point(478, 307);
+            this.txtProductQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.txtProductQuantity.Name = "txtProductQuantity";
             this.txtProductQuantity.Size = new System.Drawing.Size(53, 25);
             this.txtProductQuantity.TabIndex = 6;

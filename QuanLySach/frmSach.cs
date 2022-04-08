@@ -1,4 +1,5 @@
 ﻿using QuanLySach.App;
+using QuanLySach.Common;
 using QuanLySach.DAO;
 using QuanLySach.DTO;
 using System;
@@ -71,15 +72,33 @@ namespace QuanLySach
         private void btnAddProductToBill_Click(object sender, EventArgs e)
         {
             var sanpham = dgvSach.SelectedRows[0].DataBoundItem as SanPhamDTO;
+            bool isExist = false;
 
+            for(int i = 0; i< hoaDon.Count; i++)
+            {
+                if (sanpham.MaSP == hoaDon[i].MaSP)
+                {
+                    hoaDon[i].SoLuong += Convert.ToInt32(txtProductQuantity.Value);
+                    isExist = true;
+                    break;
+                }
+            }
             var cthd = new CTHDForm(1, 1, 1, 1, 1);
             cthd.TenSanPham = sanpham.TenSP;
             cthd.MaSP = sanpham.MaSP;
             cthd.GiaMua = sanpham.GiaBan;
             cthd.SoLuong = Convert.ToInt32(txtProductQuantity.Value);
 
-            hoaDon.Add(cthd);
+            if (!isExist) hoaDon.Add(cthd);
             RenderDatagridViewForBill(hoaDon.GetRange(0, hoaDon.Count));
+
+            decimal tongTien = tinhTong(hoaDon);
+
+            lblTongTien.Text = tongTien.ToString();
+
+            decimal tongTienSauGiamGia = tongTien - (tongTien * (nmGiamGia.Value / 100));
+            lblTongTienCuoiCung.Text = tongTienSauGiamGia.ToString();
+            lblTongTienGhiBangChu.Text = MoneyHelper.So_chu(Convert.ToDouble(tongTienSauGiamGia));
         }
 
         private void btnRemoveProductFromBill_Click(object sender, EventArgs e)
@@ -91,6 +110,27 @@ namespace QuanLySach
             var filterd = hoaDon.Where(s => s.MaSP != cthd.MaSP).ToList();
             hoaDon = filterd;
             RenderDatagridViewForBill(filterd);
+        }
+
+        private decimal tinhTong(List<CTHDForm> hoaDon)
+        {
+            decimal tong = 0;
+            
+            foreach (var cthd in hoaDon)
+            {
+                tong += cthd.SoLuong * cthd.GiaMua;
+            }
+
+            return tong;
+        }
+
+        private void nmGiamGia_ValueChanged(object sender, EventArgs e)
+        {
+            decimal tongTien = tinhTong(hoaDon);
+
+            decimal tongTienSauGiamGia = tongTien - (tongTien * (nmGiamGia.Value / 100));
+            lblTongTienCuoiCung.Text = tongTienSauGiamGia.ToString();
+            lblTongTienGhiBangChu.Text = MoneyHelper.So_chu(Convert.ToDouble(tongTienSauGiamGia));
         }
     }
 }
