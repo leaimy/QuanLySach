@@ -19,7 +19,7 @@ namespace QuanLySach.DTO
         public int MaHoaDon { get { return _MaHoaDon; } set { _MaHoaDon = value; } } 
         public int MaSP { get { return _MaSP; } set { _MaSP = value; } } 
         public int SoLuong { get { return _SoLuong; } set { _SoLuong = value; } } 
-        public decimal GiaMua { get { return _GiaMua; } set { if (value < 0) value = 0; } }
+        public decimal GiaMua { get { return _GiaMua; } set { if (value < 0) value = 0; _GiaMua = value; } }
 
         public ChiTietHoaDonDTO(int MaCTHD, int MaHD, int MaSP, int SoLuong, decimal GiaMua)
         {

@@ -172,6 +172,7 @@ namespace QuanLySach
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(454, 25);
             this.txtTimKiem.TabIndex = 0;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // groupBox2
             // 
@@ -408,7 +409,6 @@ namespace QuanLySach
             this.btnThanhToan.TabIndex = 5;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = true;
-            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // btnAddProductToBill
             // 
@@ -422,7 +422,7 @@ namespace QuanLySach
             this.btnAddProductToBill.TabIndex = 5;
             this.btnAddProductToBill.Text = ">>>";
             this.btnAddProductToBill.UseVisualStyleBackColor = true;
-            this.btnAddProductToBill.Click += new System.EventHandler(this.btnThanhToan_Click);
+            this.btnAddProductToBill.Click += new System.EventHandler(this.btnAddProductToBill_Click);
             // 
             // btnRemoveProductFromBill
             // 
@@ -436,7 +436,7 @@ namespace QuanLySach
             this.btnRemoveProductFromBill.TabIndex = 5;
             this.btnRemoveProductFromBill.Text = "<<<";
             this.btnRemoveProductFromBill.UseVisualStyleBackColor = true;
-            this.btnRemoveProductFromBill.Click += new System.EventHandler(this.btnThanhToan_Click);
+            this.btnRemoveProductFromBill.Click += new System.EventHandler(this.btnRemoveProductFromBill_Click);
             // 
             // txtProductQuantity
             // 
@@ -444,6 +444,11 @@ namespace QuanLySach
             this.txtProductQuantity.Name = "txtProductQuantity";
             this.txtProductQuantity.Size = new System.Drawing.Size(53, 25);
             this.txtProductQuantity.TabIndex = 6;
+            this.txtProductQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // frmSach
             // 
