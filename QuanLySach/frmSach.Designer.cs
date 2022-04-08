@@ -49,6 +49,7 @@ namespace QuanLySach
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvCTBH = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lblTongTienGhiBangChu = new System.Windows.Forms.Label();
             this.lblTongTienCuoiCung = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@ namespace QuanLySach
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnAddProductToBill = new System.Windows.Forms.Button();
             this.btnRemoveProductFromBill = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtProductQuantity = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -279,6 +279,13 @@ namespace QuanLySach
             this.dgvCTBH.Size = new System.Drawing.Size(509, 419);
             this.dgvCTBH.TabIndex = 1;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(-59, 226);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(53, 25);
+            this.textBox1.TabIndex = 5;
+            // 
             // groupBox5
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -431,13 +438,6 @@ namespace QuanLySach
             this.btnRemoveProductFromBill.UseVisualStyleBackColor = true;
             this.btnRemoveProductFromBill.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(-59, 226);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(53, 25);
-            this.textBox1.TabIndex = 5;
-            // 
             // txtProductQuantity
             // 
             this.txtProductQuantity.Location = new System.Drawing.Point(478, 307);
@@ -466,6 +466,7 @@ namespace QuanLySach
             this.Name = "frmSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý cửa hàng Sách";
+            this.Load += new System.EventHandler(this.frmSach_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

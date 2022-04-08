@@ -49,6 +49,7 @@
     <Compile Include="App\ChiNhanhEnum.cs" />
     <Compile Include="Common\MoneyHelper.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\SanPhamDAO.cs" />
     <Compile Include="DTO\ChiNhanhDTO.cs" />
     <Compile Include="DTO\ChiTietHoaDonDTO.cs" />
     <Compile Include="DTO\HoaDonDTO.cs" />

@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 
 namespace QuanLySach.DTO
 {
@@ -12,8 +13,8 @@ namespace QuanLySach.DTO
 
         public int MaSP { get { return _MaSP; } set { _MaSP = value; } }
         public string TenSP { set { _TenSP = value; } get { return _TenSP; } }
-        public decimal GiaBan { get { return _GiaBan; } set { GiaBan = value; } }
-        public int LoaiSanPham { get { return _LoaiSanPham; } set { LoaiSanPham = value; } }
+        public decimal GiaBan { get { return _GiaBan; } set { _GiaBan = value; } }
+        public int LoaiSanPham { get { return _LoaiSanPham; } set { _LoaiSanPham = value; } }
         public string Mota { get { return _Mota; } set { _Mota = value; } }
 
         public SanPhamDTO(int MaSP, string TenSP, decimal GiaBan, int LoaiSanPham, string MoTa)
@@ -29,8 +30,8 @@ namespace QuanLySach.DTO
         {
             this.MaSP = (int)row["MaSP"];
             this.TenSP = row["TenSP"].ToString();
-            this.GiaBan = (decimal)row["GiaBan"];
-            this.LoaiSanPham = (int)row["LoaiSanPham"];
+            this.GiaBan = Convert.ToDecimal(row["GiaBan"]);
+            this.LoaiSanPham = Convert.ToInt32(row["LoaiSanPham"]);
             this.Mota = row["Mota"].ToString();
         }
     }

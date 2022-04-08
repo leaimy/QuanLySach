@@ -22,15 +22,13 @@ namespace QuanLySach
         {
             cbChiNhanh.Items.Add("Chi nhánh 01");
             cbChiNhanh.Items.Add("Chi nhánh 02");
-
-            cbChiNhanh.SelectedText = "Chi nhánh 01";
         }
 
         private void btnLocHD_Click(object sender, EventArgs e)
         {
             string userName = txtLoginName.Text;
             string password = txtPassword.Text;
-            string branch = cbChiNhanh.SelectedText;
+            string branch = cbChiNhanh.SelectedItem.ToString();
 
             if (branch == "Chi nhánh 01")
             {
@@ -40,6 +38,11 @@ namespace QuanLySach
             {
                 DataProvider.Instance.InitConnectionString(App.ChiNhanhEnum.CN_2, userName, password);
             }
+
+            var frm = new frmSach();
+            frm.ShowDialog();
+
+            Close();
         }
     }
 }

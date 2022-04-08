@@ -38,10 +38,10 @@ namespace QuanLySach.DAO
 			this.loginName = loginName;
 			this.password = password;
 
-			connectionSTR = $"Data Source=DALATHUB\\QLSACH1;Initial Catalog=QLSACH;User uid={loginName}; password={password}";
+			connectionSTR = $"Data Source=DALATHUB\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
 
 			if (branch == ChiNhanhEnum.CN_2)
-				connectionSTR = $"Data Source=DALATHUB\\QLSACH2;Initial Catalog=QLSACH;User uid={loginName}; password={password}";
+				connectionSTR = $"Data Source=DALATHUB\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
         }
 
 		public DataTable ExecuteQuery(string query, object[] parameter = null)
