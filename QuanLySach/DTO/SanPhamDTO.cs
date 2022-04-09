@@ -17,6 +17,11 @@ namespace QuanLySach.DTO
         public int LoaiSanPham { get { return _LoaiSanPham; } set { _LoaiSanPham = value; } }
         public string Mota { get { return _Mota; } set { _Mota = value; } }
 
+        public SanPhamDTO()
+        {
+
+        }
+
         public SanPhamDTO(int MaSP, string TenSP, decimal GiaBan, int LoaiSanPham, string MoTa)
         {
             this.MaSP = MaSP;

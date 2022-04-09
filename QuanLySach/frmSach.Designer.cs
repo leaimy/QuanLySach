@@ -64,6 +64,8 @@ namespace QuanLySach
             this.btnAddProductToBill = new System.Windows.Forms.Button();
             this.btnRemoveProductFromBill = new System.Windows.Forms.Button();
             this.txtProductQuantity = new System.Windows.Forms.NumericUpDown();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tssLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,6 +76,7 @@ namespace QuanLySach
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmGiamGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductQuantity)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -461,12 +464,29 @@ namespace QuanLySach
             0,
             0});
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tssLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 659);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1064, 22);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tssLabel
+            // 
+            this.tssLabel.Name = "tssLabel";
+            this.tssLabel.Size = new System.Drawing.Size(118, 17);
+            this.tssLabel.Text = "toolStripStatusLabel1";
+            // 
             // frmSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.txtProductQuantity);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -498,6 +518,8 @@ namespace QuanLySach
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmGiamGia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductQuantity)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -540,5 +562,7 @@ namespace QuanLySach
         private System.Windows.Forms.Button btnRemoveProductFromBill;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.NumericUpDown txtProductQuantity;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tssLabel;
     }
 }

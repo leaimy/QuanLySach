@@ -24,6 +24,11 @@ namespace QuanLySach.DTO
         public string TenKH { get { return _TenKH; } set { _TenKH = value; } }
         public string SDT { get { return _SDT; } set { _SDT = value; } }
 
+        public HoaDonDTO()
+        {
+
+        }
+
         public HoaDonDTO(int MaHoaDon, int MaNV, DateTime NgayMua, decimal TongTien, decimal GiamGia, DateTime? NgayThanhToan, string TenKH, string SDT)
         {
             this.MaHoaDon = MaHoaDon;

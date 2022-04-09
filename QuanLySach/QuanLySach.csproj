@@ -46,15 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App\ChiNhanhEnum.cs" />
-    <Compile Include="App\CTHDForm.cs" />
+    <Compile Include="App\AppManager.cs" />
+    <Compile Include="App\models\ChiNhanhEnum.cs" />
+    <Compile Include="App\models\CTHDForm.cs" />
+    <Compile Include="App\models\User.cs" />
     <Compile Include="Common\MoneyHelper.cs" />
+    <Compile Include="DAO\AuthDAO.cs" />
+    <Compile Include="DAO\ChiNhanhDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DAO\SanPhamDAO.cs" />
     <Compile Include="DTO\ChiNhanhDTO.cs" />
     <Compile Include="DTO\ChiTietHoaDonDTO.cs" />
     <Compile Include="DTO\HoaDonDTO.cs" />
     <Compile Include="DTO\LoaiSanPhamDTO.cs" />
+    <Compile Include="DTO\LoginInfoDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\SanPhamDTO.cs" />
     <Compile Include="frmAdmin.cs">

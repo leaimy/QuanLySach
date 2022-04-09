@@ -1,4 +1,5 @@
 ﻿using QuanLySach.App;
+using QuanLySach.App.models;
 using QuanLySach.Common;
 using QuanLySach.DAO;
 using QuanLySach.DTO;
@@ -37,6 +38,12 @@ namespace QuanLySach
 
         private void frmSach_Load(object sender, EventArgs e)
         {
+            tssLabel.Text = $"" +
+                $"Xin chào: {AppManager.Instance.User.HoVaTen} - " +
+                $"Tên đăng nhập: {AppManager.Instance.User.TenDangNhap} - " +
+                $"Chi nhánh: {AppManager.Instance.User.ChiNhanh.Ten} - " +
+                $"Nhóm: {AppManager.Instance.User.ChucVuVN}";
+
             danhSachSanPham = SanPhamDAO.Instance.GetAllProducts();
             hoaDon = new List<CTHDForm>();
             RenderDatagridView(danhSachSanPham);

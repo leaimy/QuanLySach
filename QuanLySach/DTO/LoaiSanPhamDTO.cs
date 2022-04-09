@@ -21,6 +21,11 @@ namespace QuanLySach.DTO
         public DateTime? UpdatedAt { get { return _UpdatedAt; } set { _UpdatedAt = value; } }
         public DateTime? DeletedAt { get { return _DeletedAt; } set { _DeletedAt = value; } }
 
+        public LoaiSanPhamDTO()
+        {
+
+        }
+
         public LoaiSanPhamDTO(int MaLoaiSP, string TenLoaiSP, string MoTa, int ParentID)
         {
             this.MaLoaiSP = MaLoaiSP;

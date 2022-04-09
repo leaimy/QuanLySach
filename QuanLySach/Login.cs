@@ -1,4 +1,7 @@
-﻿using QuanLySach.DAO;
+﻿using QuanLySach.App;
+using QuanLySach.App.models;
+using QuanLySach.DAO;
+using QuanLySach.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,17 +35,36 @@ namespace QuanLySach
 
             if (branch == "Chi nhánh 01")
             {
-                DataProvider.Instance.InitConnectionString(App.ChiNhanhEnum.CN_1, userName, password);
+                DataProvider.Instance.InitConnectionString(ChiNhanhEnum.CN_1, userName, password);
             }
             else
             {
-                DataProvider.Instance.InitConnectionString(App.ChiNhanhEnum.CN_2, userName, password);
+                DataProvider.Instance.InitConnectionString(ChiNhanhEnum.CN_2, userName, password);
             }
 
-            var frm = new frmSach();
-            frm.ShowDialog();
+            LoginInfoDTO loginInfo = AuthDAO.Instance.GetLoginInfo(userName);
+            NhanVienDTO nhanVien = NhanVienDAO.Instance.GetNhanVienByID(loginInfo.NhanVienID);
 
-            Close();
+            AppManager.Instance.User = new App.models.User()
+            {
+                TenDangNhap = userName,
+                MatKhau = password,
+                ChiNhanhID = nhanVien.ChiNhanh,
+                ChucVu = loginInfo.VaiTro,
+                DiaChi = nhanVien.DiaChi,
+                HoDem = nhanVien.HoDem,
+                Luong = nhanVien.Luong,
+                MaNhanVien = nhanVien.MaNhanVien,
+                NgaySinh = nhanVien.NgaySinh,
+                SDT = nhanVien.SDT,
+                Ten = nhanVien.Ten
+            };
+
+            var frm = new frmSach();
+
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
         }
     }
 }

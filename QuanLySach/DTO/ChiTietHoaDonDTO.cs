@@ -21,6 +21,11 @@ namespace QuanLySach.DTO
         public int SoLuong { get { return _SoLuong; } set { _SoLuong = value; } } 
         public decimal GiaMua { get { return _GiaMua; } set { if (value < 0) value = 0; _GiaMua = value; } }
 
+        public ChiTietHoaDonDTO()
+        {
+
+        }
+
         public ChiTietHoaDonDTO(int MaCTHD, int MaHD, int MaSP, int SoLuong, decimal GiaMua)
         {
             this.MaChiTietHoaDon = MaCTHD;

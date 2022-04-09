@@ -19,6 +19,11 @@ namespace QuanLySach.DTO
         public string DiaChi { get { return _DiaChi; } set { _DiaChi = value;} }
         public string MoTa { get { return _MoTa; } set { _MoTa = value; } }
 
+        public ChiNhanhDTO()
+        {
+
+        }
+
         public ChiNhanhDTO(int MaChiNhanh, string Ten, string DiaChi, string MoTa)
         {
             this.MaChiNhanh = MaChiNhanh;
