@@ -59,7 +59,7 @@ namespace QuanLySach.App.models
                     case "GIAMDOC":
                         return "Giám Đốc";
 
-                    case "QLChiNhanh":
+                    case "QLCHINHANH":
                         return "Quản Lý Chi Nhánh";
 
                     case "NHANVIEN":
