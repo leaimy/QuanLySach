@@ -317,9 +317,8 @@ namespace QuanLySach
             this.lblTongTienGhiBangChu.ForeColor = System.Drawing.Color.DeepPink;
             this.lblTongTienGhiBangChu.Location = new System.Drawing.Point(194, 84);
             this.lblTongTienGhiBangChu.Name = "lblTongTienGhiBangChu";
-            this.lblTongTienGhiBangChu.Size = new System.Drawing.Size(264, 17);
+            this.lblTongTienGhiBangChu.Size = new System.Drawing.Size(0, 17);
             this.lblTongTienGhiBangChu.TabIndex = 20;
-            this.lblTongTienGhiBangChu.Text = "Hai trăm tám mươi nghìn đồng chẵn";
             // 
             // lblTongTienCuoiCung
             // 

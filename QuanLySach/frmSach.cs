@@ -117,6 +117,14 @@ namespace QuanLySach
             var filterd = hoaDon.Where(s => s.MaSP != cthd.MaSP).ToList();
             hoaDon = filterd;
             RenderDatagridViewForBill(filterd);
+
+            decimal tongTien = tinhTong(hoaDon);
+
+            lblTongTien.Text = tongTien.ToString();
+
+            decimal tongTienSauGiamGia = tongTien - (tongTien * (nmGiamGia.Value / 100));
+            lblTongTienCuoiCung.Text = tongTienSauGiamGia.ToString();
+            lblTongTienGhiBangChu.Text = MoneyHelper.So_chu(Convert.ToDouble(tongTienSauGiamGia));
         }
 
         private decimal tinhTong(List<CTHDForm> hoaDon)
