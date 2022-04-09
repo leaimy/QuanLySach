@@ -56,6 +56,9 @@ namespace QuanLySach
             dgvSach.Columns[0].Visible = false;
             dgvSach.Columns[3].Visible = false;
             dgvSach.Columns[4].Visible = false;
+
+            dgvSach.Columns[1].HeaderText = "Tên SP";
+            dgvSach.Columns[2].HeaderText = "Giá";
         }
 
         private void RenderDatagridViewForBill(List<CTHDForm> billDetails)
@@ -65,6 +68,10 @@ namespace QuanLySach
             dgvCTBH.Columns[1].Visible = false;
             dgvCTBH.Columns[2].Visible = false;
             dgvCTBH.Columns[3].Visible = false;
+
+            dgvCTBH.Columns[0].HeaderText = "Tên";
+            dgvCTBH.Columns[4].HeaderText = "Số Lượng";
+            dgvCTBH.Columns[5].HeaderText = "Giá";
         }
 
 
