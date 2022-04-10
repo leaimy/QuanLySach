@@ -44,6 +44,7 @@ namespace QuanLySach.App
 
             control.Columns[1].HeaderText = "Tên SP";
             control.Columns[2].HeaderText = "Giá";
+            control.Columns[5].HeaderText = "Thể loại";
         }
 
         public void DisplayListOfFilteredProduct(DataGridView control, string keyword)
@@ -56,6 +57,7 @@ namespace QuanLySach.App
 
             control.Columns[1].HeaderText = "Tên SP";
             control.Columns[2].HeaderText = "Giá";
+            control.Columns[5].HeaderText = "Thể loại";
         }
 
         public void DisplayCart(DataGridView control)
