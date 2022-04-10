@@ -31,6 +31,8 @@ namespace QuanLySach
         {
             this.tcAdmin = new System.Windows.Forms.TabControl();
             this.tpHoaDon = new System.Windows.Forms.TabPage();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tssLoginInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel29 = new System.Windows.Forms.Panel();
             this.cbChiNhanh = new System.Windows.Forms.ComboBox();
@@ -50,6 +52,8 @@ namespace QuanLySach
             this.panel11 = new System.Windows.Forms.Panel();
             this.dtgvHoaDon = new System.Windows.Forms.DataGridView();
             this.tpSach = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtgvSach = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCreateBook = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -61,6 +65,8 @@ namespace QuanLySach
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tpLoaiSach = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dtgvLoaiSach = new System.Windows.Forms.DataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.cbFilterLoaiSPCha = new System.Windows.Forms.ComboBox();
@@ -92,14 +98,9 @@ namespace QuanLySach
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tpThongKeDoanhThu = new System.Windows.Forms.TabPage();
             this.tpThongKeNhanVien = new System.Windows.Forms.TabPage();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.tssLoginInfo = new System.Windows.Forms.ToolStripStatusLabel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtgvSach = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dtgvLoaiSach = new System.Windows.Forms.DataGridView();
             this.tcAdmin.SuspendLayout();
             this.tpHoaDon.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel29.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -108,10 +109,14 @@ namespace QuanLySach
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvHoaDon)).BeginInit();
             this.tpSach.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSach)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tpLoaiSach.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvLoaiSach)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -123,11 +128,6 @@ namespace QuanLySach
             this.panel22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.tpThongKeSanPham.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvSach)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvLoaiSach)).BeginInit();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -159,6 +159,22 @@ namespace QuanLySach
             this.tpHoaDon.TabIndex = 1;
             this.tpHoaDon.Text = "Hoá Đơn";
             this.tpHoaDon.UseVisualStyleBackColor = true;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tssLoginInfo});
+            this.statusStrip1.Location = new System.Drawing.Point(3, 626);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1050, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tssLoginInfo
+            // 
+            this.tssLoginInfo.Name = "tssLoginInfo";
+            this.tssLoginInfo.Size = new System.Drawing.Size(72, 17);
+            this.tssLoginInfo.Text = "tssLoginInfo";
             // 
             // panel13
             // 
@@ -341,6 +357,35 @@ namespace QuanLySach
             this.tpSach.Text = "Sách";
             this.tpSach.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.dtgvSach);
+            this.groupBox2.Location = new System.Drawing.Point(8, 149);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1040, 494);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Danh sách sách hiện có";
+            // 
+            // dtgvSach
+            // 
+            this.dtgvSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvSach.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvSach.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvSach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvSach.Location = new System.Drawing.Point(3, 21);
+            this.dtgvSach.MultiSelect = false;
+            this.dtgvSach.Name = "dtgvSach";
+            this.dtgvSach.ReadOnly = true;
+            this.dtgvSach.RowHeadersWidth = 51;
+            this.dtgvSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvSach.Size = new System.Drawing.Size(1034, 470);
+            this.dtgvSach.TabIndex = 0;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnCreateBook);
@@ -400,6 +445,7 @@ namespace QuanLySach
             this.btnResetSach.TabIndex = 5;
             this.btnResetSach.Text = "Tải lại danh sách";
             this.btnResetSach.UseVisualStyleBackColor = false;
+            this.btnResetSach.Click += new System.EventHandler(this.btnResetSach_Click);
             // 
             // panel5
             // 
@@ -417,6 +463,7 @@ namespace QuanLySach
             this.cbLoaiSach.Name = "cbLoaiSach";
             this.cbLoaiSach.Size = new System.Drawing.Size(229, 25);
             this.cbLoaiSach.TabIndex = 1;
+            this.cbLoaiSach.SelectedIndexChanged += new System.EventHandler(this.cbLoaiSach_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -447,6 +494,35 @@ namespace QuanLySach
             this.tpLoaiSach.Text = "Loại Sách";
             this.tpLoaiSach.UseVisualStyleBackColor = true;
             this.tpLoaiSach.Click += new System.EventHandler(this.tpLoaiSach_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.dtgvLoaiSach);
+            this.groupBox3.Location = new System.Drawing.Point(8, 148);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1040, 424);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Danh sách loại sách";
+            // 
+            // dtgvLoaiSach
+            // 
+            this.dtgvLoaiSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvLoaiSach.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvLoaiSach.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtgvLoaiSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvLoaiSach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvLoaiSach.Location = new System.Drawing.Point(3, 21);
+            this.dtgvLoaiSach.MultiSelect = false;
+            this.dtgvLoaiSach.Name = "dtgvLoaiSach";
+            this.dtgvLoaiSach.ReadOnly = true;
+            this.dtgvLoaiSach.RowHeadersWidth = 51;
+            this.dtgvLoaiSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvLoaiSach.Size = new System.Drawing.Size(1034, 400);
+            this.dtgvLoaiSach.TabIndex = 0;
             // 
             // panel9
             // 
@@ -750,80 +826,6 @@ namespace QuanLySach
             this.tpThongKeNhanVien.Text = "Thống kê nhân viên";
             this.tpThongKeNhanVien.UseVisualStyleBackColor = true;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tssLoginInfo});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 626);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1050, 22);
-            this.statusStrip1.TabIndex = 3;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // tssLoginInfo
-            // 
-            this.tssLoginInfo.Name = "tssLoginInfo";
-            this.tssLoginInfo.Size = new System.Drawing.Size(72, 17);
-            this.tssLoginInfo.Text = "tssLoginInfo";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.dtgvSach);
-            this.groupBox2.Location = new System.Drawing.Point(8, 149);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1040, 494);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Danh sách sách hiện có";
-            // 
-            // dtgvSach
-            // 
-            this.dtgvSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvSach.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvSach.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dtgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvSach.Location = new System.Drawing.Point(3, 21);
-            this.dtgvSach.MultiSelect = false;
-            this.dtgvSach.Name = "dtgvSach";
-            this.dtgvSach.ReadOnly = true;
-            this.dtgvSach.RowHeadersWidth = 51;
-            this.dtgvSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvSach.Size = new System.Drawing.Size(1034, 470);
-            this.dtgvSach.TabIndex = 0;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.dtgvLoaiSach);
-            this.groupBox3.Location = new System.Drawing.Point(8, 148);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1040, 424);
-            this.groupBox3.TabIndex = 7;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Danh sách loại sách";
-            // 
-            // dtgvLoaiSach
-            // 
-            this.dtgvLoaiSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvLoaiSach.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvLoaiSach.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dtgvLoaiSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvLoaiSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvLoaiSach.Location = new System.Drawing.Point(3, 21);
-            this.dtgvLoaiSach.MultiSelect = false;
-            this.dtgvLoaiSach.Name = "dtgvLoaiSach";
-            this.dtgvLoaiSach.ReadOnly = true;
-            this.dtgvLoaiSach.RowHeadersWidth = 51;
-            this.dtgvLoaiSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvLoaiSach.Size = new System.Drawing.Size(1034, 400);
-            this.dtgvLoaiSach.TabIndex = 0;
-            // 
             // frmQuanLySach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -838,6 +840,8 @@ namespace QuanLySach
             this.tcAdmin.ResumeLayout(false);
             this.tpHoaDon.ResumeLayout(false);
             this.tpHoaDon.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel29.ResumeLayout(false);
@@ -851,6 +855,8 @@ namespace QuanLySach
             this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvHoaDon)).EndInit();
             this.tpSach.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSach)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -858,6 +864,8 @@ namespace QuanLySach
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tpLoaiSach.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvLoaiSach)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel12.ResumeLayout(false);
@@ -876,12 +884,6 @@ namespace QuanLySach
             this.panel22.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).EndInit();
             this.tpThongKeSanPham.ResumeLayout(false);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvSach)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvLoaiSach)).EndInit();
             this.ResumeLayout(false);
 
         }

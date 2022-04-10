@@ -118,7 +118,23 @@ namespace QuanLySach
             dtgvSach.Columns[4].HeaderText = "Mô tả";
             dtgvSach.Columns[5].HeaderText = "Thể loại";
         }
+
+        private void cbLoaiSach_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbLoaiSach.SelectedIndex == -1) return;
+
+            var selected = cbLoaiSach.SelectedItem as LoaiSanPhamDTO;
+            RenderSachDatagridview(ProductController.Instance.FilterByCategory(selected.MaLoaiSP));
+        }
+
+        private void btnResetSach_Click(object sender, EventArgs e)
+        {
+            RenderSachDatagridview(ProductController.Instance.GetProducts());
+
+            cbLoaiSach.ResetText();
+        }
         #endregion
+
 
         private void tcAdmin_SelectedIndexChanged(object sender, EventArgs e)
         {

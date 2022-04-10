@@ -34,6 +34,11 @@ namespace QuanLySach.App
             return products.Where(s => s.TenSP.ToLower().Contains(keyword)).ToList();
         }
 
+        public List<SanPhamDTO> FilterByCategory(int categoryID)
+        {
+            return products.Where(s => s.LoaiSanPham == categoryID).ToList();
+        }
+
         public List<SanPhamDTO> GetProducts() => Clone();
 
         public List<SanPhamDTO> Clone()
