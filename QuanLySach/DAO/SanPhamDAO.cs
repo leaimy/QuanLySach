@@ -31,7 +31,7 @@ namespace QuanLySach.DAO
         {
             var products = new List<SanPhamDTO>();
 
-            var query = "EXEC dbo.sp_GetSanPham";
+            var query = "EXEC dbo.sp_GetProducts";
             var table = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow item in table.Rows)
