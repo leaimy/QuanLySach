@@ -57,6 +57,12 @@ namespace QuanLySach.App.models
             }
         }
 
+        public void Clear()
+        {
+            items.Clear();
+            Discount = 0;
+        }
+
         public List<CartItem> Clone()
         {
             return items.GetRange(0, items.Count);
