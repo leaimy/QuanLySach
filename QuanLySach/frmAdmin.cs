@@ -145,6 +145,31 @@ namespace QuanLySach
 
             cbLoaiSach.ResetText();
         }
+
+        private void btnCreateBook_Click(object sender, EventArgs e)
+        {
+            var frm = new frmThemSach();
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                string TenSach = frm.TenSach;
+                int LoaiSach = frm.LoaiSach;
+                decimal GiaBan = frm.GiaBan;
+                string MoTa = frm.MoTa;
+
+                if (ProductController.Instance.CreateNew(TenSach, GiaBan, LoaiSach, MoTa) != null)
+                {
+                    MessageBox.Show("Tạo sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi xảy ra trong quá trình thêm sản phẩm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                RenderSachDatagridview(ProductController.Instance.GetProducts());
+            }
+        }
+
         #endregion
 
 
@@ -155,12 +180,6 @@ namespace QuanLySach
         private void tpLoaiSach_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnCreateBook_Click(object sender, EventArgs e)
-        {
-            var frm = new frmThemSach();
-            frm.ShowDialog();
         }
 
 

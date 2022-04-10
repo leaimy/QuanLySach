@@ -31,12 +31,12 @@ namespace QuanLySach
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.btnCreateCategory = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtMota = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtGiaSach = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbLoaiSach = new System.Windows.Forms.ComboBox();
@@ -44,12 +44,13 @@ namespace QuanLySach
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCreateCategory = new System.Windows.Forms.Button();
+            this.txtPrice = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -81,6 +82,20 @@ namespace QuanLySach
             this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnCreateCategory
+            // 
+            this.btnCreateCategory.BackColor = System.Drawing.Color.Green;
+            this.btnCreateCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateCategory.ForeColor = System.Drawing.Color.White;
+            this.btnCreateCategory.Location = new System.Drawing.Point(490, 165);
+            this.btnCreateCategory.Name = "btnCreateCategory";
+            this.btnCreateCategory.Size = new System.Drawing.Size(87, 35);
+            this.btnCreateCategory.TabIndex = 4;
+            this.btnCreateCategory.Text = "Thêm";
+            this.btnCreateCategory.UseVisualStyleBackColor = false;
+            this.btnCreateCategory.Click += new System.EventHandler(this.btnCreateCategory_Click);
             // 
             // btnThem
             // 
@@ -93,6 +108,7 @@ namespace QuanLySach
             this.btnThem.TabIndex = 4;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // panel4
             // 
@@ -124,20 +140,13 @@ namespace QuanLySach
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.txtGiaSach);
+            this.panel3.Controls.Add(this.txtPrice);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(35, 233);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(542, 81);
             this.panel3.TabIndex = 2;
-            // 
-            // txtGiaSach
-            // 
-            this.txtGiaSach.Location = new System.Drawing.Point(119, 26);
-            this.txtGiaSach.Name = "txtGiaSach";
-            this.txtGiaSach.Size = new System.Drawing.Size(397, 26);
-            this.txtGiaSach.TabIndex = 1;
             // 
             // label3
             // 
@@ -204,18 +213,22 @@ namespace QuanLySach
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên sách";
             // 
-            // btnCreateCategory
+            // txtPrice
             // 
-            this.btnCreateCategory.BackColor = System.Drawing.Color.Green;
-            this.btnCreateCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateCategory.ForeColor = System.Drawing.Color.White;
-            this.btnCreateCategory.Location = new System.Drawing.Point(490, 165);
-            this.btnCreateCategory.Name = "btnCreateCategory";
-            this.btnCreateCategory.Size = new System.Drawing.Size(87, 35);
-            this.btnCreateCategory.TabIndex = 4;
-            this.btnCreateCategory.Text = "Thêm";
-            this.btnCreateCategory.UseVisualStyleBackColor = false;
-            this.btnCreateCategory.Click += new System.EventHandler(this.btnCreateCategory_Click);
+            this.txtPrice.Increment = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.txtPrice.Location = new System.Drawing.Point(119, 27);
+            this.txtPrice.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(397, 26);
+            this.txtPrice.TabIndex = 1;
             // 
             // frmThemSach
             // 
@@ -228,6 +241,7 @@ namespace QuanLySach
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmThemSach";
             this.Text = "Sách";
+            this.Load += new System.EventHandler(this.frmThemSach_Load);
             this.groupBox1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -237,6 +251,7 @@ namespace QuanLySach
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,7 +265,6 @@ namespace QuanLySach
         private System.Windows.Forms.TextBox txtMota;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtGiaSach;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cbLoaiSach;
@@ -259,5 +273,6 @@ namespace QuanLySach
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCreateCategory;
+        private System.Windows.Forms.NumericUpDown txtPrice;
     }
 }

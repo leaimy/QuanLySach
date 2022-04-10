@@ -56,5 +56,21 @@ namespace QuanLySach.DAO
             
             return products;
         }
+
+        public SanPhamDTO Create(string TenSP, decimal GiaBan, int TheLoai, string MoTa)
+        {
+            string query = "EXEC dbo.sp_CreateNewProduct @Name , @Price , @Category , @Desc";
+
+            object[] param = new object[] { TenSP, GiaBan, TheLoai, MoTa };
+
+            DataTable table = DataProvider.Instance.ExecuteQuery(query, param);
+
+            foreach (DataRow row in table.Rows)
+            {
+                return new SanPhamDTO(row);
+            }
+
+            return null;
+        }
     }
 }

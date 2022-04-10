@@ -45,5 +45,18 @@ namespace QuanLySach.App
         {
             return products.GetRange(0, products.Count);
         }
+
+        public SanPhamDTO CreateNew(string TenSP, decimal GiaBan, int TheLoai, string MoTa)
+        {
+            var sanPham = SanPhamDAO.Instance.Create(TenSP, GiaBan, TheLoai, MoTa);
+
+            if (sanPham != null)
+            {
+                var cat = CategoryController.Instance.GetByID(sanPham.LoaiSanPham);
+                sanPham.TenLoaiSP = cat.TenLoaiSP;
+            }
+
+            return sanPham;
+        }
     }
 }
