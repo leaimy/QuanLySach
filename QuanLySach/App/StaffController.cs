@@ -32,6 +32,11 @@ namespace QuanLySach.App
             return staffs.GetRange(0, staffs.Count);
         }
 
+        public List<NhanVienDTO> FilterByPhoneNumber(string phone)
+        {
+            return staffs.Where(s => s.SDT.Contains(phone)).ToList();
+        }
+
         public void FetchNew()
         {
             staffs = NhanVienDAO.Instance.GetAllStaffWithBranch();

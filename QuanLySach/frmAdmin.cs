@@ -200,6 +200,19 @@ namespace QuanLySach
             dtgvNV.Columns[8].HeaderText = "Lương";
             dtgvNV.Columns[9].HeaderText = "Chi nhánh";
         }
+
+        private void txtFilterStaffByPhone_TextChanged(object sender, EventArgs e)
+        {
+            var keyword = txtFilterStaffByPhone.Text.Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                RenderNhanVienDatagridview(StaffController.Instance.GetStaffs());
+                return; 
+            }
+
+            RenderNhanVienDatagridview(StaffController.Instance.FilterByPhoneNumber(keyword));
+        }
         #endregion
 
         private void tcAdmin_SelectedIndexChanged(object sender, EventArgs e)

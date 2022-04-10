@@ -78,26 +78,22 @@ namespace QuanLySach
             this.btnCreateCategory = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.tpNhanVien = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dtgvNV = new System.Windows.Forms.DataGridView();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.cbChiNhanhNV = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnResetNV = new System.Windows.Forms.Button();
             this.btnCreateStaff = new System.Windows.Forms.Button();
-            this.btnLocNV = new System.Windows.Forms.Button();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.mtbSĐTNV = new System.Windows.Forms.MaskedTextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.cbChucVu = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tpThongKeSanPham = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tpThongKeDoanhThu = new System.Windows.Forms.TabPage();
             this.tpThongKeNhanVien = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dtgvNV = new System.Windows.Forms.DataGridView();
+            this.txtFilterStaffByPhone = new System.Windows.Forms.TextBox();
             this.tcAdmin.SuspendLayout();
             this.tpHoaDon.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -121,13 +117,12 @@ namespace QuanLySach
             this.panel12.SuspendLayout();
             this.panel10.SuspendLayout();
             this.tpNhanVien.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
-            this.panel20.SuspendLayout();
             this.tpThongKeSanPham.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -634,14 +629,41 @@ namespace QuanLySach
             this.tpNhanVien.Text = "Nhân Viên";
             this.tpNhanVien.UseVisualStyleBackColor = true;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.dtgvNV);
+            this.groupBox4.Location = new System.Drawing.Point(8, 148);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1040, 495);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Danh sách nhân viên";
+            // 
+            // dtgvNV
+            // 
+            this.dtgvNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvNV.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvNV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvNV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvNV.Location = new System.Drawing.Point(3, 21);
+            this.dtgvNV.MultiSelect = false;
+            this.dtgvNV.Name = "dtgvNV";
+            this.dtgvNV.ReadOnly = true;
+            this.dtgvNV.RowHeadersWidth = 51;
+            this.dtgvNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvNV.Size = new System.Drawing.Size(1034, 471);
+            this.dtgvNV.TabIndex = 0;
+            // 
             // panel15
             // 
             this.panel15.Controls.Add(this.panel16);
             this.panel15.Controls.Add(this.btnResetNV);
             this.panel15.Controls.Add(this.btnCreateStaff);
-            this.panel15.Controls.Add(this.btnLocNV);
             this.panel15.Controls.Add(this.panel18);
-            this.panel15.Controls.Add(this.panel20);
             this.panel15.Controls.Add(this.label16);
             this.panel15.Location = new System.Drawing.Point(8, 5);
             this.panel15.Name = "panel15";
@@ -652,7 +674,7 @@ namespace QuanLySach
             // 
             this.panel16.Controls.Add(this.cbChiNhanhNV);
             this.panel16.Controls.Add(this.label11);
-            this.panel16.Location = new System.Drawing.Point(54, 89);
+            this.panel16.Location = new System.Drawing.Point(123, 87);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(322, 39);
             this.panel16.TabIndex = 3;
@@ -680,50 +702,31 @@ namespace QuanLySach
             this.btnResetNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResetNV.Location = new System.Drawing.Point(742, 89);
             this.btnResetNV.Name = "btnResetNV";
-            this.btnResetNV.Size = new System.Drawing.Size(118, 37);
+            this.btnResetNV.Size = new System.Drawing.Size(145, 37);
             this.btnResetNV.TabIndex = 5;
-            this.btnResetNV.Text = "Đặt lại bộ lọc";
+            this.btnResetNV.Text = "Tải lại danh sách";
             this.btnResetNV.UseVisualStyleBackColor = false;
             // 
             // btnCreateStaff
             // 
             this.btnCreateStaff.BackColor = System.Drawing.Color.Transparent;
             this.btnCreateStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateStaff.Location = new System.Drawing.Point(886, 31);
+            this.btnCreateStaff.Location = new System.Drawing.Point(742, 28);
             this.btnCreateStaff.Name = "btnCreateStaff";
-            this.btnCreateStaff.Size = new System.Drawing.Size(118, 37);
+            this.btnCreateStaff.Size = new System.Drawing.Size(145, 37);
             this.btnCreateStaff.TabIndex = 4;
             this.btnCreateStaff.Text = "Thêm mới";
             this.btnCreateStaff.UseVisualStyleBackColor = false;
             this.btnCreateStaff.Click += new System.EventHandler(this.btnCreateStaff_Click);
             // 
-            // btnLocNV
-            // 
-            this.btnLocNV.BackColor = System.Drawing.Color.Transparent;
-            this.btnLocNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocNV.Location = new System.Drawing.Point(742, 30);
-            this.btnLocNV.Name = "btnLocNV";
-            this.btnLocNV.Size = new System.Drawing.Size(118, 37);
-            this.btnLocNV.TabIndex = 4;
-            this.btnLocNV.Text = "Lọc";
-            this.btnLocNV.UseVisualStyleBackColor = false;
-            // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.mtbSĐTNV);
+            this.panel18.Controls.Add(this.txtFilterStaffByPhone);
             this.panel18.Controls.Add(this.label13);
-            this.panel18.Location = new System.Drawing.Point(391, 29);
+            this.panel18.Location = new System.Drawing.Point(123, 28);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(322, 39);
             this.panel18.TabIndex = 3;
-            // 
-            // mtbSĐTNV
-            // 
-            this.mtbSĐTNV.Location = new System.Drawing.Point(101, 5);
-            this.mtbSĐTNV.Mask = "0000.000.000";
-            this.mtbSĐTNV.Name = "mtbSĐTNV";
-            this.mtbSĐTNV.Size = new System.Drawing.Size(218, 25);
-            this.mtbSĐTNV.TabIndex = 1;
             // 
             // label13
             // 
@@ -733,32 +736,6 @@ namespace QuanLySach
             this.label13.Size = new System.Drawing.Size(61, 17);
             this.label13.TabIndex = 0;
             this.label13.Text = "SĐT NV";
-            // 
-            // panel20
-            // 
-            this.panel20.Controls.Add(this.cbChucVu);
-            this.panel20.Controls.Add(this.label15);
-            this.panel20.Location = new System.Drawing.Point(54, 29);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(322, 39);
-            this.panel20.TabIndex = 2;
-            // 
-            // cbChucVu
-            // 
-            this.cbChucVu.FormattingEnabled = true;
-            this.cbChucVu.Location = new System.Drawing.Point(90, 5);
-            this.cbChucVu.Name = "cbChucVu";
-            this.cbChucVu.Size = new System.Drawing.Size(229, 25);
-            this.cbChucVu.TabIndex = 1;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(10, 9);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(64, 17);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Chức vụ";
             // 
             // label16
             // 
@@ -807,34 +784,13 @@ namespace QuanLySach
             this.tpThongKeNhanVien.Text = "Thống kê nhân viên";
             this.tpThongKeNhanVien.UseVisualStyleBackColor = true;
             // 
-            // groupBox4
+            // txtFilterStaffByPhone
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.dtgvNV);
-            this.groupBox4.Location = new System.Drawing.Point(8, 148);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1040, 495);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Danh sách nhân viên";
-            // 
-            // dtgvNV
-            // 
-            this.dtgvNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvNV.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvNV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dtgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvNV.Location = new System.Drawing.Point(3, 21);
-            this.dtgvNV.MultiSelect = false;
-            this.dtgvNV.Name = "dtgvNV";
-            this.dtgvNV.ReadOnly = true;
-            this.dtgvNV.RowHeadersWidth = 51;
-            this.dtgvNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvNV.Size = new System.Drawing.Size(1034, 471);
-            this.dtgvNV.TabIndex = 0;
+            this.txtFilterStaffByPhone.Location = new System.Drawing.Point(90, 6);
+            this.txtFilterStaffByPhone.Name = "txtFilterStaffByPhone";
+            this.txtFilterStaffByPhone.Size = new System.Drawing.Size(229, 25);
+            this.txtFilterStaffByPhone.TabIndex = 1;
+            this.txtFilterStaffByPhone.TextChanged += new System.EventHandler(this.txtFilterStaffByPhone_TextChanged);
             // 
             // frmQuanLySach
             // 
@@ -883,17 +839,15 @@ namespace QuanLySach
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.tpNhanVien.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).EndInit();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
-            this.panel20.ResumeLayout(false);
-            this.panel20.PerformLayout();
             this.tpThongKeSanPham.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -943,13 +897,8 @@ namespace QuanLySach
         private System.Windows.Forms.ComboBox cbChiNhanhNV;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnResetNV;
-        private System.Windows.Forms.Button btnLocNV;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.MaskedTextBox mtbSĐTNV;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.ComboBox cbChucVu;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnCreateBook;
         private System.Windows.Forms.Button btnCreateCategory;
@@ -969,6 +918,7 @@ namespace QuanLySach
         private System.Windows.Forms.DataGridView dtgvLoaiSach;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dtgvNV;
+        private System.Windows.Forms.TextBox txtFilterStaffByPhone;
     }
 }
 
