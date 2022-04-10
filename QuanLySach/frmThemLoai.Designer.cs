@@ -74,6 +74,7 @@ namespace QuanLySach
             this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnThem
             // 
@@ -86,6 +87,7 @@ namespace QuanLySach
             this.btnThem.TabIndex = 4;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // panel4
             // 
@@ -111,7 +113,7 @@ namespace QuanLySach
             this.label4.Location = new System.Drawing.Point(16, 74);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 22);
+            this.label4.Size = new System.Drawing.Size(46, 19);
             this.label4.TabIndex = 0;
             this.label4.Text = "Mô tả";
             // 
@@ -130,7 +132,7 @@ namespace QuanLySach
             this.cbParentID.FormattingEnabled = true;
             this.cbParentID.Location = new System.Drawing.Point(119, 26);
             this.cbParentID.Name = "cbParentID";
-            this.cbParentID.Size = new System.Drawing.Size(397, 30);
+            this.cbParentID.Size = new System.Drawing.Size(397, 27);
             this.cbParentID.TabIndex = 1;
             // 
             // label2
@@ -139,7 +141,7 @@ namespace QuanLySach
             this.label2.Location = new System.Drawing.Point(16, 29);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 22);
+            this.label2.Size = new System.Drawing.Size(72, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nhóm cha";
             // 
@@ -157,7 +159,7 @@ namespace QuanLySach
             // 
             this.txtName.Location = new System.Drawing.Point(119, 26);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(397, 30);
+            this.txtName.Size = new System.Drawing.Size(397, 26);
             this.txtName.TabIndex = 1;
             // 
             // label1
@@ -166,13 +168,13 @@ namespace QuanLySach
             this.label1.Location = new System.Drawing.Point(16, 29);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 22);
+            this.label1.Size = new System.Drawing.Size(79, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên thể loại";
             // 
             // frmThemLoai
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(639, 610);
@@ -181,6 +183,7 @@ namespace QuanLySach
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmThemLoai";
             this.Text = "Thể Loại Sách";
+            this.Load += new System.EventHandler(this.frmThemLoai_Load);
             this.groupBox1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
