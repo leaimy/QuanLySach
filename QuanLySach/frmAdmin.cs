@@ -51,6 +51,10 @@ namespace QuanLySach
             #region Nhan Vien 
             RenderNhanVienDatagridview(StaffController.Instance.GetStaffs());
             #endregion
+
+            #region Hoa Don 
+            RenderHoaDonDatagridview(BillController.Instance.GetBillsToday());
+            #endregion
         }
 
         #region Loai San Pham
@@ -212,6 +216,27 @@ namespace QuanLySach
             }
 
             RenderNhanVienDatagridview(StaffController.Instance.FilterByPhoneNumber(keyword));
+        }
+        #endregion
+
+        #region Hoa Don 
+        void RenderHoaDonDatagridview(List<HoaDonDTO> bills)
+        {
+            dtgvBill.DataSource = bills;
+
+            dtgvBill.Columns[1].Visible = false;
+            dtgvBill.Columns[5].Visible = false;
+            dtgvBill.Columns[8].Visible = false;
+            dtgvBill.Columns[9].Visible = false;
+            dtgvBill.Columns[10].Visible = false;
+
+            dtgvBill.Columns[0].HeaderText = "Mã";
+            dtgvBill.Columns[2].HeaderText = "Ngày mua";
+            dtgvBill.Columns[3].HeaderText = "Tổng";
+            dtgvBill.Columns[4].HeaderText = "Giảm giá";
+            dtgvBill.Columns[6].HeaderText = "KH";
+            dtgvBill.Columns[7].HeaderText = "SDT";
+            dtgvBill.Columns[11].HeaderText = "NV";
         }
         #endregion
 
