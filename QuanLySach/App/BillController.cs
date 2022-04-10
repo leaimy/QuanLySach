@@ -163,5 +163,10 @@ namespace QuanLySach.App
         {
             return bills.Where(s => s.MaNV == StaffID).ToList();
         }
+
+        public List<HoaDonDTO> FilterByCustomerPhoneNumber(string phone)
+        {
+            return bills.Where(s => s.SDT.Contains(phone)).ToList();
+        }
     }
 }

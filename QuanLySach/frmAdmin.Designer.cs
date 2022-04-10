@@ -366,6 +366,7 @@ namespace QuanLySach
             this.txtFilterBillByCPhone.Name = "txtFilterBillByCPhone";
             this.txtFilterBillByCPhone.Size = new System.Drawing.Size(220, 25);
             this.txtFilterBillByCPhone.TabIndex = 1;
+            this.txtFilterBillByCPhone.TextChanged += new System.EventHandler(this.txtFilterBillByCPhone_TextChanged);
             // 
             // label7
             // 

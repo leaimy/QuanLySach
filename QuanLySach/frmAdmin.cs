@@ -284,6 +284,12 @@ namespace QuanLySach
             var selected = cbTenNV.SelectedItem as NhanVienDTO;
             RenderHoaDonDatagridview(BillController.Instance.FilterByStaff(selected.MaNhanVien));
         }
+
+        private void txtFilterBillByCPhone_TextChanged(object sender, EventArgs e)
+        {
+            var keyword = txtFilterBillByCPhone.Text.Trim();
+            RenderHoaDonDatagridview(BillController.Instance.FilterByCustomerPhoneNumber(keyword));
+        }
         #endregion
 
         private void tcAdmin_SelectedIndexChanged(object sender, EventArgs e)
