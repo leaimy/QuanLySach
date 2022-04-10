@@ -20,7 +20,7 @@ namespace QuanLySach.App.models
                 items.ForEach(s => total += s.ThanhTien);
 
                 total -= (total * (Discount / 100));
-                return Convert.ToInt32(total * 1000 / 1000);
+                return Convert.ToInt32(total / 1000) * 1000;
             }
         }
 
@@ -31,7 +31,7 @@ namespace QuanLySach.App.models
                 decimal total = 0;
                 items.ForEach(s => total += s.ThanhTien);
 
-                return Convert.ToInt32(total * 1000 / 1000);
+                return Convert.ToInt32(total / 1000) * 1000;
             }
         }
 
