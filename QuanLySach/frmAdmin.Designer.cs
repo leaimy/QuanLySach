@@ -31,17 +31,26 @@ namespace QuanLySach
         {
             this.tcAdmin = new System.Windows.Forms.TabControl();
             this.tpHoaDon = new System.Windows.Forms.TabPage();
+            this.grBillContainer = new System.Windows.Forms.GroupBox();
+            this.dtgvBill = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tssLoginInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.btnFilterBillInRange = new System.Windows.Forms.Button();
+            this.btnFilterBillCurrentMonth = new System.Windows.Forms.Button();
+            this.btnFilterBillToday = new System.Windows.Forms.Button();
+            this.btnFilterMonthLastDate = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
             this.cbChiNhanh = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnFilterBillLastMonth = new System.Windows.Forms.Button();
             this.panel27 = new System.Windows.Forms.Panel();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
+            this.txtFilterBillByCPhone = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
             this.cbTenNV = new System.Windows.Forms.ComboBox();
@@ -83,27 +92,20 @@ namespace QuanLySach
             this.btnResetNV = new System.Windows.Forms.Button();
             this.btnCreateStaff = new System.Windows.Forms.Button();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.txtFilterStaffByPhone = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tpThongKeSanPham = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tpThongKeDoanhThu = new System.Windows.Forms.TabPage();
             this.tpThongKeNhanVien = new System.Windows.Forms.TabPage();
-            this.txtFilterStaffByPhone = new System.Windows.Forms.TextBox();
-            this.grBillContainer = new System.Windows.Forms.GroupBox();
-            this.dtgvBill = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnFilterMonthLastDate = new System.Windows.Forms.Button();
-            this.btnFilterBillToday = new System.Windows.Forms.Button();
-            this.btnFilterBillCurrentMonth = new System.Windows.Forms.Button();
-            this.btnFilterBillInRange = new System.Windows.Forms.Button();
-            this.txtFilterBillByCPhone = new System.Windows.Forms.TextBox();
             this.tcAdmin.SuspendLayout();
             this.tpHoaDon.SuspendLayout();
+            this.grBillContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.panel13.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel29.SuspendLayout();
             this.panel27.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -127,9 +129,6 @@ namespace QuanLySach
             this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
             this.tpThongKeSanPham.SuspendLayout();
-            this.grBillContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -162,6 +161,35 @@ namespace QuanLySach
             this.tpHoaDon.Text = "Hoá Đơn";
             this.tpHoaDon.UseVisualStyleBackColor = true;
             // 
+            // grBillContainer
+            // 
+            this.grBillContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grBillContainer.Controls.Add(this.dtgvBill);
+            this.grBillContainer.Location = new System.Drawing.Point(8, 149);
+            this.grBillContainer.Name = "grBillContainer";
+            this.grBillContainer.Size = new System.Drawing.Size(1040, 474);
+            this.grBillContainer.TabIndex = 6;
+            this.grBillContainer.TabStop = false;
+            this.grBillContainer.Text = "Danh sách hóa đơn hiện có";
+            // 
+            // dtgvBill
+            // 
+            this.dtgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvBill.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvBill.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvBill.Location = new System.Drawing.Point(3, 21);
+            this.dtgvBill.MultiSelect = false;
+            this.dtgvBill.Name = "dtgvBill";
+            this.dtgvBill.ReadOnly = true;
+            this.dtgvBill.RowHeadersWidth = 51;
+            this.dtgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvBill.Size = new System.Drawing.Size(1034, 450);
+            this.dtgvBill.TabIndex = 0;
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -186,7 +214,6 @@ namespace QuanLySach
             this.panel13.Controls.Add(this.btnFilterMonthLastDate);
             this.panel13.Controls.Add(this.panel2);
             this.panel13.Controls.Add(this.panel29);
-            this.panel13.Controls.Add(this.btnFilterBillLastMonth);
             this.panel13.Controls.Add(this.panel27);
             this.panel13.Controls.Add(this.panel19);
             this.panel13.Controls.Add(this.panel21);
@@ -195,6 +222,81 @@ namespace QuanLySach
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(1040, 137);
             this.panel13.TabIndex = 2;
+            // 
+            // btnFilterBillInRange
+            // 
+            this.btnFilterBillInRange.BackColor = System.Drawing.Color.Transparent;
+            this.btnFilterBillInRange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilterBillInRange.Location = new System.Drawing.Point(458, 78);
+            this.btnFilterBillInRange.Name = "btnFilterBillInRange";
+            this.btnFilterBillInRange.Size = new System.Drawing.Size(69, 37);
+            this.btnFilterBillInRange.TabIndex = 9;
+            this.btnFilterBillInRange.Text = "Lọc";
+            this.btnFilterBillInRange.UseVisualStyleBackColor = false;
+            this.btnFilterBillInRange.Click += new System.EventHandler(this.btnFilterBillInRange_Click);
+            // 
+            // btnFilterBillCurrentMonth
+            // 
+            this.btnFilterBillCurrentMonth.BackColor = System.Drawing.Color.Transparent;
+            this.btnFilterBillCurrentMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilterBillCurrentMonth.Location = new System.Drawing.Point(922, 80);
+            this.btnFilterBillCurrentMonth.Name = "btnFilterBillCurrentMonth";
+            this.btnFilterBillCurrentMonth.Size = new System.Drawing.Size(103, 37);
+            this.btnFilterBillCurrentMonth.TabIndex = 8;
+            this.btnFilterBillCurrentMonth.Text = "Tháng này";
+            this.btnFilterBillCurrentMonth.UseVisualStyleBackColor = false;
+            this.btnFilterBillCurrentMonth.Click += new System.EventHandler(this.btnFilterBillCurrentMonth_Click);
+            // 
+            // btnFilterBillToday
+            // 
+            this.btnFilterBillToday.BackColor = System.Drawing.Color.Transparent;
+            this.btnFilterBillToday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilterBillToday.Location = new System.Drawing.Point(804, 80);
+            this.btnFilterBillToday.Name = "btnFilterBillToday";
+            this.btnFilterBillToday.Size = new System.Drawing.Size(103, 37);
+            this.btnFilterBillToday.TabIndex = 7;
+            this.btnFilterBillToday.Text = "Hôm nay";
+            this.btnFilterBillToday.UseVisualStyleBackColor = false;
+            this.btnFilterBillToday.Click += new System.EventHandler(this.btnFilterBillToday_Click);
+            // 
+            // btnFilterMonthLastDate
+            // 
+            this.btnFilterMonthLastDate.BackColor = System.Drawing.Color.Transparent;
+            this.btnFilterMonthLastDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilterMonthLastDate.Location = new System.Drawing.Point(684, 80);
+            this.btnFilterMonthLastDate.Name = "btnFilterMonthLastDate";
+            this.btnFilterMonthLastDate.Size = new System.Drawing.Size(103, 37);
+            this.btnFilterMonthLastDate.TabIndex = 6;
+            this.btnFilterMonthLastDate.Text = "Hôm qua";
+            this.btnFilterMonthLastDate.UseVisualStyleBackColor = false;
+            this.btnFilterMonthLastDate.Click += new System.EventHandler(this.btnFilterMonthLastDate_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dtpToDate);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(239, 78);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(213, 39);
+            this.panel2.TabIndex = 4;
+            // 
+            // dtpToDate
+            // 
+            this.dtpToDate.CustomFormat = "dd/MM/yyyy";
+            this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpToDate.Location = new System.Drawing.Point(90, 7);
+            this.dtpToDate.Name = "dtpToDate";
+            this.dtpToDate.Size = new System.Drawing.Size(111, 25);
+            this.dtpToDate.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Đến ngày";
             // 
             // panel29
             // 
@@ -221,17 +323,6 @@ namespace QuanLySach
             this.label21.Size = new System.Drawing.Size(74, 17);
             this.label21.TabIndex = 0;
             this.label21.Text = "Chi nhánh";
-            // 
-            // btnFilterBillLastMonth
-            // 
-            this.btnFilterBillLastMonth.BackColor = System.Drawing.Color.Transparent;
-            this.btnFilterBillLastMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterBillLastMonth.Location = new System.Drawing.Point(804, 80);
-            this.btnFilterBillLastMonth.Name = "btnFilterBillLastMonth";
-            this.btnFilterBillLastMonth.Size = new System.Drawing.Size(103, 37);
-            this.btnFilterBillLastMonth.TabIndex = 5;
-            this.btnFilterBillLastMonth.Text = "Tháng trước";
-            this.btnFilterBillLastMonth.UseVisualStyleBackColor = false;
             // 
             // panel27
             // 
@@ -268,6 +359,13 @@ namespace QuanLySach
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(322, 39);
             this.panel19.TabIndex = 3;
+            // 
+            // txtFilterBillByCPhone
+            // 
+            this.txtFilterBillByCPhone.Location = new System.Drawing.Point(88, 5);
+            this.txtFilterBillByCPhone.Name = "txtFilterBillByCPhone";
+            this.txtFilterBillByCPhone.Size = new System.Drawing.Size(220, 25);
+            this.txtFilterBillByCPhone.TabIndex = 1;
             // 
             // label7
             // 
@@ -700,6 +798,14 @@ namespace QuanLySach
             this.panel18.Size = new System.Drawing.Size(322, 39);
             this.panel18.TabIndex = 3;
             // 
+            // txtFilterStaffByPhone
+            // 
+            this.txtFilterStaffByPhone.Location = new System.Drawing.Point(90, 6);
+            this.txtFilterStaffByPhone.Name = "txtFilterStaffByPhone";
+            this.txtFilterStaffByPhone.Size = new System.Drawing.Size(229, 25);
+            this.txtFilterStaffByPhone.TabIndex = 1;
+            this.txtFilterStaffByPhone.TextChanged += new System.EventHandler(this.txtFilterStaffByPhone_TextChanged);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -756,125 +862,6 @@ namespace QuanLySach
             this.tpThongKeNhanVien.Text = "Thống kê nhân viên";
             this.tpThongKeNhanVien.UseVisualStyleBackColor = true;
             // 
-            // txtFilterStaffByPhone
-            // 
-            this.txtFilterStaffByPhone.Location = new System.Drawing.Point(90, 6);
-            this.txtFilterStaffByPhone.Name = "txtFilterStaffByPhone";
-            this.txtFilterStaffByPhone.Size = new System.Drawing.Size(229, 25);
-            this.txtFilterStaffByPhone.TabIndex = 1;
-            this.txtFilterStaffByPhone.TextChanged += new System.EventHandler(this.txtFilterStaffByPhone_TextChanged);
-            // 
-            // grBillContainer
-            // 
-            this.grBillContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grBillContainer.Controls.Add(this.dtgvBill);
-            this.grBillContainer.Location = new System.Drawing.Point(8, 149);
-            this.grBillContainer.Name = "grBillContainer";
-            this.grBillContainer.Size = new System.Drawing.Size(1040, 474);
-            this.grBillContainer.TabIndex = 6;
-            this.grBillContainer.TabStop = false;
-            this.grBillContainer.Text = "Danh sách hóa đơn hiện có";
-            // 
-            // dtgvBill
-            // 
-            this.dtgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvBill.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvBill.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvBill.Location = new System.Drawing.Point(3, 21);
-            this.dtgvBill.MultiSelect = false;
-            this.dtgvBill.Name = "dtgvBill";
-            this.dtgvBill.ReadOnly = true;
-            this.dtgvBill.RowHeadersWidth = 51;
-            this.dtgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvBill.Size = new System.Drawing.Size(1034, 450);
-            this.dtgvBill.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dtpToDate);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(239, 78);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(213, 39);
-            this.panel2.TabIndex = 4;
-            // 
-            // dtpToDate
-            // 
-            this.dtpToDate.CustomFormat = "dd/MM/yyyy";
-            this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpToDate.Location = new System.Drawing.Point(90, 7);
-            this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.Size = new System.Drawing.Size(111, 25);
-            this.dtpToDate.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Đến ngày";
-            // 
-            // btnFilterMonthLastDate
-            // 
-            this.btnFilterMonthLastDate.BackColor = System.Drawing.Color.Transparent;
-            this.btnFilterMonthLastDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterMonthLastDate.Location = new System.Drawing.Point(565, 80);
-            this.btnFilterMonthLastDate.Name = "btnFilterMonthLastDate";
-            this.btnFilterMonthLastDate.Size = new System.Drawing.Size(103, 37);
-            this.btnFilterMonthLastDate.TabIndex = 6;
-            this.btnFilterMonthLastDate.Text = "Hôm qua";
-            this.btnFilterMonthLastDate.UseVisualStyleBackColor = false;
-            this.btnFilterMonthLastDate.Click += new System.EventHandler(this.btnFilterMonthLastDate_Click);
-            // 
-            // btnFilterBillToday
-            // 
-            this.btnFilterBillToday.BackColor = System.Drawing.Color.Transparent;
-            this.btnFilterBillToday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterBillToday.Location = new System.Drawing.Point(684, 79);
-            this.btnFilterBillToday.Name = "btnFilterBillToday";
-            this.btnFilterBillToday.Size = new System.Drawing.Size(103, 37);
-            this.btnFilterBillToday.TabIndex = 7;
-            this.btnFilterBillToday.Text = "Hôm nay";
-            this.btnFilterBillToday.UseVisualStyleBackColor = false;
-            this.btnFilterBillToday.Click += new System.EventHandler(this.btnFilterBillToday_Click);
-            // 
-            // btnFilterBillCurrentMonth
-            // 
-            this.btnFilterBillCurrentMonth.BackColor = System.Drawing.Color.Transparent;
-            this.btnFilterBillCurrentMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterBillCurrentMonth.Location = new System.Drawing.Point(922, 80);
-            this.btnFilterBillCurrentMonth.Name = "btnFilterBillCurrentMonth";
-            this.btnFilterBillCurrentMonth.Size = new System.Drawing.Size(103, 37);
-            this.btnFilterBillCurrentMonth.TabIndex = 8;
-            this.btnFilterBillCurrentMonth.Text = "Tháng này";
-            this.btnFilterBillCurrentMonth.UseVisualStyleBackColor = false;
-            this.btnFilterBillCurrentMonth.Click += new System.EventHandler(this.btnFilterBillCurrentMonth_Click);
-            // 
-            // btnFilterBillInRange
-            // 
-            this.btnFilterBillInRange.BackColor = System.Drawing.Color.Transparent;
-            this.btnFilterBillInRange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterBillInRange.Location = new System.Drawing.Point(458, 78);
-            this.btnFilterBillInRange.Name = "btnFilterBillInRange";
-            this.btnFilterBillInRange.Size = new System.Drawing.Size(69, 37);
-            this.btnFilterBillInRange.TabIndex = 9;
-            this.btnFilterBillInRange.Text = "Lọc";
-            this.btnFilterBillInRange.UseVisualStyleBackColor = false;
-            this.btnFilterBillInRange.Click += new System.EventHandler(this.btnFilterBillInRange_Click);
-            // 
-            // txtFilterBillByCPhone
-            // 
-            this.txtFilterBillByCPhone.Location = new System.Drawing.Point(88, 5);
-            this.txtFilterBillByCPhone.Name = "txtFilterBillByCPhone";
-            this.txtFilterBillByCPhone.Size = new System.Drawing.Size(220, 25);
-            this.txtFilterBillByCPhone.TabIndex = 1;
-            // 
             // frmQuanLySach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -889,10 +876,14 @@ namespace QuanLySach
             this.tcAdmin.ResumeLayout(false);
             this.tpHoaDon.ResumeLayout(false);
             this.tpHoaDon.PerformLayout();
+            this.grBillContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel29.ResumeLayout(false);
             this.panel29.PerformLayout();
             this.panel27.ResumeLayout(false);
@@ -929,10 +920,6 @@ namespace QuanLySach
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.tpThongKeSanPham.ResumeLayout(false);
-            this.grBillContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -948,7 +935,6 @@ namespace QuanLySach
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.ComboBox cbChiNhanh;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button btnFilterBillLastMonth;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.Label label20;
