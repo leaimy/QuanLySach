@@ -16,8 +16,27 @@ namespace QuanLySach.App
 
         private BillController()
         {
-            From = DateTime.Now;
-            To = DateTime.Now;
+            var now = DateTime.Now;
+
+            From = new DateTime(
+                now.Year,
+                now.Month,
+                now.Day,
+                0,
+                0,
+                0,
+                now.Kind
+            );
+
+            To = new DateTime(
+                now.Year,
+                now.Month,
+                now.Day,
+                23,
+                59,
+                59,
+                now.Kind
+            );
 
             bills = new List<HoaDonDTO>();
         }
@@ -40,8 +59,25 @@ namespace QuanLySach.App
 
         public List<HoaDonDTO> GetBillsInRange(DateTime from, DateTime to)
         {
-            From = from;
-            To = to;
+            From = new DateTime(
+                from.Year,
+                from.Month,
+                from.Day,
+                0,
+                0,
+                0,
+                from.Kind
+            );
+
+            To = new DateTime(
+                to.Year,
+                to.Month,
+                to.Day,
+                23,
+                59,
+                59,
+                to.Kind
+            );
 
             bills = HoaDonDAO.Instance.GetBillsInRange(from, to);
             return Clone();
@@ -49,8 +85,27 @@ namespace QuanLySach.App
 
         public List<HoaDonDTO> GetBillsToday()
         {
-            From = DateTime.Now;
-            To = DateTime.Now;
+            var now = DateTime.Now;
+
+            From = new DateTime(
+                now.Year,
+                now.Month,
+                now.Day,
+                0,
+                0,
+                0,
+                now.Kind
+            );
+
+            To = new DateTime(
+                now.Year,
+                now.Month,
+                now.Day,
+                23,
+                59,
+                59,
+                now.Kind
+            );
 
             bills = HoaDonDAO.Instance.GetBillsInRange(From, To);
             return Clone();

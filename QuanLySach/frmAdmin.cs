@@ -53,6 +53,9 @@ namespace QuanLySach
             #endregion
 
             #region Hoa Don 
+            dtpFromDate.Value = DateTime.Now;
+            dtpToDate.Value = DateTime.Now;
+
             RenderHoaDonDatagridview(BillController.Instance.GetBillsToday());
             #endregion
         }
@@ -237,6 +240,17 @@ namespace QuanLySach
             dtgvBill.Columns[6].HeaderText = "KH";
             dtgvBill.Columns[7].HeaderText = "SDT";
             dtgvBill.Columns[11].HeaderText = "NV";
+
+            grBillContainer.Text = "Danh sách hóa đơn từ ngày: " + BillController.Instance.From.ToString("dd-MM-yyyy HH:mm:ss") + " đến ngày " + BillController.Instance.To.ToString("dd-MM-yyyy HH:mm:ss");
+        }
+
+        private void btnFilterBillInRange_Click(object sender, EventArgs e)
+        {
+            var fromDate = dtpFromDate.Value;
+            var toDate = dtpToDate.Value;
+
+            BillController.Instance.GetBillsInRange(fromDate, toDate);
+            RenderHoaDonDatagridview(BillController.Instance.Clone());
         }
         #endregion
 

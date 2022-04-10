@@ -39,7 +39,7 @@ namespace QuanLySach
             this.label21 = new System.Windows.Forms.Label();
             this.btnFilterBillLastMonth = new System.Windows.Forms.Button();
             this.panel27 = new System.Windows.Forms.Panel();
-            this.dtpNgayMua = new System.Windows.Forms.DateTimePicker();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -90,10 +90,10 @@ namespace QuanLySach
             this.tpThongKeDoanhThu = new System.Windows.Forms.TabPage();
             this.tpThongKeNhanVien = new System.Windows.Forms.TabPage();
             this.txtFilterStaffByPhone = new System.Windows.Forms.TextBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.grBillContainer = new System.Windows.Forms.GroupBox();
             this.dtgvBill = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFilterMonthLastDate = new System.Windows.Forms.Button();
             this.btnFilterBillToday = new System.Windows.Forms.Button();
@@ -127,7 +127,7 @@ namespace QuanLySach
             this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
             this.tpThongKeSanPham.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.grBillContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -151,7 +151,7 @@ namespace QuanLySach
             // 
             // tpHoaDon
             // 
-            this.tpHoaDon.Controls.Add(this.groupBox5);
+            this.tpHoaDon.Controls.Add(this.grBillContainer);
             this.tpHoaDon.Controls.Add(this.statusStrip1);
             this.tpHoaDon.Controls.Add(this.panel13);
             this.tpHoaDon.Location = new System.Drawing.Point(4, 26);
@@ -235,26 +235,26 @@ namespace QuanLySach
             // 
             // panel27
             // 
-            this.panel27.Controls.Add(this.dtpNgayMua);
+            this.panel27.Controls.Add(this.dtpFromDate);
             this.panel27.Controls.Add(this.label20);
             this.panel27.Location = new System.Drawing.Point(16, 78);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(220, 39);
             this.panel27.TabIndex = 3;
             // 
-            // dtpNgayMua
+            // dtpFromDate
             // 
-            this.dtpNgayMua.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayMua.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayMua.Location = new System.Drawing.Point(90, 5);
-            this.dtpNgayMua.Name = "dtpNgayMua";
-            this.dtpNgayMua.Size = new System.Drawing.Size(115, 25);
-            this.dtpNgayMua.TabIndex = 1;
+            this.dtpFromDate.CustomFormat = "dd/MM/yyyy";
+            this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFromDate.Location = new System.Drawing.Point(90, 7);
+            this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.Size = new System.Drawing.Size(115, 25);
+            this.dtpFromDate.TabIndex = 1;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(10, 9);
+            this.label20.Location = new System.Drawing.Point(10, 11);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(62, 17);
             this.label20.TabIndex = 0;
@@ -764,18 +764,18 @@ namespace QuanLySach
             this.txtFilterStaffByPhone.TabIndex = 1;
             this.txtFilterStaffByPhone.TextChanged += new System.EventHandler(this.txtFilterStaffByPhone_TextChanged);
             // 
-            // groupBox5
+            // grBillContainer
             // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.grBillContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.dtgvBill);
-            this.groupBox5.Location = new System.Drawing.Point(8, 149);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1040, 474);
-            this.groupBox5.TabIndex = 6;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Danh sách hóa đơn hiện có";
+            this.grBillContainer.Controls.Add(this.dtgvBill);
+            this.grBillContainer.Location = new System.Drawing.Point(8, 149);
+            this.grBillContainer.Name = "grBillContainer";
+            this.grBillContainer.Size = new System.Drawing.Size(1040, 474);
+            this.grBillContainer.TabIndex = 6;
+            this.grBillContainer.TabStop = false;
+            this.grBillContainer.Text = "Danh sách hóa đơn hiện có";
             // 
             // dtgvBill
             // 
@@ -795,26 +795,26 @@ namespace QuanLySach
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.dtpToDate);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(256, 78);
+            this.panel2.Location = new System.Drawing.Point(239, 78);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(213, 39);
             this.panel2.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // dtpToDate
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(90, 5);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(111, 25);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dtpToDate.CustomFormat = "dd/MM/yyyy";
+            this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpToDate.Location = new System.Drawing.Point(90, 7);
+            this.dtpToDate.Name = "dtpToDate";
+            this.dtpToDate.Size = new System.Drawing.Size(111, 25);
+            this.dtpToDate.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 9);
+            this.label1.Location = new System.Drawing.Point(10, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 17);
             this.label1.TabIndex = 0;
@@ -857,12 +857,13 @@ namespace QuanLySach
             // 
             this.btnFilterBillInRange.BackColor = System.Drawing.Color.Transparent;
             this.btnFilterBillInRange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterBillInRange.Location = new System.Drawing.Point(475, 79);
+            this.btnFilterBillInRange.Location = new System.Drawing.Point(458, 78);
             this.btnFilterBillInRange.Name = "btnFilterBillInRange";
-            this.btnFilterBillInRange.Size = new System.Drawing.Size(56, 37);
+            this.btnFilterBillInRange.Size = new System.Drawing.Size(69, 37);
             this.btnFilterBillInRange.TabIndex = 9;
             this.btnFilterBillInRange.Text = "Lọc";
             this.btnFilterBillInRange.UseVisualStyleBackColor = false;
+            this.btnFilterBillInRange.Click += new System.EventHandler(this.btnFilterBillInRange_Click);
             // 
             // txtFilterBillByCPhone
             // 
@@ -925,7 +926,7 @@ namespace QuanLySach
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.tpThongKeSanPham.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
+            this.grBillContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -946,7 +947,7 @@ namespace QuanLySach
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnFilterBillLastMonth;
         private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.DateTimePicker dtpNgayMua;
+        private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Label label7;
@@ -996,10 +997,10 @@ namespace QuanLySach
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dtgvNV;
         private System.Windows.Forms.TextBox txtFilterStaffByPhone;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox grBillContainer;
         private System.Windows.Forms.DataGridView dtgvBill;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFilterBillToday;
         private System.Windows.Forms.Button btnFilterMonthLastDate;
