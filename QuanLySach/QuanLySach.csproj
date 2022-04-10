@@ -54,6 +54,7 @@
     <Compile Include="App\models\User.cs" />
     <Compile Include="App\ProductController.cs" />
     <Compile Include="App\UIController.cs" />
+    <Compile Include="Common\CustomerFakeData.cs" />
     <Compile Include="Common\MoneyHelper.cs" />
     <Compile Include="DAO\AuthDAO.cs" />
     <Compile Include="DAO\ChiNhanhDAO.cs" />

@@ -66,6 +66,7 @@ namespace QuanLySach
             this.txtProductQuantity = new System.Windows.Forms.NumericUpDown();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tssLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnGenCustomer = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -209,6 +210,7 @@ namespace QuanLySach
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.groupBox3.Controls.Add(this.btnGenCustomer);
             this.groupBox3.Controls.Add(this.txtSDT);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.txtHoTen);
@@ -222,16 +224,16 @@ namespace QuanLySach
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(393, 24);
+            this.txtSDT.Location = new System.Drawing.Point(374, 24);
             this.txtSDT.Mask = "0000000000";
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(169, 25);
+            this.txtSDT.Size = new System.Drawing.Size(159, 25);
             this.txtSDT.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(335, 26);
+            this.label2.Location = new System.Drawing.Point(316, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 6;
@@ -241,7 +243,7 @@ namespace QuanLySach
             // 
             this.txtHoTen.Location = new System.Drawing.Point(82, 24);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(226, 25);
+            this.txtHoTen.Size = new System.Drawing.Size(208, 25);
             this.txtHoTen.TabIndex = 5;
             // 
             // label1
@@ -480,6 +482,20 @@ namespace QuanLySach
             this.tssLabel.Size = new System.Drawing.Size(118, 17);
             this.tssLabel.Text = "toolStripStatusLabel1";
             // 
+            // btnGenCustomer
+            // 
+            this.btnGenCustomer.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnGenCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenCustomer.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenCustomer.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnGenCustomer.Location = new System.Drawing.Point(539, 24);
+            this.btnGenCustomer.Name = "btnGenCustomer";
+            this.btnGenCustomer.Size = new System.Drawing.Size(29, 25);
+            this.btnGenCustomer.TabIndex = 8;
+            this.btnGenCustomer.Text = "+";
+            this.btnGenCustomer.UseVisualStyleBackColor = true;
+            this.btnGenCustomer.Click += new System.EventHandler(this.btnGenCustomer_Click);
+            // 
             // frmSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -564,5 +580,6 @@ namespace QuanLySach
         private System.Windows.Forms.NumericUpDown txtProductQuantity;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel tssLabel;
+        private System.Windows.Forms.Button btnGenCustomer;
     }
 }

@@ -103,5 +103,14 @@ namespace QuanLySach
 
             if (result != DialogResult.OK) return;
         }
+
+        private void btnGenCustomer_Click(object sender, EventArgs e)
+        {
+            var instance = new CustomerFakeData();
+            var result = instance.GetRandomPair();
+
+            txtHoTen.Text = result["name"];
+            txtSDT.Text = result["phone"];
+        }
     }
 }
