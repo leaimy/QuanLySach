@@ -31,7 +31,7 @@ namespace QuanLySach.App
         public List<SanPhamDTO> FilterByName(string keyword)
         {
             keyword = keyword.ToLower().Trim();
-            return products.Where(s => !s.TenSP.ToLower().Contains(keyword)).ToList();
+            return products.Where(s => s.TenSP.ToLower().Contains(keyword)).ToList();
         }
 
         public List<SanPhamDTO> GetProducts() => Clone();
