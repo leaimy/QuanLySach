@@ -61,6 +61,13 @@ namespace QuanLySach.App
         public void DisplayCart(DataGridView control)
         {
             control.DataSource = AppManager.Instance.Cart.Clone();
+
+            control.Columns[0].Visible = false; 
+
+            control.Columns[1].HeaderText = "Tên SP";
+            control.Columns[2].HeaderText = "Số Lượng";
+            control.Columns[3].HeaderText = "Giá";
+            control.Columns[4].HeaderText = "Thành Tiền";
         }
     }
 }
