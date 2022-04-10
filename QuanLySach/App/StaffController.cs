@@ -32,6 +32,20 @@ namespace QuanLySach.App
             return staffs.GetRange(0, staffs.Count);
         }
 
+        public List<NhanVienDTO> GetStaffsForCombobox()
+        {
+            var options = staffs.GetRange(0, staffs.Count);
+
+            options.Insert(0, new NhanVienDTO()
+            {
+                MaNhanVien = 0,
+                HoDem = "Chọn nhân",
+                Ten = "viên"
+            });
+
+            return options;
+        }
+
         public List<NhanVienDTO> FilterByPhoneNumber(string phone)
         {
             return staffs.Where(s => s.SDT.Contains(phone)).ToList();

@@ -26,6 +26,7 @@ namespace QuanLySach.DTO
         public decimal Luong { get { return _Luong; } set { _Luong = value; } }
 
         public string TenChiNhanh { get; set; }
+        public string HoVaTen { get => HoDem + " " + Ten; }
 
         public NhanVienDTO()
         {

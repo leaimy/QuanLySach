@@ -392,6 +392,7 @@ namespace QuanLySach
             this.cbTenNV.Name = "cbTenNV";
             this.cbTenNV.Size = new System.Drawing.Size(229, 25);
             this.cbTenNV.TabIndex = 1;
+            this.cbTenNV.SelectedIndexChanged += new System.EventHandler(this.cbTenNV_SelectedIndexChanged);
             // 
             // label18
             // 

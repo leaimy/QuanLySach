@@ -56,6 +56,10 @@ namespace QuanLySach
             dtpFromDate.Value = DateTime.Now;
             dtpToDate.Value = DateTime.Now;
 
+            cbTenNV.DataSource = StaffController.Instance.GetStaffsForCombobox();
+            cbTenNV.ValueMember = "MaNhanVien";
+            cbTenNV.DisplayMember = "HoVaTen";
+
             RenderHoaDonDatagridview(BillController.Instance.GetBillsToday());
             #endregion
         }
@@ -271,6 +275,14 @@ namespace QuanLySach
         {
             BillController.Instance.GetBillsThisMonth();
             RenderHoaDonDatagridview(BillController.Instance.Clone());
+        }
+
+        private void cbTenNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbTenNV.SelectedIndex == -1) return;
+
+            var selected = cbTenNV.SelectedItem as NhanVienDTO;
+            RenderHoaDonDatagridview(BillController.Instance.FilterByStaff(selected.MaNhanVien));
         }
         #endregion
 

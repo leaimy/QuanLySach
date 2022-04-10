@@ -158,5 +158,10 @@ namespace QuanLySach.App
 
             return true;
         }
+
+        public List<HoaDonDTO> FilterByStaff(int StaffID)
+        {
+            return bills.Where(s => s.MaNV == StaffID).ToList();
+        }
     }
 }
