@@ -9,7 +9,10 @@ namespace QuanLySach.App
 {
     internal class AppManager
     {
-        private AppManager() { }
+        private AppManager() 
+        {
+            Cart = new Cart();
+        }
 
         private static AppManager instance;
         public static AppManager Instance
@@ -23,5 +26,6 @@ namespace QuanLySach.App
         }
 
         public User User { get; set; }
+        public Cart Cart { get; set; }
     }
 }
