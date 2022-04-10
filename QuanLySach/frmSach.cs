@@ -102,6 +102,15 @@ namespace QuanLySach
             var result = frm.ShowDialog();
 
             if (result != DialogResult.OK) return;
+
+            if (BillController.Instance.CreateBill())
+            {
+                MessageBox.Show("Tạo hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi trong quá trình tạo hóa đơn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnGenCustomer_Click(object sender, EventArgs e)
@@ -111,6 +120,21 @@ namespace QuanLySach
 
             txtHoTen.Text = result["name"];
             txtSDT.Text = result["phone"];
+        }
+
+        private void Reset()
+        {
+            lblTongTien.ResetText();
+            lblTongTienCuoiCung.ResetText();
+            lblTongTienGhiBangChu.ResetText();
+
+            txtHoTen.ResetText();
+            txtSDT.ResetText();
+
+            nmGiamGia.ResetText();
+            AppManager.Instance.Cart.Clear();
+
+            UIController.Instance.DisplayCart(dgvCTBH);
         }
     }
 }
