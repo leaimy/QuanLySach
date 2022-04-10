@@ -57,7 +57,7 @@ namespace QuanLySach
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCreateBook = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFilterProductByName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnResetSach = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -412,19 +412,20 @@ namespace QuanLySach
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.txtFilterProductByName);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(176, 78);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(355, 39);
             this.panel4.TabIndex = 3;
             // 
-            // textBox1
+            // txtFilterProductByName
             // 
-            this.textBox1.Location = new System.Drawing.Point(120, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(229, 25);
-            this.textBox1.TabIndex = 1;
+            this.txtFilterProductByName.Location = new System.Drawing.Point(120, 6);
+            this.txtFilterProductByName.Name = "txtFilterProductByName";
+            this.txtFilterProductByName.Size = new System.Drawing.Size(229, 25);
+            this.txtFilterProductByName.TabIndex = 1;
+            this.txtFilterProductByName.TextChanged += new System.EventHandler(this.txtFilterProductByName_TextChanged);
             // 
             // label3
             // 
@@ -915,7 +916,7 @@ namespace QuanLySach
         private System.Windows.Forms.TabPage tpSach;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFilterProductByName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnResetSach;
         private System.Windows.Forms.Panel panel5;

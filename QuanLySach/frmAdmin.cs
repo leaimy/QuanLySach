@@ -127,6 +127,18 @@ namespace QuanLySach
             RenderSachDatagridview(ProductController.Instance.FilterByCategory(selected.MaLoaiSP));
         }
 
+        private void txtFilterProductByName_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtFilterProductByName.Text.Trim().ToLower();
+            if (string.IsNullOrEmpty(keyword))
+            {
+                RenderSachDatagridview(ProductController.Instance.GetProducts());
+                return;
+            }
+
+            RenderSachDatagridview(ProductController.Instance.FilterByName(keyword));
+        }
+
         private void btnResetSach_Click(object sender, EventArgs e)
         {
             RenderSachDatagridview(ProductController.Instance.GetProducts());
