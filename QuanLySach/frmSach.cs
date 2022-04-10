@@ -106,6 +106,7 @@ namespace QuanLySach
             if (BillController.Instance.CreateBill())
             {
                 MessageBox.Show("Tạo hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Reset();
             }
             else
             {
@@ -131,7 +132,7 @@ namespace QuanLySach
             txtHoTen.ResetText();
             txtSDT.ResetText();
 
-            nmGiamGia.ResetText();
+            nmGiamGia.Value = 0;
             AppManager.Instance.Cart.Clear();
 
             UIController.Instance.DisplayCart(dgvCTBH);
