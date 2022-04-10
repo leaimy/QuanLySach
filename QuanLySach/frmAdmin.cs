@@ -266,6 +266,12 @@ namespace QuanLySach
             BillController.Instance.GetBillsToday();
             RenderHoaDonDatagridview(BillController.Instance.Clone());
         }
+
+        private void btnFilterBillCurrentMonth_Click(object sender, EventArgs e)
+        {
+            BillController.Instance.GetBillsThisMonth();
+            RenderHoaDonDatagridview(BillController.Instance.Clone());
+        }
         #endregion
 
         private void tcAdmin_SelectedIndexChanged(object sender, EventArgs e)

@@ -111,6 +111,35 @@ namespace QuanLySach.App
             return Clone();
         }
 
+        public List<HoaDonDTO> GetBillsThisMonth()
+        {
+            var now = DateTime.Now;
+            var lastDayOfMonth = DateTime.DaysInMonth(now.Year, now.Month);
+
+            From = new DateTime(
+                now.Year,
+                now.Month,
+                1,
+                0,
+                0,
+                0,
+                now.Kind
+            );
+
+            To = new DateTime(
+                now.Year,
+                now.Month,
+                lastDayOfMonth,
+                23,
+                59,
+                59,
+                now.Kind
+            );
+
+            bills = HoaDonDAO.Instance.GetBillsInRange(From, To);
+            return Clone();
+        }
+
         public bool CreateBill()
         {
             int MaNV = AppManager.Instance.User.MaNhanVien;

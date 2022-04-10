@@ -854,6 +854,7 @@ namespace QuanLySach
             this.btnFilterBillCurrentMonth.TabIndex = 8;
             this.btnFilterBillCurrentMonth.Text = "Tháng này";
             this.btnFilterBillCurrentMonth.UseVisualStyleBackColor = false;
+            this.btnFilterBillCurrentMonth.Click += new System.EventHandler(this.btnFilterBillCurrentMonth_Click);
             // 
             // btnFilterBillInRange
             // 
