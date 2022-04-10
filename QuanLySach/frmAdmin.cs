@@ -24,12 +24,22 @@ namespace QuanLySach
         {
             UIController.Instance.DisplayStatusBar(tssLoginInfo);
 
+            #region Loai San Pham
             dtgvSach.DataSource = ProductController.Instance.GetProducts();
             cbFilterLoaiSPCha.DataSource = CategoryController.Instance.GetParentCategoriesForCombobox();
             cbFilterLoaiSPCha.ValueMember = "MaLoaiSP";
             cbFilterLoaiSPCha.DisplayMember = "TenLoaiSP";
 
             RenderLoaiSachDatagridview(CategoryController.Instance.GetCategories());
+            #endregion
+
+            #region San Pham 
+            cbLoaiSach.DataSource = CategoryController.Instance.GetChildCategoriesForCombobox();
+            cbLoaiSach.ValueMember = "MaLoaiSP";
+            cbLoaiSach.DisplayMember = "TenLoaiSP";
+
+            RenderSachDatagridview(ProductController.Instance.GetProducts());
+            #endregion
         }
 
         #region Loai San Pham
@@ -92,6 +102,21 @@ namespace QuanLySach
             dtgvLoaiSach.Columns[1].HeaderText = "Tên";
             dtgvLoaiSach.Columns[2].HeaderText = "Mô tả";
             dtgvLoaiSach.Columns[4].HeaderText = "Nhóm cha";
+        }
+        #endregion
+
+        #region San Pham 
+        void RenderSachDatagridview(List<SanPhamDTO> products)
+        {
+            dtgvSach.DataSource = products;
+
+            dtgvSach.Columns[3].Visible = false;
+
+            dtgvSach.Columns[0].HeaderText = "Mã";
+            dtgvSach.Columns[1].HeaderText = "Tên";
+            dtgvSach.Columns[2].HeaderText = "Giá";
+            dtgvSach.Columns[4].HeaderText = "Mô tả";
+            dtgvSach.Columns[5].HeaderText = "Thể loại";
         }
         #endregion
 

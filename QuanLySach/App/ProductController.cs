@@ -25,7 +25,7 @@ namespace QuanLySach.App
 
         public void FetchNew()
         {
-            products = SanPhamDAO.Instance.GetAllProducts();
+            products = SanPhamDAO.Instance.GetAllProductsWithCategory();
         }
 
         public List<SanPhamDTO> FilterByName(string keyword)

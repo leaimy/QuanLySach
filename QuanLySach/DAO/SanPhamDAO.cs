@@ -41,7 +41,20 @@ namespace QuanLySach.DAO
             
             return products;
         }
+
+        public List<SanPhamDTO> GetAllProductsWithCategory()
+        {
+            var products = new List<SanPhamDTO>();
+
+            var query = "EXEC dbo.sp_GetProducts_WithCategory";
+            var table = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in table.Rows)
+            {
+                products.Add(new SanPhamDTO(item));
+            }
+            
+            return products;
+        }
     }
-
-
 }

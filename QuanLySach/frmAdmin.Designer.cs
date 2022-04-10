@@ -56,7 +56,6 @@ namespace QuanLySach
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnResetSach = new System.Windows.Forms.Button();
-            this.btnLocSach = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.cbLoaiSach = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -347,7 +346,6 @@ namespace QuanLySach
             this.panel1.Controls.Add(this.btnCreateBook);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.btnResetSach);
-            this.panel1.Controls.Add(this.btnLocSach);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(8, 6);
@@ -359,9 +357,9 @@ namespace QuanLySach
             // 
             this.btnCreateBook.BackColor = System.Drawing.Color.Transparent;
             this.btnCreateBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateBook.Location = new System.Drawing.Point(826, 22);
+            this.btnCreateBook.Location = new System.Drawing.Point(650, 20);
             this.btnCreateBook.Name = "btnCreateBook";
-            this.btnCreateBook.Size = new System.Drawing.Size(118, 37);
+            this.btnCreateBook.Size = new System.Drawing.Size(141, 37);
             this.btnCreateBook.TabIndex = 6;
             this.btnCreateBook.Text = "Thêm mới";
             this.btnCreateBook.UseVisualStyleBackColor = false;
@@ -396,23 +394,12 @@ namespace QuanLySach
             // 
             this.btnResetSach.BackColor = System.Drawing.Color.Transparent;
             this.btnResetSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetSach.Location = new System.Drawing.Point(673, 80);
+            this.btnResetSach.Location = new System.Drawing.Point(650, 80);
             this.btnResetSach.Name = "btnResetSach";
-            this.btnResetSach.Size = new System.Drawing.Size(118, 37);
+            this.btnResetSach.Size = new System.Drawing.Size(141, 37);
             this.btnResetSach.TabIndex = 5;
-            this.btnResetSach.Text = "Đặt lại bộ lọc";
+            this.btnResetSach.Text = "Tải lại danh sách";
             this.btnResetSach.UseVisualStyleBackColor = false;
-            // 
-            // btnLocSach
-            // 
-            this.btnLocSach.BackColor = System.Drawing.Color.Transparent;
-            this.btnLocSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocSach.Location = new System.Drawing.Point(673, 21);
-            this.btnLocSach.Name = "btnLocSach";
-            this.btnLocSach.Size = new System.Drawing.Size(118, 37);
-            this.btnLocSach.TabIndex = 4;
-            this.btnLocSach.Text = "Lọc";
-            this.btnLocSach.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -929,7 +916,6 @@ namespace QuanLySach
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnResetSach;
-        private System.Windows.Forms.Button btnLocSach;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox cbLoaiSach;
         private System.Windows.Forms.Label label4;

@@ -16,6 +16,7 @@ namespace QuanLySach.DTO
         public decimal GiaBan { get { return _GiaBan; } set { _GiaBan = value; } }
         public int LoaiSanPham { get { return _LoaiSanPham; } set { _LoaiSanPham = value; } }
         public string Mota { get { return _Mota; } set { _Mota = value; } }
+        public string TenLoaiSP { get; set; }
 
         public SanPhamDTO()
         {
@@ -38,6 +39,12 @@ namespace QuanLySach.DTO
             this.GiaBan = Convert.ToDecimal(row["GiaBan"]);
             this.LoaiSanPham = Convert.ToInt32(row["LoaiSanPham"]);
             this.Mota = row["Mota"].ToString();
+
+            try
+            {
+                TenLoaiSP = row["TenLoaiSP"].ToString();
+            }
+            catch { }
         }
     }
 }
