@@ -252,6 +252,12 @@ namespace QuanLySach
             BillController.Instance.GetBillsInRange(fromDate, toDate);
             RenderHoaDonDatagridview(BillController.Instance.Clone());
         }
+
+        private void btnFilterBillToday_Click(object sender, EventArgs e)
+        {
+            BillController.Instance.GetBillsToday();
+            RenderHoaDonDatagridview(BillController.Instance.Clone());
+        }
         #endregion
 
         private void tcAdmin_SelectedIndexChanged(object sender, EventArgs e)

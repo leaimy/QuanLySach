@@ -841,6 +841,7 @@ namespace QuanLySach
             this.btnFilterBillToday.TabIndex = 7;
             this.btnFilterBillToday.Text = "Hôm nay";
             this.btnFilterBillToday.UseVisualStyleBackColor = false;
+            this.btnFilterBillToday.Click += new System.EventHandler(this.btnFilterBillToday_Click);
             // 
             // btnFilterBillCurrentMonth
             // 
