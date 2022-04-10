@@ -40,6 +40,21 @@ namespace QuanLySach.DAO
             
             return products;
         }
+        
+        public List<LoaiSanPhamDTO> GetAllCategoriesWithParent()
+        {
+            var products = new List<LoaiSanPhamDTO>();
+
+            var query = "EXEC dbo.sp_GetCategories_WithParent";
+            var table = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in table.Rows)
+            {
+                products.Add(new LoaiSanPhamDTO(item));
+            }
+            
+            return products;
+        }
 
         public List<LoaiSanPhamDTO> GetAllParentCategories()
         {

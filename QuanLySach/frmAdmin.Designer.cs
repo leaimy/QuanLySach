@@ -64,14 +64,13 @@ namespace QuanLySach
             this.tpLoaiSach = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbFilterLoaiSPCha = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtTenLoai = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnResetLoaiSach = new System.Windows.Forms.Button();
             this.btnCreateCategory = new System.Windows.Forms.Button();
-            this.btnLocLoaiSach = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.tpNhanVien = new System.Windows.Forms.TabPage();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -468,7 +467,6 @@ namespace QuanLySach
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Controls.Add(this.btnResetLoaiSach);
             this.panel9.Controls.Add(this.btnCreateCategory);
-            this.panel9.Controls.Add(this.btnLocLoaiSach);
             this.panel9.Controls.Add(this.label14);
             this.panel9.Location = new System.Drawing.Point(8, 5);
             this.panel9.Name = "panel9";
@@ -477,20 +475,21 @@ namespace QuanLySach
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.comboBox2);
+            this.panel12.Controls.Add(this.cbFilterLoaiSPCha);
             this.panel12.Controls.Add(this.label10);
             this.panel12.Location = new System.Drawing.Point(179, 78);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(375, 39);
             this.panel12.TabIndex = 6;
             // 
-            // comboBox2
+            // cbFilterLoaiSPCha
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(143, 5);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(229, 25);
-            this.comboBox2.TabIndex = 1;
+            this.cbFilterLoaiSPCha.FormattingEnabled = true;
+            this.cbFilterLoaiSPCha.Location = new System.Drawing.Point(143, 5);
+            this.cbFilterLoaiSPCha.Name = "cbFilterLoaiSPCha";
+            this.cbFilterLoaiSPCha.Size = new System.Drawing.Size(229, 25);
+            this.cbFilterLoaiSPCha.TabIndex = 1;
+            this.cbFilterLoaiSPCha.SelectedIndexChanged += new System.EventHandler(this.cbFilterLoaiSPCha_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -516,6 +515,7 @@ namespace QuanLySach
             this.txtTenLoai.Name = "txtTenLoai";
             this.txtTenLoai.Size = new System.Drawing.Size(229, 25);
             this.txtTenLoai.TabIndex = 1;
+            this.txtTenLoai.TextChanged += new System.EventHandler(this.txtTenLoai_TextChanged);
             // 
             // label9
             // 
@@ -530,35 +530,25 @@ namespace QuanLySach
             // 
             this.btnResetLoaiSach.BackColor = System.Drawing.Color.Transparent;
             this.btnResetLoaiSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetLoaiSach.Location = new System.Drawing.Point(725, 80);
+            this.btnResetLoaiSach.Location = new System.Drawing.Point(688, 80);
             this.btnResetLoaiSach.Name = "btnResetLoaiSach";
-            this.btnResetLoaiSach.Size = new System.Drawing.Size(118, 37);
+            this.btnResetLoaiSach.Size = new System.Drawing.Size(155, 37);
             this.btnResetLoaiSach.TabIndex = 5;
-            this.btnResetLoaiSach.Text = "Đặt lại bộ lọc";
+            this.btnResetLoaiSach.Text = "Tải lại danh sách";
             this.btnResetLoaiSach.UseVisualStyleBackColor = false;
+            this.btnResetLoaiSach.Click += new System.EventHandler(this.btnResetLoaiSach_Click);
             // 
             // btnCreateCategory
             // 
             this.btnCreateCategory.BackColor = System.Drawing.Color.Transparent;
             this.btnCreateCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateCategory.Location = new System.Drawing.Point(881, 25);
+            this.btnCreateCategory.Location = new System.Drawing.Point(688, 25);
             this.btnCreateCategory.Name = "btnCreateCategory";
-            this.btnCreateCategory.Size = new System.Drawing.Size(118, 37);
+            this.btnCreateCategory.Size = new System.Drawing.Size(155, 37);
             this.btnCreateCategory.TabIndex = 4;
             this.btnCreateCategory.Text = "Thêm mới";
             this.btnCreateCategory.UseVisualStyleBackColor = false;
             this.btnCreateCategory.Click += new System.EventHandler(this.btnCreateCategory_Click);
-            // 
-            // btnLocLoaiSach
-            // 
-            this.btnLocLoaiSach.BackColor = System.Drawing.Color.Transparent;
-            this.btnLocLoaiSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocLoaiSach.Location = new System.Drawing.Point(725, 25);
-            this.btnLocLoaiSach.Name = "btnLocLoaiSach";
-            this.btnLocLoaiSach.Size = new System.Drawing.Size(118, 37);
-            this.btnLocLoaiSach.TabIndex = 4;
-            this.btnLocLoaiSach.Text = "Lọc";
-            this.btnLocLoaiSach.UseVisualStyleBackColor = false;
             // 
             // label14
             // 
@@ -946,10 +936,9 @@ namespace QuanLySach
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbFilterLoaiSPCha;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnResetLoaiSach;
-        private System.Windows.Forms.Button btnLocLoaiSach;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;

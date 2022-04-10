@@ -1,4 +1,5 @@
-﻿using QuanLySach.DAO;
+﻿using QuanLySach.App;
+using QuanLySach.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,15 +25,7 @@ namespace QuanLySach
 
         private void frmThemLoai_Load(object sender, EventArgs e)
         {
-            var parents = LoaiSanPhamDAO.Instance.GetAllParentCategories();
-
-            parents.Insert(0, new DTO.LoaiSanPhamDTO
-            {
-                MaLoaiSP = 0,
-                TenLoaiSP = "Chọn nhóm cha"
-            });
-
-            cbParentID.DataSource = parents;
+            cbParentID.DataSource = CategoryController.Instance.GetParentCategoriesForCombobox();
             cbParentID.ValueMember = "MaLoaiSP";
             cbParentID.DisplayMember = "TenLoaiSP";
         }

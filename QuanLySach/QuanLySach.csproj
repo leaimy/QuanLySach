@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="App\AppManager.cs" />
     <Compile Include="App\BillController.cs" />
+    <Compile Include="App\CategoryController.cs" />
     <Compile Include="App\models\Cart.cs" />
     <Compile Include="App\models\CartItem.cs" />
     <Compile Include="App\models\ChiNhanhEnum.cs" />
