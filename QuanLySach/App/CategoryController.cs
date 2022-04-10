@@ -32,6 +32,24 @@ namespace QuanLySach.App
             return categories.GetRange(0, categories.Count);
         }
 
+        public List<LoaiSanPhamDTO> GetChildCategories()
+        {
+            return categories.Where(s => s.ParentID != 0).ToList();
+        }
+
+        public List<LoaiSanPhamDTO> GetChildCategoriesForCombobox()
+        {
+            var children = categories.Where(s => s.ParentID != 0).ToList();
+
+            children.Insert(0, new DTO.LoaiSanPhamDTO
+            {
+                MaLoaiSP = 0,
+                TenLoaiSP = "Chọn thể loại sách"
+            });
+
+            return children;
+        }
+
         public List<LoaiSanPhamDTO> GetParentCategories()
         {
             return categories.Where(s => s.ParentID == 0).ToList();
@@ -78,6 +96,11 @@ namespace QuanLySach.App
             }
             
             return result;
+        }
+
+        public LoaiSanPhamDTO GetByID(int MaLoaiSP)
+        {
+            return categories.Find(s => s.MaLoaiSP == MaLoaiSP);
         }
     }
 }
