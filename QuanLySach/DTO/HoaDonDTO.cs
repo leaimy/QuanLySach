@@ -46,8 +46,8 @@ namespace QuanLySach.DTO
             this.MaHoaDon = (int)row["MaHoaDon"];
             this.MaNV = (int)row["MaNV"];
             this.NgayMua = DateTime.Parse(row["NgayMua"].ToString());
-            this.TongTien = (decimal)row["TongTien"];
-            this.GiamGia = (decimal)row["GiamGia"];
+            this.TongTien = Convert.ToDecimal(row["TongTien"]);
+            this.GiamGia = Convert.ToDecimal(row["GiamGia"]);
             this.NgayThanhToan = DateTime.Parse(row["NgayThanhToan"].ToString());
             this.TenKH = row["TenKH"].ToString();
             this.SDT = row["SDT"].ToString();
