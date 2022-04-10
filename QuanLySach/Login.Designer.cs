@@ -32,8 +32,8 @@
             this.cbChiNhanh = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtLoginName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -79,6 +79,14 @@
             this.panel1.Size = new System.Drawing.Size(385, 39);
             this.panel1.TabIndex = 4;
             // 
+            // txtLoginName
+            // 
+            this.txtLoginName.Location = new System.Drawing.Point(131, 6);
+            this.txtLoginName.Name = "txtLoginName";
+            this.txtLoginName.Size = new System.Drawing.Size(251, 20);
+            this.txtLoginName.TabIndex = 5;
+            this.txtLoginName.Text = "thiha";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -87,13 +95,6 @@
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập:";
-            // 
-            // txtLoginName
-            // 
-            this.txtLoginName.Location = new System.Drawing.Point(131, 6);
-            this.txtLoginName.Name = "txtLoginName";
-            this.txtLoginName.Size = new System.Drawing.Size(251, 20);
-            this.txtLoginName.TabIndex = 5;
             // 
             // panel2
             // 
@@ -110,6 +111,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(251, 20);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.Text = "thiha";
             // 
             // label2
             // 
