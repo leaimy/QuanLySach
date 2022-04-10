@@ -253,6 +253,14 @@ namespace QuanLySach
             RenderHoaDonDatagridview(BillController.Instance.Clone());
         }
 
+        private void btnFilterMonthLastDate_Click(object sender, EventArgs e)
+        {
+            var yesterday = DateTime.Today.AddDays(-1);
+
+            BillController.Instance.GetBillsInRange(yesterday, yesterday);
+            RenderHoaDonDatagridview(BillController.Instance.Clone());
+        }
+
         private void btnFilterBillToday_Click(object sender, EventArgs e)
         {
             BillController.Instance.GetBillsToday();

@@ -830,6 +830,7 @@ namespace QuanLySach
             this.btnFilterMonthLastDate.TabIndex = 6;
             this.btnFilterMonthLastDate.Text = "Hôm qua";
             this.btnFilterMonthLastDate.UseVisualStyleBackColor = false;
+            this.btnFilterMonthLastDate.Click += new System.EventHandler(this.btnFilterMonthLastDate_Click);
             // 
             // btnFilterBillToday
             // 
