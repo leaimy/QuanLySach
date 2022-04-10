@@ -22,6 +22,13 @@ namespace QuanLySach
 
         private void frmQuanLySach_Load(object sender, EventArgs e)
         {
+            if (AppManager.Instance.IsNewLoggedInSession)
+            {
+                AppManager.Instance.IsNewLoggedInSession = false;
+
+                StaffController.Instance.FetchNew();
+            }
+
             UIController.Instance.DisplayStatusBar(tssLoginInfo);
 
             #region Loai San Pham
@@ -39,6 +46,10 @@ namespace QuanLySach
             cbLoaiSach.DisplayMember = "TenLoaiSP";
 
             RenderSachDatagridview(ProductController.Instance.GetProducts());
+            #endregion
+
+            #region Nhan Vien 
+            RenderNhanVienDatagridview(StaffController.Instance.GetStaffs());
             #endregion
         }
 
@@ -172,6 +183,24 @@ namespace QuanLySach
 
         #endregion
 
+        #region Nhan Vien 
+        void RenderNhanVienDatagridview(List<NhanVienDTO> staffs)
+        {
+            dtgvNV.DataSource = staffs;
+
+            dtgvNV.Columns[1].Visible = false;
+            dtgvNV.Columns[2].Visible = false;
+
+            dtgvNV.Columns[0].HeaderText = "Mã";
+            dtgvNV.Columns[3].HeaderText = "Tên";
+            dtgvNV.Columns[4].HeaderText = "Họ";
+            dtgvNV.Columns[5].HeaderText = "Ngày sinh";
+            dtgvNV.Columns[6].HeaderText = "Địa chỉ";
+            dtgvNV.Columns[7].HeaderText = "SDT";
+            dtgvNV.Columns[8].HeaderText = "Lương";
+            dtgvNV.Columns[9].HeaderText = "Chi nhánh";
+        }
+        #endregion
 
         private void tcAdmin_SelectedIndexChanged(object sender, EventArgs e)
         {

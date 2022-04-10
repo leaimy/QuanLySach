@@ -55,6 +55,7 @@
     <Compile Include="App\models\Customer.cs" />
     <Compile Include="App\models\User.cs" />
     <Compile Include="App\ProductController.cs" />
+    <Compile Include="App\StaffController.cs" />
     <Compile Include="App\UIController.cs" />
     <Compile Include="Common\CustomerFakeData.cs" />
     <Compile Include="Common\MoneyHelper.cs" />

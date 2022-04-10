@@ -92,12 +92,12 @@ namespace QuanLySach
             this.cbChucVu = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.dtgvNV = new System.Windows.Forms.DataGridView();
             this.tpThongKeSanPham = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tpThongKeDoanhThu = new System.Windows.Forms.TabPage();
             this.tpThongKeNhanVien = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dtgvNV = new System.Windows.Forms.DataGridView();
             this.tcAdmin.SuspendLayout();
             this.tpHoaDon.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -125,9 +125,9 @@ namespace QuanLySach
             this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel20.SuspendLayout();
-            this.panel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.tpThongKeSanPham.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -624,8 +624,8 @@ namespace QuanLySach
             // 
             // tpNhanVien
             // 
+            this.tpNhanVien.Controls.Add(this.groupBox4);
             this.tpNhanVien.Controls.Add(this.panel15);
-            this.tpNhanVien.Controls.Add(this.panel22);
             this.tpNhanVien.Location = new System.Drawing.Point(4, 26);
             this.tpNhanVien.Name = "tpNhanVien";
             this.tpNhanVien.Padding = new System.Windows.Forms.Padding(3);
@@ -768,26 +768,6 @@ namespace QuanLySach
             this.label16.Size = new System.Drawing.Size(0, 17);
             this.label16.TabIndex = 0;
             // 
-            // panel22
-            // 
-            this.panel22.Controls.Add(this.dtgvNV);
-            this.panel22.Location = new System.Drawing.Point(8, 148);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(1040, 494);
-            this.panel22.TabIndex = 3;
-            // 
-            // dtgvNV
-            // 
-            this.dtgvNV.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvNV.Enabled = false;
-            this.dtgvNV.Location = new System.Drawing.Point(3, 3);
-            this.dtgvNV.Name = "dtgvNV";
-            this.dtgvNV.RowHeadersWidth = 51;
-            this.dtgvNV.RowTemplate.Height = 24;
-            this.dtgvNV.Size = new System.Drawing.Size(1034, 488);
-            this.dtgvNV.TabIndex = 0;
-            // 
             // tpThongKeSanPham
             // 
             this.tpThongKeSanPham.Controls.Add(this.groupBox1);
@@ -826,6 +806,35 @@ namespace QuanLySach
             this.tpThongKeNhanVien.TabIndex = 8;
             this.tpThongKeNhanVien.Text = "Thống kê nhân viên";
             this.tpThongKeNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.dtgvNV);
+            this.groupBox4.Location = new System.Drawing.Point(8, 148);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1040, 495);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Danh sách nhân viên";
+            // 
+            // dtgvNV
+            // 
+            this.dtgvNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvNV.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvNV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvNV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvNV.Location = new System.Drawing.Point(3, 21);
+            this.dtgvNV.MultiSelect = false;
+            this.dtgvNV.Name = "dtgvNV";
+            this.dtgvNV.ReadOnly = true;
+            this.dtgvNV.RowHeadersWidth = 51;
+            this.dtgvNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvNV.Size = new System.Drawing.Size(1034, 471);
+            this.dtgvNV.TabIndex = 0;
             // 
             // frmQuanLySach
             // 
@@ -882,9 +891,9 @@ namespace QuanLySach
             this.panel18.PerformLayout();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
-            this.panel22.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).EndInit();
             this.tpThongKeSanPham.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -942,8 +951,6 @@ namespace QuanLySach
         private System.Windows.Forms.ComboBox cbChucVu;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.DataGridView dtgvNV;
         private System.Windows.Forms.Button btnCreateBook;
         private System.Windows.Forms.Button btnCreateCategory;
         private System.Windows.Forms.Button btnCreateStaff;
@@ -960,6 +967,8 @@ namespace QuanLySach
         private System.Windows.Forms.DataGridView dtgvSach;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dtgvLoaiSach;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dtgvNV;
     }
 }
 

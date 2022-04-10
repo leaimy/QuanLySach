@@ -59,12 +59,18 @@ namespace QuanLySach
                 SDT = nhanVien.SDT,
                 Ten = nhanVien.Ten
             };
+            AppManager.Instance.IsNewLoggedInSession = true;
 
             var frm = new frmSach();
 
             this.Hide();
             frm.ShowDialog();
             this.Show();
+        }
+
+        private void cbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AppManager.Instance.IsNewLoggedInSession = true;
         }
     }
 }

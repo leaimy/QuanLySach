@@ -25,6 +25,8 @@ namespace QuanLySach.DTO
         public string SDT { get { return _SDT; } set { _SDT = value; } }
         public decimal Luong { get { return _Luong; } set { _Luong = value; } }
 
+        public string TenChiNhanh { get; set; }
+
         public NhanVienDTO()
         {
 
@@ -46,14 +48,36 @@ namespace QuanLySach.DTO
         public NhanVienDTO(DataRow row)
         {
             this.MaNhanVien = (int)row["MaNhanVien"];
-            this.ChiNhanh = (int)row["ChiNhanh"];
-            this.ChucVu = row["ChucVu"].ToString();
             this.Ten = row["Ten"].ToString();
             this.HoDem = row["HoDem"].ToString();
             this.NgaySinh = DateTime.Parse(row["NgaySinh"].ToString());
             this.DiaChi = row["DiaChi"].ToString();
             this.SDT = row["SDT"].ToString();
             this.Luong = Convert.ToDecimal(row["Luong"]);
+
+            try
+            {
+                this.ChucVu = row["ChucVu"].ToString();
+            }
+            catch { }
+
+            try
+            {
+                this.ChiNhanh = (int)row["ChiNhanh"];
+            }
+            catch { }
+
+            try
+            {
+                this.ChiNhanh = (int)row["MaChiNhanh"];
+            }
+            catch { }
+
+            try
+            {
+                TenChiNhanh = row["TenChiNhanh"].ToString();
+            }
+            catch { }
         }
     }
 }
