@@ -5,12 +5,8 @@ using QuanLySach.DAO;
 using QuanLySach.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLySach
@@ -28,131 +24,70 @@ namespace QuanLySach
             frm.ShowDialog();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private List<SanPhamDTO> danhSachSanPham;
-        private List<CTHDForm> hoaDon;
-
         private void frmSach_Load(object sender, EventArgs e)
         {
-            tssLabel.Text = $"" +
-                $"Xin chào: {AppManager.Instance.User.HoVaTen} - " +
-                $"Tên đăng nhập: {AppManager.Instance.User.TenDangNhap} - " +
-                $"Chi nhánh: {AppManager.Instance.User.ChiNhanh.Ten} - " +
-                $"Nhóm: {AppManager.Instance.User.ChucVuVN}";
-
-            danhSachSanPham = SanPhamDAO.Instance.GetAllProducts();
-            hoaDon = new List<CTHDForm>();
-            RenderDatagridView(danhSachSanPham);
-        }
-
-        private void RenderDatagridView(List<SanPhamDTO> products)
-        {
-            dgvSach.DataSource = products;
-
-            dgvSach.Columns[0].Visible = false;
-            dgvSach.Columns[3].Visible = false;
-            dgvSach.Columns[4].Visible = false;
-
-            dgvSach.Columns[1].HeaderText = "Tên SP";
-            dgvSach.Columns[2].HeaderText = "Giá";
-        }
-
-        private void RenderDatagridViewForBill(List<CTHDForm> billDetails)
-        {
-            dgvCTBH.DataSource = billDetails;
-
-            dgvCTBH.Columns[1].Visible = false;
-            dgvCTBH.Columns[2].Visible = false;
-            dgvCTBH.Columns[3].Visible = false;
-
-            dgvCTBH.Columns[0].HeaderText = "Tên";
-            dgvCTBH.Columns[4].HeaderText = "Số Lượng";
-            dgvCTBH.Columns[5].HeaderText = "Giá";
+            ProductController.Instance.FetchNew();
+            UIController.Instance.DisplayListOfProduct(dgvSach);
+            UIController.Instance.DisplayStatusBar(tssLabel);
         }
 
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            var keyword = txtTimKiem.Text.Trim().ToLower();
-            var filtered = danhSachSanPham.Where(s => s.TenSP.ToLower().Contains(keyword)).ToList();
-
-            RenderDatagridView(filtered);
+            UIController.Instance.DisplayListOfFilteredProduct(dgvSach, txtTimKiem.Text);
         }
 
         private void btnAddProductToBill_Click(object sender, EventArgs e)
         {
+            if (dgvSach.SelectedRows.Count == 0) return;
+
             var sanpham = dgvSach.SelectedRows[0].DataBoundItem as SanPhamDTO;
-            bool isExist = false;
-
-            for(int i = 0; i< hoaDon.Count; i++)
+            var CartItem = new CartItem()
             {
-                if (sanpham.MaSP == hoaDon[i].MaSP)
-                {
-                    hoaDon[i].SoLuong += Convert.ToInt32(txtProductQuantity.Value);
-                    isExist = true;
-                    break;
-                }
-            }
-            var cthd = new CTHDForm(1, 1, 1, 1, 1);
-            cthd.TenSanPham = sanpham.TenSP;
-            cthd.MaSP = sanpham.MaSP;
-            cthd.GiaMua = sanpham.GiaBan;
-            cthd.SoLuong = Convert.ToInt32(txtProductQuantity.Value);
+                GiaMua = sanpham.GiaBan,
+                MaSP = sanpham.MaSP,
+                SoLuong = Convert.ToInt32(txtProductQuantity.Value),
+                TenSP = sanpham.TenSP
+            };
 
-            if (!isExist) hoaDon.Add(cthd);
-            RenderDatagridViewForBill(hoaDon.GetRange(0, hoaDon.Count));
+            AppManager.Instance.Cart.AddToCart(CartItem);
+            UIController.Instance.DisplayCart(dgvCTBH);
 
-            decimal tongTien = tinhTong(hoaDon);
+            lblTongTien.Text = AppManager.Instance.Cart.TotalWithoutDiscount.ToString();
+            lblTongTienCuoiCung.Text = AppManager.Instance.Cart.TotalWithDiscount.ToString();
+            lblTongTienGhiBangChu.Text = MoneyHelper.So_chu(Convert.ToDouble(AppManager.Instance.Cart.TotalWithDiscount));
 
-            lblTongTien.Text = tongTien.ToString();
-
-            decimal tongTienSauGiamGia = tongTien - (tongTien * (nmGiamGia.Value / 100));
-            lblTongTienCuoiCung.Text = tongTienSauGiamGia.ToString();
-            lblTongTienGhiBangChu.Text = MoneyHelper.So_chu(Convert.ToDouble(tongTienSauGiamGia));
+            txtProductQuantity.Value = 1;
         }
 
         private void btnRemoveProductFromBill_Click(object sender, EventArgs e)
         {
             if (dgvCTBH.SelectedRows.Count == 0) return;
 
-            var cthd = dgvCTBH.SelectedRows[0].DataBoundItem as CTHDForm;
+            var cthd = dgvCTBH.SelectedRows[0].DataBoundItem as CartItem;
+            AppManager.Instance.Cart.RemoveFromCart(cthd.MaSP, Convert.ToInt32(txtProductQuantity.Value));
 
-            var filterd = hoaDon.Where(s => s.MaSP != cthd.MaSP).ToList();
-            hoaDon = filterd;
-            RenderDatagridViewForBill(filterd);
+            UIController.Instance.DisplayCart(dgvCTBH);
 
-            decimal tongTien = tinhTong(hoaDon);
+            lblTongTien.Text = AppManager.Instance.Cart.TotalWithoutDiscount.ToString();
+            lblTongTienCuoiCung.Text = AppManager.Instance.Cart.TotalWithDiscount.ToString();
+            lblTongTienGhiBangChu.Text = MoneyHelper.So_chu(Convert.ToDouble(AppManager.Instance.Cart.TotalWithDiscount));
 
-            lblTongTien.Text = tongTien.ToString();
-
-            decimal tongTienSauGiamGia = tongTien - (tongTien * (nmGiamGia.Value / 100));
-            lblTongTienCuoiCung.Text = tongTienSauGiamGia.ToString();
-            lblTongTienGhiBangChu.Text = MoneyHelper.So_chu(Convert.ToDouble(tongTienSauGiamGia));
-        }
-
-        private decimal tinhTong(List<CTHDForm> hoaDon)
-        {
-            decimal tong = 0;
-            
-            foreach (var cthd in hoaDon)
-            {
-                tong += cthd.SoLuong * cthd.GiaMua;
-            }
-
-            return tong;
+            txtProductQuantity.Value = 1;
         }
 
         private void nmGiamGia_ValueChanged(object sender, EventArgs e)
         {
-            decimal tongTien = tinhTong(hoaDon);
+            AppManager.Instance.Cart.Discount = nmGiamGia.Value;
 
-            decimal tongTienSauGiamGia = tongTien - (tongTien * (nmGiamGia.Value / 100));
-            lblTongTienCuoiCung.Text = tongTienSauGiamGia.ToString();
-            lblTongTienGhiBangChu.Text = MoneyHelper.So_chu(Convert.ToDouble(tongTienSauGiamGia));
+            lblTongTien.Text = AppManager.Instance.Cart.TotalWithoutDiscount.ToString();
+            lblTongTienCuoiCung.Text = AppManager.Instance.Cart.TotalWithDiscount.ToString();
+            lblTongTienGhiBangChu.Text = MoneyHelper.So_chu(Convert.ToDouble(AppManager.Instance.Cart.TotalWithDiscount));
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

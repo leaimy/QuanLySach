@@ -47,9 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App\AppManager.cs" />
+    <Compile Include="App\models\Cart.cs" />
+    <Compile Include="App\models\CartItem.cs" />
     <Compile Include="App\models\ChiNhanhEnum.cs" />
-    <Compile Include="App\models\CTHDForm.cs" />
     <Compile Include="App\models\User.cs" />
+    <Compile Include="App\ProductController.cs" />
+    <Compile Include="App\UIController.cs" />
     <Compile Include="Common\MoneyHelper.cs" />
     <Compile Include="DAO\AuthDAO.cs" />
     <Compile Include="DAO\ChiNhanhDAO.cs" />
