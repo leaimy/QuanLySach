@@ -26,6 +26,7 @@ namespace QuanLySach.App
         }
 
         public User User { get; set; }
+        public Customer Customer { get; set; }
         public Cart Cart { get; set; }
     }
 }

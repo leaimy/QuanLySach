@@ -40,8 +40,6 @@ namespace QuanLySach
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbBill_SDTKH = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.lbBill_DiaChiKH = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.lbBill_TenKH = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -105,9 +103,9 @@ namespace QuanLySach
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label5.Location = new System.Drawing.Point(100, 111);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(183, 17);
+            this.label5.Size = new System.Drawing.Size(172, 17);
             this.label5.TabIndex = 4;
-            this.label5.Text = "shopbachtuye@gmail.com";
+            this.label5.Text = "shopbachtuyet@.com.vn";
             // 
             // label4
             // 
@@ -151,20 +149,18 @@ namespace QuanLySach
             // 
             this.panel3.Controls.Add(this.lbBill_SDTKH);
             this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.lbBill_DiaChiKH);
-            this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.lbBill_TenKH);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.label15);
             this.panel3.Location = new System.Drawing.Point(13, 138);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(327, 107);
+            this.panel3.Size = new System.Drawing.Size(327, 94);
             this.panel3.TabIndex = 2;
             // 
             // lbBill_SDTKH
             // 
             this.lbBill_SDTKH.AutoSize = true;
-            this.lbBill_SDTKH.Location = new System.Drawing.Point(134, 84);
+            this.lbBill_SDTKH.Location = new System.Drawing.Point(134, 65);
             this.lbBill_SDTKH.Name = "lbBill_SDTKH";
             this.lbBill_SDTKH.Size = new System.Drawing.Size(88, 17);
             this.lbBill_SDTKH.TabIndex = 6;
@@ -173,29 +169,11 @@ namespace QuanLySach
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(12, 84);
+            this.label20.Location = new System.Drawing.Point(12, 65);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(40, 17);
             this.label20.TabIndex = 5;
             this.label20.Text = "SĐT:";
-            // 
-            // lbBill_DiaChiKH
-            // 
-            this.lbBill_DiaChiKH.AutoSize = true;
-            this.lbBill_DiaChiKH.Location = new System.Drawing.Point(134, 61);
-            this.lbBill_DiaChiKH.Name = "lbBill_DiaChiKH";
-            this.lbBill_DiaChiKH.Size = new System.Drawing.Size(63, 17);
-            this.lbBill_DiaChiKH.TabIndex = 4;
-            this.lbBill_DiaChiKH.Text = "Phú Yên";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 61);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(61, 17);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "Địa chỉ: ";
             // 
             // lbBill_TenKH
             // 
@@ -358,6 +336,7 @@ namespace QuanLySach
             this.btnBill_ThanhToan.TabIndex = 8;
             this.btnBill_ThanhToan.Text = "Xác nhận thanh toán";
             this.btnBill_ThanhToan.UseVisualStyleBackColor = true;
+            this.btnBill_ThanhToan.Click += new System.EventHandler(this.btnBill_ThanhToan_Click);
             // 
             // btnBill_Thoat
             // 
@@ -371,6 +350,7 @@ namespace QuanLySach
             this.btnBill_Thoat.TabIndex = 9;
             this.btnBill_Thoat.Text = "Thoát";
             this.btnBill_Thoat.UseVisualStyleBackColor = true;
+            this.btnBill_Thoat.Click += new System.EventHandler(this.btnBill_Thoat_Click);
             // 
             // frmBill
             // 
@@ -391,6 +371,7 @@ namespace QuanLySach
             this.Name = "frmBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bill";
+            this.Load += new System.EventHandler(this.frmBill_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -417,8 +398,6 @@ namespace QuanLySach
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Label lbBill_SDTKH;
 		private System.Windows.Forms.Label label20;
-		private System.Windows.Forms.Label lbBill_DiaChiKH;
-		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.Label lbBill_TenKH;
 		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.Label label15;

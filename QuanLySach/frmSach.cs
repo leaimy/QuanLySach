@@ -87,7 +87,21 @@ namespace QuanLySach
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            string hoTen = txtHoTen.Text;
+            string sdt = txtSDT.Text;
 
+            if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(sdt)) return;
+
+            AppManager.Instance.Customer = new Customer()
+            {
+                HoTen = hoTen,
+                SDT = sdt,
+            };
+
+            var frm = new frmBill();
+            var result = frm.ShowDialog();
+
+            if (result != DialogResult.OK) return;
         }
     }
 }

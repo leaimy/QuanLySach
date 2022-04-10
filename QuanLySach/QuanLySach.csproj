@@ -50,6 +50,7 @@
     <Compile Include="App\models\Cart.cs" />
     <Compile Include="App\models\CartItem.cs" />
     <Compile Include="App\models\ChiNhanhEnum.cs" />
+    <Compile Include="App\models\Customer.cs" />
     <Compile Include="App\models\User.cs" />
     <Compile Include="App\ProductController.cs" />
     <Compile Include="App\UIController.cs" />
