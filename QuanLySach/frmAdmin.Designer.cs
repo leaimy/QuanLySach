@@ -1128,6 +1128,7 @@ namespace QuanLySach
             this.tp_ST_Product_txtVisibleNumber.Name = "tp_ST_Product_txtVisibleNumber";
             this.tp_ST_Product_txtVisibleNumber.Size = new System.Drawing.Size(87, 25);
             this.tp_ST_Product_txtVisibleNumber.TabIndex = 1;
+            this.tp_ST_Product_txtVisibleNumber.ValueChanged += new System.EventHandler(this.tp_ST_Product_txtVisibleNumber_ValueChanged);
             // 
             // label15
             // 
@@ -1153,6 +1154,7 @@ namespace QuanLySach
             this.tp_ST_Product_txtBookname.Name = "tp_ST_Product_txtBookname";
             this.tp_ST_Product_txtBookname.Size = new System.Drawing.Size(153, 25);
             this.tp_ST_Product_txtBookname.TabIndex = 1;
+            this.tp_ST_Product_txtBookname.TextChanged += new System.EventHandler(this.tp_ST_Product_txtBookname_TextChanged);
             // 
             // label12
             // 
@@ -1179,6 +1181,7 @@ namespace QuanLySach
             this.tp_ST_Product_cbCategory.Name = "tp_ST_Product_cbCategory";
             this.tp_ST_Product_cbCategory.Size = new System.Drawing.Size(153, 25);
             this.tp_ST_Product_cbCategory.TabIndex = 1;
+            this.tp_ST_Product_cbCategory.SelectedIndexChanged += new System.EventHandler(this.tp_ST_Product_cbCategory_SelectedIndexChanged);
             // 
             // label8
             // 

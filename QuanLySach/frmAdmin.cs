@@ -1,6 +1,7 @@
 ﻿using QuanLySach.App;
 using QuanLySach.DAO;
 using QuanLySach.DTO;
+using QuanLySach.DTO.Statistics;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -324,9 +325,58 @@ namespace QuanLySach
 
         private void tp_ST_Product_btnST_Click(object sender, EventArgs e)
         {
+            DateTime from = tp_ST_Product_dtpFrom.Value;
+            DateTime to = tp_ST_Product_dtpTo.Value;
 
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.FetchStatistics(from, to));
         }
 
+        private void tp_ST_Product_cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tp_ST_Product_cbCategory.SelectedIndex == -1)
+                return;
+
+            LoaiSanPhamDTO item = tp_ST_Product_cbCategory.SelectedItem as LoaiSanPhamDTO;
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.FilterByCategory(item.MaLoaiSP));
+        }
+
+        private void tp_ST_Product_txtBookname_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = tp_ST_Product_txtBookname.Text;
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.FilterByName(keyword));
+        }
+
+        private void tp_ST_Product_txtVisibleNumber_ValueChanged(object sender, EventArgs e)
+        {
+            int visibleCount = Convert.ToInt32(tp_ST_Product_txtVisibleNumber.Value);
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.Take(visibleCount));
+        }
+
+        private void RenderProductStatisticDataGridView(List<TKSanPhamDTO> statistics)
+        {
+            tp_ST_Product_dgvProduct.DataSource = statistics;
+
+            tp_ST_Product_dgvProduct.Columns[0].Visible = false;
+            tp_ST_Product_dgvProduct.Columns[2].Visible = false;
+            
+            tp_ST_Product_dgvProduct.Columns[1].HeaderText = "Tên SP";
+            tp_ST_Product_dgvProduct.Columns[3].HeaderText = "Thể loại";
+            tp_ST_Product_dgvProduct.Columns[4].HeaderText = "SL Bán";
+            tp_ST_Product_dgvProduct.Columns[5].HeaderText = "Giá";
+            tp_ST_Product_dgvProduct.Columns[6].HeaderText = "Ước Tính";
+
+            string starting = $"Có {ProductStatisticController.Instance.Count} thống kê ";
+            if (ProductStatisticController.Instance.Count == 0)
+            {
+                starting = "Không có thống kê ";
+            }
+
+            if (ProductStatisticController.Instance.FromDate != null)
+            {
+                tp_ST_Product_dgvContainer.Text = starting + $"từ ngày {ProductStatisticController.Instance.FromDate.ToString("dd-MM-yyyy HH:mm:ss")} đến ngày {ProductStatisticController.Instance.ToDate.ToString("dd-MM-yyyy HH:mm:ss")}";
+            }
+        }
         #endregion
+
     }
 }

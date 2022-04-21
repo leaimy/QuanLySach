@@ -57,6 +57,7 @@
     <Compile Include="App\models\Customer.cs" />
     <Compile Include="App\models\User.cs" />
     <Compile Include="App\ProductController.cs" />
+    <Compile Include="App\ProductStatisticController.cs" />
     <Compile Include="App\StaffController.cs" />
     <Compile Include="App\UIController.cs" />
     <Compile Include="Common\CustomerFakeData.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="DAO\LoaiSanPhamDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DAO\SanPhamDAO.cs" />
+    <Compile Include="DAO\ThongKeDAO.cs" />
     <Compile Include="DTO\ChiNhanhDTO.cs" />
     <Compile Include="DTO\ChiTietHoaDonDTO.cs" />
     <Compile Include="DTO\HoaDonDTO.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="DTO\LoginInfoDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\SanPhamDTO.cs" />
+    <Compile Include="DTO\Statistics\TKSanPhamDTO.cs" />
     <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
