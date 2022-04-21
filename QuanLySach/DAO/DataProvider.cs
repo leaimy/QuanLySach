@@ -32,17 +32,36 @@ namespace QuanLySach.DAO
 		}
 
 		private DataProvider() { } 
-		public void InitConnectionString(ChiNhanhEnum branch, string loginName, string password)
+		public void InitConnectionString(ChiNhanhEnum branch, string loginName, string password, int who)
         {
 			this.branch = branch;
 			this.loginName = loginName;
 			this.password = password;
 
-			connectionSTR = $"Data Source=DALATHUB\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
+			if (who == 1)
+            {
+				connectionSTR = $"Data Source=DALATHUB\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
 
-			if (branch == ChiNhanhEnum.CN_2)
-				connectionSTR = $"Data Source=DALATHUB\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
-        }
+				if (branch == ChiNhanhEnum.CN_2)
+					connectionSTR = $"Data Source=DALATHUB\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
+			}
+
+			else if (who == 2)
+            {
+				connectionSTR = $"Data Source=DESKTOP-C27NP9T\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
+
+				if (branch == ChiNhanhEnum.CN_2)
+					connectionSTR = $"Data Source=DESKTOP-C27NP9T\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
+			}
+
+			else if (who == 3)
+            {
+				connectionSTR = $"Data Source=DALATHUB\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
+
+				if (branch == ChiNhanhEnum.CN_2)
+					connectionSTR = $"Data Source=DALATHUB\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
+			}
+		}
 
 		public DataTable ExecuteQuery(string query, object[] parameter = null)
 		{
