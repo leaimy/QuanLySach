@@ -232,7 +232,7 @@ namespace QuanLySach
             if (string.IsNullOrEmpty(keyword))
             {
                 RenderNhanVienDatagridview(StaffController.Instance.GetStaffs());
-                return; 
+                return;
             }
 
             RenderNhanVienDatagridview(StaffController.Instance.FilterByPhoneNumber(keyword));
@@ -358,7 +358,7 @@ namespace QuanLySach
 
             tp_ST_Product_dgvProduct.Columns[0].Visible = false;
             tp_ST_Product_dgvProduct.Columns[2].Visible = false;
-            
+
             tp_ST_Product_dgvProduct.Columns[1].HeaderText = "Tên SP";
             tp_ST_Product_dgvProduct.Columns[3].HeaderText = "Thể loại";
             tp_ST_Product_dgvProduct.Columns[4].HeaderText = "SL Bán";
@@ -376,8 +376,6 @@ namespace QuanLySach
                 tp_ST_Product_dgvContainer.Text = starting + $"từ ngày {ProductStatisticController.Instance.FromDate.ToString("dd-MM-yyyy HH:mm:ss")} đến ngày {ProductStatisticController.Instance.ToDate.ToString("dd-MM-yyyy HH:mm:ss")}";
             }
         }
-        #endregion
-
         private void tp_ST_Product_btnToday_Click(object sender, EventArgs e)
         {
             RenderProductStatisticDataGridView(ProductStatisticController.Instance.FetchStatisticsToDay());
@@ -387,5 +385,16 @@ namespace QuanLySach
         {
             RenderProductStatisticDataGridView(ProductStatisticController.Instance.FetchStatisticsThisMonth());
         }
+
+        private void tp_ST_Product_btnReset_Click(object sender, EventArgs e)
+        {
+            int visibleCount = Convert.ToInt32(tp_ST_Product_txtVisibleNumber.Value);
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.Take(visibleCount));
+
+            tp_ST_Product_txtBookname.ResetText();
+            tp_ST_Product_cbCategory.ResetText();
+        }
+        #endregion
+
     }
 }

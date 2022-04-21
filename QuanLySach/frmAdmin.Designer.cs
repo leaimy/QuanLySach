@@ -987,6 +987,7 @@ namespace QuanLySach
             this.tp_ST_Product_btnReset.TabIndex = 17;
             this.tp_ST_Product_btnReset.Text = "Đặt lại";
             this.tp_ST_Product_btnReset.UseVisualStyleBackColor = false;
+            this.tp_ST_Product_btnReset.Click += new System.EventHandler(this.tp_ST_Product_btnReset_Click);
             // 
             // tp_ST_Product_btnToday
             // 
