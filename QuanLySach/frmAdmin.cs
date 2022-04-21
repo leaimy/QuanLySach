@@ -62,6 +62,18 @@ namespace QuanLySach
 
             RenderHoaDonDatagridview(BillController.Instance.GetBillsToday());
             #endregion
+
+            #region Thong Ke San Pham
+            tp_ST_Product_cbCategory.DataSource = CategoryController.Instance.GetChildCategoriesForCombobox();
+            tp_ST_Product_cbCategory.ValueMember = "MaLoaiSP";
+            tp_ST_Product_cbCategory.DisplayMember = "TenLoaiSP";
+
+            tp_ST_Product_cbBranches.DataSource = BranchController.Instance.GetBranchesForCombobox();
+            tp_ST_Product_cbBranches.ValueMember = "Code";
+            tp_ST_Product_cbBranches.DisplayMember = "Title";
+
+            tp_ST_Product_txtVisibleNumber.Value = 10;
+            #endregion
         }
 
         #region Loai San Pham
@@ -308,5 +320,13 @@ namespace QuanLySach
             frm.ShowDialog();
         }
 
+        #region Thong Ke San Pham
+
+        private void tp_ST_Product_btnST_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
     }
 }
