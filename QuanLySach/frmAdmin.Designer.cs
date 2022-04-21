@@ -31,11 +31,16 @@ namespace QuanLySach
         {
             this.tcAdmin = new System.Windows.Forms.TabControl();
             this.tpHoaDon = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.grBillContainer = new System.Windows.Forms.GroupBox();
             this.dtgvBill = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tssLoginInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnFilterBillInRange = new System.Windows.Forms.Button();
             this.btnFilterBillCurrentMonth = new System.Windows.Forms.Button();
             this.btnFilterBillToday = new System.Windows.Forms.Button();
@@ -96,11 +101,38 @@ namespace QuanLySach
             this.label13 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tpThongKeSanPham = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tp_ST_Product_dgvContainer = new System.Windows.Forms.GroupBox();
+            this.tp_ST_Product_dgvProduct = new System.Windows.Forms.DataGridView();
+            this.tp_ST_Product_btnAsc = new System.Windows.Forms.Button();
+            this.tp_ST_Product_btnReset = new System.Windows.Forms.Button();
+            this.tp_ST_Product_btnToday = new System.Windows.Forms.Button();
+            this.tp_ST_Product_btnThisMonth = new System.Windows.Forms.Button();
+            this.tp_ST_Product_btnST = new System.Windows.Forms.Button();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.tp_ST_Product_dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.label22 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.tp_ST_Product_dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.tp_ST_Product_cbBranches = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tp_ST_Product_btnDesc = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.tp_ST_Product_txtVisibleNumber = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.tp_ST_Product_txtBookname = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.tp_ST_Product_cbCategory = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.tpThongKeDoanhThu = new System.Windows.Forms.TabPage();
             this.tpThongKeNhanVien = new System.Windows.Forms.TabPage();
             this.tcAdmin.SuspendLayout();
             this.tpHoaDon.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.grBillContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -129,6 +161,15 @@ namespace QuanLySach
             this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
             this.tpThongKeSanPham.SuspendLayout();
+            this.tp_ST_Product_dgvContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tp_ST_Product_dgvProduct)).BeginInit();
+            this.panel17.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tp_ST_Product_txtVisibleNumber)).BeginInit();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -150,6 +191,7 @@ namespace QuanLySach
             // 
             // tpHoaDon
             // 
+            this.tpHoaDon.Controls.Add(this.groupBox5);
             this.tpHoaDon.Controls.Add(this.grBillContainer);
             this.tpHoaDon.Controls.Add(this.statusStrip1);
             this.tpHoaDon.Controls.Add(this.panel13);
@@ -161,15 +203,50 @@ namespace QuanLySach
             this.tpHoaDon.Text = "Hoá Đơn";
             this.tpHoaDon.UseVisualStyleBackColor = true;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.panel3);
+            this.groupBox5.Location = new System.Drawing.Point(11, 100);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(1037, 94);
+            this.groupBox5.TabIndex = 7;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Số liệu thống kê";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(6, 24);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(302, 34);
+            this.panel3.TabIndex = 4;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(76, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(220, 25);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "SĐT KH";
+            // 
             // grBillContainer
             // 
             this.grBillContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grBillContainer.Controls.Add(this.dtgvBill);
-            this.grBillContainer.Location = new System.Drawing.Point(8, 149);
+            this.grBillContainer.Location = new System.Drawing.Point(8, 200);
             this.grBillContainer.Name = "grBillContainer";
-            this.grBillContainer.Size = new System.Drawing.Size(1040, 474);
+            this.grBillContainer.Size = new System.Drawing.Size(1040, 423);
             this.grBillContainer.TabIndex = 6;
             this.grBillContainer.TabStop = false;
             this.grBillContainer.Text = "Danh sách hóa đơn hiện có";
@@ -187,7 +264,7 @@ namespace QuanLySach
             this.dtgvBill.ReadOnly = true;
             this.dtgvBill.RowHeadersWidth = 51;
             this.dtgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvBill.Size = new System.Drawing.Size(1034, 450);
+            this.dtgvBill.Size = new System.Drawing.Size(1034, 399);
             this.dtgvBill.TabIndex = 0;
             // 
             // statusStrip1
@@ -208,6 +285,7 @@ namespace QuanLySach
             // 
             // panel13
             // 
+            this.panel13.Controls.Add(this.button1);
             this.panel13.Controls.Add(this.btnFilterBillInRange);
             this.panel13.Controls.Add(this.btnFilterBillCurrentMonth);
             this.panel13.Controls.Add(this.btnFilterBillToday);
@@ -220,14 +298,25 @@ namespace QuanLySach
             this.panel13.Controls.Add(this.label6);
             this.panel13.Location = new System.Drawing.Point(8, 6);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1040, 137);
+            this.panel13.Size = new System.Drawing.Size(1040, 87);
             this.panel13.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(543, 43);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 37);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Lọc";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // btnFilterBillInRange
             // 
             this.btnFilterBillInRange.BackColor = System.Drawing.Color.Transparent;
             this.btnFilterBillInRange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterBillInRange.Location = new System.Drawing.Point(458, 78);
+            this.btnFilterBillInRange.Location = new System.Drawing.Point(458, 43);
             this.btnFilterBillInRange.Name = "btnFilterBillInRange";
             this.btnFilterBillInRange.Size = new System.Drawing.Size(69, 37);
             this.btnFilterBillInRange.TabIndex = 9;
@@ -239,7 +328,7 @@ namespace QuanLySach
             // 
             this.btnFilterBillCurrentMonth.BackColor = System.Drawing.Color.Transparent;
             this.btnFilterBillCurrentMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterBillCurrentMonth.Location = new System.Drawing.Point(922, 80);
+            this.btnFilterBillCurrentMonth.Location = new System.Drawing.Point(919, 43);
             this.btnFilterBillCurrentMonth.Name = "btnFilterBillCurrentMonth";
             this.btnFilterBillCurrentMonth.Size = new System.Drawing.Size(103, 37);
             this.btnFilterBillCurrentMonth.TabIndex = 8;
@@ -251,7 +340,7 @@ namespace QuanLySach
             // 
             this.btnFilterBillToday.BackColor = System.Drawing.Color.Transparent;
             this.btnFilterBillToday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterBillToday.Location = new System.Drawing.Point(804, 80);
+            this.btnFilterBillToday.Location = new System.Drawing.Point(810, 43);
             this.btnFilterBillToday.Name = "btnFilterBillToday";
             this.btnFilterBillToday.Size = new System.Drawing.Size(103, 37);
             this.btnFilterBillToday.TabIndex = 7;
@@ -263,7 +352,7 @@ namespace QuanLySach
             // 
             this.btnFilterMonthLastDate.BackColor = System.Drawing.Color.Transparent;
             this.btnFilterMonthLastDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterMonthLastDate.Location = new System.Drawing.Point(684, 80);
+            this.btnFilterMonthLastDate.Location = new System.Drawing.Point(700, 43);
             this.btnFilterMonthLastDate.Name = "btnFilterMonthLastDate";
             this.btnFilterMonthLastDate.Size = new System.Drawing.Size(103, 37);
             this.btnFilterMonthLastDate.TabIndex = 6;
@@ -275,7 +364,7 @@ namespace QuanLySach
             // 
             this.panel2.Controls.Add(this.dtpToDate);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(239, 78);
+            this.panel2.Location = new System.Drawing.Point(239, 43);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(213, 39);
             this.panel2.TabIndex = 4;
@@ -302,9 +391,9 @@ namespace QuanLySach
             // 
             this.panel29.Controls.Add(this.cbChiNhanh);
             this.panel29.Controls.Add(this.label21);
-            this.panel29.Location = new System.Drawing.Point(703, 20);
+            this.panel29.Location = new System.Drawing.Point(700, 3);
             this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(322, 39);
+            this.panel29.Size = new System.Drawing.Size(322, 34);
             this.panel29.TabIndex = 3;
             // 
             // cbChiNhanh
@@ -328,9 +417,9 @@ namespace QuanLySach
             // 
             this.panel27.Controls.Add(this.dtpFromDate);
             this.panel27.Controls.Add(this.label20);
-            this.panel27.Location = new System.Drawing.Point(16, 78);
+            this.panel27.Location = new System.Drawing.Point(16, 43);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(220, 39);
+            this.panel27.Size = new System.Drawing.Size(220, 38);
             this.panel27.TabIndex = 3;
             // 
             // dtpFromDate
@@ -355,9 +444,9 @@ namespace QuanLySach
             // 
             this.panel19.Controls.Add(this.txtFilterBillByCPhone);
             this.panel19.Controls.Add(this.label7);
-            this.panel19.Location = new System.Drawing.Point(360, 20);
+            this.panel19.Location = new System.Drawing.Point(344, 3);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(322, 39);
+            this.panel19.Size = new System.Drawing.Size(322, 34);
             this.panel19.TabIndex = 3;
             // 
             // txtFilterBillByCPhone
@@ -381,9 +470,9 @@ namespace QuanLySach
             // 
             this.panel21.Controls.Add(this.cbTenNV);
             this.panel21.Controls.Add(this.label18);
-            this.panel21.Location = new System.Drawing.Point(16, 20);
+            this.panel21.Location = new System.Drawing.Point(16, 3);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(322, 39);
+            this.panel21.Size = new System.Drawing.Size(322, 34);
             this.panel21.TabIndex = 2;
             // 
             // cbTenNV
@@ -827,7 +916,19 @@ namespace QuanLySach
             // 
             // tpThongKeSanPham
             // 
-            this.tpThongKeSanPham.Controls.Add(this.groupBox1);
+            this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_dgvContainer);
+            this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnAsc);
+            this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnReset);
+            this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnToday);
+            this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnThisMonth);
+            this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnST);
+            this.tpThongKeSanPham.Controls.Add(this.panel17);
+            this.tpThongKeSanPham.Controls.Add(this.panel14);
+            this.tpThongKeSanPham.Controls.Add(this.panel11);
+            this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnDesc);
+            this.tpThongKeSanPham.Controls.Add(this.panel8);
+            this.tpThongKeSanPham.Controls.Add(this.panel7);
+            this.tpThongKeSanPham.Controls.Add(this.panel6);
             this.tpThongKeSanPham.Location = new System.Drawing.Point(4, 26);
             this.tpThongKeSanPham.Name = "tpThongKeSanPham";
             this.tpThongKeSanPham.Padding = new System.Windows.Forms.Padding(3);
@@ -836,14 +937,257 @@ namespace QuanLySach
             this.tpThongKeSanPham.Text = "Thống kê sản phẩm";
             this.tpThongKeSanPham.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // tp_ST_Product_dgvContainer
             // 
-            this.groupBox1.Location = new System.Drawing.Point(8, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1040, 221);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh sách sản phẩm bán chạy";
+            this.tp_ST_Product_dgvContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tp_ST_Product_dgvContainer.Controls.Add(this.tp_ST_Product_dgvProduct);
+            this.tp_ST_Product_dgvContainer.Location = new System.Drawing.Point(8, 113);
+            this.tp_ST_Product_dgvContainer.Name = "tp_ST_Product_dgvContainer";
+            this.tp_ST_Product_dgvContainer.Size = new System.Drawing.Size(1040, 530);
+            this.tp_ST_Product_dgvContainer.TabIndex = 19;
+            this.tp_ST_Product_dgvContainer.TabStop = false;
+            this.tp_ST_Product_dgvContainer.Text = "Danh sách sản phẩm";
+            // 
+            // tp_ST_Product_dgvProduct
+            // 
+            this.tp_ST_Product_dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tp_ST_Product_dgvProduct.BackgroundColor = System.Drawing.Color.White;
+            this.tp_ST_Product_dgvProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tp_ST_Product_dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tp_ST_Product_dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tp_ST_Product_dgvProduct.Location = new System.Drawing.Point(3, 21);
+            this.tp_ST_Product_dgvProduct.MultiSelect = false;
+            this.tp_ST_Product_dgvProduct.Name = "tp_ST_Product_dgvProduct";
+            this.tp_ST_Product_dgvProduct.ReadOnly = true;
+            this.tp_ST_Product_dgvProduct.RowHeadersWidth = 51;
+            this.tp_ST_Product_dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tp_ST_Product_dgvProduct.Size = new System.Drawing.Size(1034, 506);
+            this.tp_ST_Product_dgvProduct.TabIndex = 0;
+            // 
+            // tp_ST_Product_btnAsc
+            // 
+            this.tp_ST_Product_btnAsc.BackColor = System.Drawing.Color.Transparent;
+            this.tp_ST_Product_btnAsc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tp_ST_Product_btnAsc.Location = new System.Drawing.Point(678, 64);
+            this.tp_ST_Product_btnAsc.Name = "tp_ST_Product_btnAsc";
+            this.tp_ST_Product_btnAsc.Size = new System.Drawing.Size(60, 37);
+            this.tp_ST_Product_btnAsc.TabIndex = 18;
+            this.tp_ST_Product_btnAsc.Text = "A-Z";
+            this.tp_ST_Product_btnAsc.UseVisualStyleBackColor = false;
+            // 
+            // tp_ST_Product_btnReset
+            // 
+            this.tp_ST_Product_btnReset.BackColor = System.Drawing.Color.Transparent;
+            this.tp_ST_Product_btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tp_ST_Product_btnReset.Location = new System.Drawing.Point(955, 64);
+            this.tp_ST_Product_btnReset.Name = "tp_ST_Product_btnReset";
+            this.tp_ST_Product_btnReset.Size = new System.Drawing.Size(93, 37);
+            this.tp_ST_Product_btnReset.TabIndex = 17;
+            this.tp_ST_Product_btnReset.Text = "Đặt lại";
+            this.tp_ST_Product_btnReset.UseVisualStyleBackColor = false;
+            // 
+            // tp_ST_Product_btnToday
+            // 
+            this.tp_ST_Product_btnToday.BackColor = System.Drawing.Color.Transparent;
+            this.tp_ST_Product_btnToday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tp_ST_Product_btnToday.Location = new System.Drawing.Point(856, 9);
+            this.tp_ST_Product_btnToday.Name = "tp_ST_Product_btnToday";
+            this.tp_ST_Product_btnToday.Size = new System.Drawing.Size(93, 37);
+            this.tp_ST_Product_btnToday.TabIndex = 16;
+            this.tp_ST_Product_btnToday.Text = "Hôm nay";
+            this.tp_ST_Product_btnToday.UseVisualStyleBackColor = false;
+            // 
+            // tp_ST_Product_btnThisMonth
+            // 
+            this.tp_ST_Product_btnThisMonth.BackColor = System.Drawing.Color.Transparent;
+            this.tp_ST_Product_btnThisMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tp_ST_Product_btnThisMonth.Location = new System.Drawing.Point(955, 9);
+            this.tp_ST_Product_btnThisMonth.Name = "tp_ST_Product_btnThisMonth";
+            this.tp_ST_Product_btnThisMonth.Size = new System.Drawing.Size(93, 37);
+            this.tp_ST_Product_btnThisMonth.TabIndex = 15;
+            this.tp_ST_Product_btnThisMonth.Text = "Tháng này";
+            this.tp_ST_Product_btnThisMonth.UseVisualStyleBackColor = false;
+            // 
+            // tp_ST_Product_btnST
+            // 
+            this.tp_ST_Product_btnST.BackColor = System.Drawing.Color.Transparent;
+            this.tp_ST_Product_btnST.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tp_ST_Product_btnST.Location = new System.Drawing.Point(678, 8);
+            this.tp_ST_Product_btnST.Name = "tp_ST_Product_btnST";
+            this.tp_ST_Product_btnST.Size = new System.Drawing.Size(93, 37);
+            this.tp_ST_Product_btnST.TabIndex = 14;
+            this.tp_ST_Product_btnST.Text = "Thống kê";
+            this.tp_ST_Product_btnST.UseVisualStyleBackColor = false;
+            this.tp_ST_Product_btnST.Click += new System.EventHandler(this.tp_ST_Product_btnST_Click);
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.tp_ST_Product_dtpTo);
+            this.panel17.Controls.Add(this.label22);
+            this.panel17.Location = new System.Drawing.Point(464, 6);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(208, 39);
+            this.panel17.TabIndex = 5;
+            // 
+            // tp_ST_Product_dtpTo
+            // 
+            this.tp_ST_Product_dtpTo.CustomFormat = "dd/MM/yyyy";
+            this.tp_ST_Product_dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tp_ST_Product_dtpTo.Location = new System.Drawing.Point(90, 7);
+            this.tp_ST_Product_dtpTo.Name = "tp_ST_Product_dtpTo";
+            this.tp_ST_Product_dtpTo.Size = new System.Drawing.Size(111, 25);
+            this.tp_ST_Product_dtpTo.TabIndex = 1;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(3, 9);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(70, 17);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Đến ngày";
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.tp_ST_Product_dtpFrom);
+            this.panel14.Controls.Add(this.label19);
+            this.panel14.Location = new System.Drawing.Point(255, 6);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(203, 38);
+            this.panel14.TabIndex = 13;
+            // 
+            // tp_ST_Product_dtpFrom
+            // 
+            this.tp_ST_Product_dtpFrom.CustomFormat = "dd/MM/yyyy";
+            this.tp_ST_Product_dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tp_ST_Product_dtpFrom.Location = new System.Drawing.Point(82, 6);
+            this.tp_ST_Product_dtpFrom.Name = "tp_ST_Product_dtpFrom";
+            this.tp_ST_Product_dtpFrom.Size = new System.Drawing.Size(113, 25);
+            this.tp_ST_Product_dtpFrom.TabIndex = 1;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(3, 8);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(62, 17);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Từ ngày";
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.tp_ST_Product_cbBranches);
+            this.panel11.Controls.Add(this.label17);
+            this.panel11.Location = new System.Drawing.Point(6, 6);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(243, 34);
+            this.panel11.TabIndex = 12;
+            // 
+            // tp_ST_Product_cbBranches
+            // 
+            this.tp_ST_Product_cbBranches.FormattingEnabled = true;
+            this.tp_ST_Product_cbBranches.Location = new System.Drawing.Point(82, 5);
+            this.tp_ST_Product_cbBranches.Name = "tp_ST_Product_cbBranches";
+            this.tp_ST_Product_cbBranches.Size = new System.Drawing.Size(153, 25);
+            this.tp_ST_Product_cbBranches.TabIndex = 1;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(3, 8);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(74, 17);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Chi nhánh";
+            // 
+            // tp_ST_Product_btnDesc
+            // 
+            this.tp_ST_Product_btnDesc.BackColor = System.Drawing.Color.Transparent;
+            this.tp_ST_Product_btnDesc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tp_ST_Product_btnDesc.Location = new System.Drawing.Point(744, 64);
+            this.tp_ST_Product_btnDesc.Name = "tp_ST_Product_btnDesc";
+            this.tp_ST_Product_btnDesc.Size = new System.Drawing.Size(60, 37);
+            this.tp_ST_Product_btnDesc.TabIndex = 11;
+            this.tp_ST_Product_btnDesc.Text = "Z-A";
+            this.tp_ST_Product_btnDesc.UseVisualStyleBackColor = false;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.tp_ST_Product_txtVisibleNumber);
+            this.panel8.Controls.Add(this.label15);
+            this.panel8.Location = new System.Drawing.Point(504, 62);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(168, 39);
+            this.panel8.TabIndex = 7;
+            // 
+            // tp_ST_Product_txtVisibleNumber
+            // 
+            this.tp_ST_Product_txtVisibleNumber.Location = new System.Drawing.Point(75, 5);
+            this.tp_ST_Product_txtVisibleNumber.Name = "tp_ST_Product_txtVisibleNumber";
+            this.tp_ST_Product_txtVisibleNumber.Size = new System.Drawing.Size(87, 25);
+            this.tp_ST_Product_txtVisibleNumber.TabIndex = 1;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 17);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Hiển thị";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.tp_ST_Product_txtBookname);
+            this.panel7.Controls.Add(this.label12);
+            this.panel7.Location = new System.Drawing.Point(255, 62);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(243, 39);
+            this.panel7.TabIndex = 6;
+            // 
+            // tp_ST_Product_txtBookname
+            // 
+            this.tp_ST_Product_txtBookname.Location = new System.Drawing.Point(82, 6);
+            this.tp_ST_Product_txtBookname.Name = "tp_ST_Product_txtBookname";
+            this.tp_ST_Product_txtBookname.Size = new System.Drawing.Size(153, 25);
+            this.tp_ST_Product_txtBookname.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 9);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(71, 17);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Tên Sách";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.tp_ST_Product_cbCategory);
+            this.panel6.Controls.Add(this.label8);
+            this.panel6.Location = new System.Drawing.Point(6, 62);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(243, 39);
+            this.panel6.TabIndex = 5;
+            // 
+            // tp_ST_Product_cbCategory
+            // 
+            this.tp_ST_Product_cbCategory.FormattingEnabled = true;
+            this.tp_ST_Product_cbCategory.Location = new System.Drawing.Point(82, 5);
+            this.tp_ST_Product_cbCategory.Name = "tp_ST_Product_cbCategory";
+            this.tp_ST_Product_cbCategory.Size = new System.Drawing.Size(153, 25);
+            this.tp_ST_Product_cbCategory.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 17);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Loại Sách";
             // 
             // tpThongKeDoanhThu
             // 
@@ -878,6 +1222,9 @@ namespace QuanLySach
             this.tcAdmin.ResumeLayout(false);
             this.tpHoaDon.ResumeLayout(false);
             this.tpHoaDon.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.grBillContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.statusStrip1.ResumeLayout(false);
@@ -922,6 +1269,21 @@ namespace QuanLySach
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.tpThongKeSanPham.ResumeLayout(false);
+            this.tp_ST_Product_dgvContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tp_ST_Product_dgvProduct)).EndInit();
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tp_ST_Product_txtVisibleNumber)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -977,7 +1339,6 @@ namespace QuanLySach
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TabPage tpThongKeSanPham;
         private System.Windows.Forms.TabPage tpThongKeDoanhThu;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabPage tpThongKeNhanVien;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel tssLoginInfo;
@@ -998,6 +1359,37 @@ namespace QuanLySach
         private System.Windows.Forms.Button btnFilterBillCurrentMonth;
         private System.Windows.Forms.Button btnFilterBillInRange;
         private System.Windows.Forms.TextBox txtFilterBillByCPhone;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox tp_ST_Product_txtBookname;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.ComboBox tp_ST_Product_cbCategory;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.NumericUpDown tp_ST_Product_txtVisibleNumber;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button tp_ST_Product_btnDesc;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.ComboBox tp_ST_Product_cbBranches;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.DateTimePicker tp_ST_Product_dtpFrom;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.DateTimePicker tp_ST_Product_dtpTo;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button tp_ST_Product_btnReset;
+        private System.Windows.Forms.Button tp_ST_Product_btnToday;
+        private System.Windows.Forms.Button tp_ST_Product_btnThisMonth;
+        private System.Windows.Forms.Button tp_ST_Product_btnST;
+        private System.Windows.Forms.Button tp_ST_Product_btnAsc;
+        private System.Windows.Forms.GroupBox tp_ST_Product_dgvContainer;
+        private System.Windows.Forms.DataGridView tp_ST_Product_dgvProduct;
     }
 }
 
