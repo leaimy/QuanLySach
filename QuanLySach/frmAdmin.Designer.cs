@@ -998,6 +998,7 @@ namespace QuanLySach
             this.tp_ST_Product_btnToday.TabIndex = 16;
             this.tp_ST_Product_btnToday.Text = "Hôm nay";
             this.tp_ST_Product_btnToday.UseVisualStyleBackColor = false;
+            this.tp_ST_Product_btnToday.Click += new System.EventHandler(this.tp_ST_Product_btnToday_Click);
             // 
             // tp_ST_Product_btnThisMonth
             // 

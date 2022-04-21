@@ -378,5 +378,9 @@ namespace QuanLySach
         }
         #endregion
 
+        private void tp_ST_Product_btnToday_Click(object sender, EventArgs e)
+        {
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.FetchStatisticsToDay());
+        }
     }
 }
