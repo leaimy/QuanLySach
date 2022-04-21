@@ -14,6 +14,10 @@ namespace QuanLySach.App
         public DateTime ToDate { get; set; }
         public int VisibleLimit { get; set; }
 
+        private bool sortQuantityDesc = true;
+        private bool sortPriceDesc = true;
+        private bool sortTotalDesc = true;
+
         private ProductStatisticController()
         {
             statistics = new List<TKSanPhamDTO>();
@@ -102,14 +106,56 @@ namespace QuanLySach.App
             Name = Name.ToLower().Trim();
             if (string.IsNullOrEmpty(Name)) return Take(VisibleLimit);
 
-            return statistics.Where(s => s.TenSP.ToLower().Contains(Name)).Take(VisibleLimit).ToList();    
+            return statistics.Where(s => s.TenSP.ToLower().Contains(Name)).Take(VisibleLimit).ToList();
+        }
+
+        public void ToggleSortQuantity()
+        {
+            SortByQuantity(sortQuantityDesc);
+            sortQuantityDesc = !sortQuantityDesc;
+        }
+
+        public void ToggleSortPrice()
+        {
+            SortByPrice(sortPriceDesc);
+            sortPriceDesc = !sortPriceDesc;
+        }
+
+        public void ToggleSortTotal()
+        {
+            SortByTotal(sortTotalDesc);
+            sortTotalDesc = !sortTotalDesc;
+        }
+
+        public void SortByQuantity(bool Desc = true)
+        {
+            if (!Desc)
+                statistics = statistics.OrderBy(s => s.SoLuongBan).ToList();
+            else
+                statistics = statistics.OrderByDescending(s => s.SoLuongBan).ToList();
+        }
+
+        public void SortByPrice(bool Desc = true)
+        {
+            if (!Desc)
+                statistics = statistics.OrderBy(s => s.GiaBan).ToList();
+            else
+                statistics = statistics.OrderByDescending(s => s.GiaBan).ToList();
+        }
+
+        public void SortByTotal(bool Desc = true)
+        {
+            if (!Desc)
+                statistics = statistics.OrderBy(s => s.UocLuongSoTien).ToList();
+            else
+                statistics = statistics.OrderByDescending(s => s.UocLuongSoTien).ToList();
         }
 
         public List<TKSanPhamDTO> Take(int Number)
         {
             return statistics.Take(Number).ToList();
         }
-        
+
         public List<TKSanPhamDTO> Clone()
         {
             return statistics.GetRange(0, statistics.Count);

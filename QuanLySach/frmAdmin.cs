@@ -394,7 +394,30 @@ namespace QuanLySach
             tp_ST_Product_txtBookname.ResetText();
             tp_ST_Product_cbCategory.ResetText();
         }
-        #endregion
 
+        private void tp_ST_Product_dgvProduct_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case 4:
+                    ProductStatisticController.Instance.ToggleSortQuantity();
+                    break;
+
+                case 5:
+                    ProductStatisticController.Instance.ToggleSortPrice();
+                    break;
+
+                case 6:
+                    ProductStatisticController.Instance.ToggleSortTotal();
+                    break;
+
+                default:
+                    return;
+            }
+
+            int visibleCount = Convert.ToInt32(tp_ST_Product_txtVisibleNumber.Value);
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.Take(visibleCount));
+        }
+        #endregion
     }
 }

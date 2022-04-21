@@ -103,7 +103,6 @@ namespace QuanLySach
             this.tpThongKeSanPham = new System.Windows.Forms.TabPage();
             this.tp_ST_Product_dgvContainer = new System.Windows.Forms.GroupBox();
             this.tp_ST_Product_dgvProduct = new System.Windows.Forms.DataGridView();
-            this.tp_ST_Product_btnAsc = new System.Windows.Forms.Button();
             this.tp_ST_Product_btnReset = new System.Windows.Forms.Button();
             this.tp_ST_Product_btnToday = new System.Windows.Forms.Button();
             this.tp_ST_Product_btnThisMonth = new System.Windows.Forms.Button();
@@ -117,7 +116,6 @@ namespace QuanLySach
             this.panel11 = new System.Windows.Forms.Panel();
             this.tp_ST_Product_cbBranches = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.tp_ST_Product_btnDesc = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tp_ST_Product_txtVisibleNumber = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
@@ -917,7 +915,6 @@ namespace QuanLySach
             // tpThongKeSanPham
             // 
             this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_dgvContainer);
-            this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnAsc);
             this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnReset);
             this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnToday);
             this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnThisMonth);
@@ -925,7 +922,6 @@ namespace QuanLySach
             this.tpThongKeSanPham.Controls.Add(this.panel17);
             this.tpThongKeSanPham.Controls.Add(this.panel14);
             this.tpThongKeSanPham.Controls.Add(this.panel11);
-            this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnDesc);
             this.tpThongKeSanPham.Controls.Add(this.panel8);
             this.tpThongKeSanPham.Controls.Add(this.panel7);
             this.tpThongKeSanPham.Controls.Add(this.panel6);
@@ -965,17 +961,7 @@ namespace QuanLySach
             this.tp_ST_Product_dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tp_ST_Product_dgvProduct.Size = new System.Drawing.Size(1034, 506);
             this.tp_ST_Product_dgvProduct.TabIndex = 0;
-            // 
-            // tp_ST_Product_btnAsc
-            // 
-            this.tp_ST_Product_btnAsc.BackColor = System.Drawing.Color.Transparent;
-            this.tp_ST_Product_btnAsc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tp_ST_Product_btnAsc.Location = new System.Drawing.Point(678, 64);
-            this.tp_ST_Product_btnAsc.Name = "tp_ST_Product_btnAsc";
-            this.tp_ST_Product_btnAsc.Size = new System.Drawing.Size(60, 37);
-            this.tp_ST_Product_btnAsc.TabIndex = 18;
-            this.tp_ST_Product_btnAsc.Text = "A-Z";
-            this.tp_ST_Product_btnAsc.UseVisualStyleBackColor = false;
+            this.tp_ST_Product_dgvProduct.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tp_ST_Product_dgvProduct_ColumnHeaderMouseClick);
             // 
             // tp_ST_Product_btnReset
             // 
@@ -1104,17 +1090,6 @@ namespace QuanLySach
             this.label17.Size = new System.Drawing.Size(74, 17);
             this.label17.TabIndex = 0;
             this.label17.Text = "Chi nhánh";
-            // 
-            // tp_ST_Product_btnDesc
-            // 
-            this.tp_ST_Product_btnDesc.BackColor = System.Drawing.Color.Transparent;
-            this.tp_ST_Product_btnDesc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tp_ST_Product_btnDesc.Location = new System.Drawing.Point(744, 64);
-            this.tp_ST_Product_btnDesc.Name = "tp_ST_Product_btnDesc";
-            this.tp_ST_Product_btnDesc.Size = new System.Drawing.Size(60, 37);
-            this.tp_ST_Product_btnDesc.TabIndex = 11;
-            this.tp_ST_Product_btnDesc.Text = "Z-A";
-            this.tp_ST_Product_btnDesc.UseVisualStyleBackColor = false;
             // 
             // panel8
             // 
@@ -1379,7 +1354,6 @@ namespace QuanLySach
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.NumericUpDown tp_ST_Product_txtVisibleNumber;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button tp_ST_Product_btnDesc;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.ComboBox tp_ST_Product_cbBranches;
         private System.Windows.Forms.Label label17;
@@ -1393,7 +1367,6 @@ namespace QuanLySach
         private System.Windows.Forms.Button tp_ST_Product_btnToday;
         private System.Windows.Forms.Button tp_ST_Product_btnThisMonth;
         private System.Windows.Forms.Button tp_ST_Product_btnST;
-        private System.Windows.Forms.Button tp_ST_Product_btnAsc;
         private System.Windows.Forms.GroupBox tp_ST_Product_dgvContainer;
         private System.Windows.Forms.DataGridView tp_ST_Product_dgvProduct;
     }
