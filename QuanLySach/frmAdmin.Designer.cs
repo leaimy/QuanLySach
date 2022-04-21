@@ -1010,6 +1010,7 @@ namespace QuanLySach
             this.tp_ST_Product_btnThisMonth.TabIndex = 15;
             this.tp_ST_Product_btnThisMonth.Text = "Tháng này";
             this.tp_ST_Product_btnThisMonth.UseVisualStyleBackColor = false;
+            this.tp_ST_Product_btnThisMonth.Click += new System.EventHandler(this.tp_ST_Product_btnThisMonth_Click);
             // 
             // tp_ST_Product_btnST
             // 

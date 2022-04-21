@@ -382,5 +382,10 @@ namespace QuanLySach
         {
             RenderProductStatisticDataGridView(ProductStatisticController.Instance.FetchStatisticsToDay());
         }
+
+        private void tp_ST_Product_btnThisMonth_Click(object sender, EventArgs e)
+        {
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.FetchStatisticsThisMonth());
+        }
     }
 }
