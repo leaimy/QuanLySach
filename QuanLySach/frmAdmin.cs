@@ -444,7 +444,7 @@ namespace QuanLySach
                 string password = frm.Password;
                 RoleEnum role = frm.Role;
                 int userID = frm.UserID;
-                
+
                 try
                 {
                     AccountController.Instance.CreateNewAccount(loginName, password, role, userID);
@@ -461,7 +461,7 @@ namespace QuanLySach
 
         private void tp_Account_btnReload_Click(object sender, EventArgs e)
         {
-            RenderAccountDatagridview(AccountController.Instance.FetchStaffs());
+            RenderAccountDatagridview(AccountController.Instance.Clone());
         }
 
         private void RenderAccountDatagridview(List<NhanVienDTO> staffs)
@@ -480,6 +480,20 @@ namespace QuanLySach
             tp_Account_dgvAccount.Columns[9].HeaderText = "Tên CN";
             tp_Account_dgvAccount.Columns[10].HeaderText = "Họ tên";
         }
+
+        private void tp_Account_cbRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tp_Account_cbRoles.SelectedIndex == -1) return;
+
+            var selectedItem = tp_Account_cbRoles.SelectedItem as Role;
+            RenderAccountDatagridview(AccountController.Instance.FilterByRole(selectedItem.Code));
+        }
+
+        private void tp_Account_cbBranches_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
         #endregion
+
     }
 }

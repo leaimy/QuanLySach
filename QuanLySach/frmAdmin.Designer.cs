@@ -1291,6 +1291,7 @@ namespace QuanLySach
             this.tp_Account_cbBranches.Name = "tp_Account_cbBranches";
             this.tp_Account_cbBranches.Size = new System.Drawing.Size(229, 25);
             this.tp_Account_cbBranches.TabIndex = 1;
+            this.tp_Account_cbBranches.SelectedIndexChanged += new System.EventHandler(this.tp_Account_cbBranches_SelectedIndexChanged);
             // 
             // label24
             // 
@@ -1345,6 +1346,7 @@ namespace QuanLySach
             this.tp_Account_cbRoles.Name = "tp_Account_cbRoles";
             this.tp_Account_cbRoles.Size = new System.Drawing.Size(229, 25);
             this.tp_Account_cbRoles.TabIndex = 2;
+            this.tp_Account_cbRoles.SelectedIndexChanged += new System.EventHandler(this.tp_Account_cbRoles_SelectedIndexChanged);
             // 
             // frmQuanLySach
             // 

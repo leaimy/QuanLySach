@@ -42,5 +42,15 @@ namespace QuanLySach.App
             TaiKhoanDAO.Instance.CreateAccount(loginName, password, role, staffID);
             FetchStaffs();
         }
+
+        public List<NhanVienDTO> FilterByRole(RoleEnum role)
+        {
+            string roleStr = "NHANVIEN";
+
+            if (role == RoleEnum.QLCHINHANH) roleStr = "QLCHINHANH";
+            else if (role == RoleEnum.GIAMDOC) roleStr = "GIAMDOC";
+
+            return staffs.Where(s => s.ChucVu == roleStr).ToList();
+        }
     }
 }
