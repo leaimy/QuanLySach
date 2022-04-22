@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App.models
 {
-    internal enum RoleEnum
+    public enum RoleEnum
     {
         GIAMDOC,
         QLCHINHANH,

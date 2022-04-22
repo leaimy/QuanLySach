@@ -1,4 +1,5 @@
-﻿using QuanLySach.DAO;
+﻿using QuanLySach.App.models;
+using QuanLySach.DAO;
 using QuanLySach.DTO;
 using System;
 using System.Collections.Generic;
@@ -35,5 +36,11 @@ namespace QuanLySach.App
         }
 
         public List<NhanVienDTO> Clone() => staffs.GetRange(0, staffs.Count);
+
+        public void CreateNewAccount(string loginName, string password, RoleEnum role, int staffID)
+        {
+            TaiKhoanDAO.Instance.CreateAccount(loginName, password, role, staffID);
+            FetchStaffs();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using QuanLySach.App;
+using QuanLySach.App.models;
 using QuanLySach.DAO;
 using QuanLySach.DTO;
 using QuanLySach.DTO.Statistics;
@@ -74,19 +75,7 @@ namespace QuanLySach
             tp_Account_cbBranches.ValueMember = "Code";
             tp_Account_cbBranches.DisplayMember = "Title";
 
-            tp_Account_dgvAccount.DataSource = AccountController.Instance.FetchStaffs();
-            tp_Account_dgvAccount.Columns[1].Visible = false;
-            tp_Account_dgvAccount.Columns[3].Visible = false;
-            tp_Account_dgvAccount.Columns[4].Visible = false;
-            tp_Account_dgvAccount.Columns[5].Visible = false;
-            tp_Account_dgvAccount.Columns[6].Visible = false;
-            tp_Account_dgvAccount.Columns[7].Visible = false;
-            tp_Account_dgvAccount.Columns[8].Visible = false;
-
-            tp_Account_dgvAccount.Columns[0].HeaderText = "Mã NV";
-            tp_Account_dgvAccount.Columns[2].HeaderText = "Chức Vụ";
-            tp_Account_dgvAccount.Columns[9].HeaderText = "Tên CN";
-            tp_Account_dgvAccount.Columns[10].HeaderText = "Họ tên";
+            RenderAccountDatagridview(AccountController.Instance.FetchStaffs());
             #endregion
 
             #region Thong Ke San Pham
@@ -442,6 +431,54 @@ namespace QuanLySach
 
             int visibleCount = Convert.ToInt32(tp_ST_Product_txtVisibleNumber.Value);
             RenderProductStatisticDataGridView(ProductStatisticController.Instance.Take(visibleCount));
+        }
+        #endregion
+
+        #region Tai Khoan
+        private void tp_Account_btnAdd_Click(object sender, EventArgs e)
+        {
+            var frm = new frmThemTaiKhoan();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                string loginName = frm.LoginName;
+                string password = frm.Password;
+                RoleEnum role = frm.Role;
+                int userID = frm.UserID;
+                
+                try
+                {
+                    AccountController.Instance.CreateNewAccount(loginName, password, role, userID);
+                    RenderAccountDatagridview(AccountController.Instance.Clone());
+
+                    MessageBox.Show("Tạo tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void tp_Account_btnReload_Click(object sender, EventArgs e)
+        {
+            RenderAccountDatagridview(AccountController.Instance.FetchStaffs());
+        }
+
+        private void RenderAccountDatagridview(List<NhanVienDTO> staffs)
+        {
+            tp_Account_dgvAccount.DataSource = staffs;
+            tp_Account_dgvAccount.Columns[1].Visible = false;
+            tp_Account_dgvAccount.Columns[3].Visible = false;
+            tp_Account_dgvAccount.Columns[4].Visible = false;
+            tp_Account_dgvAccount.Columns[5].Visible = false;
+            tp_Account_dgvAccount.Columns[6].Visible = false;
+            tp_Account_dgvAccount.Columns[7].Visible = false;
+            tp_Account_dgvAccount.Columns[8].Visible = false;
+
+            tp_Account_dgvAccount.Columns[0].HeaderText = "Mã NV";
+            tp_Account_dgvAccount.Columns[2].HeaderText = "Chức Vụ";
+            tp_Account_dgvAccount.Columns[9].HeaderText = "Tên CN";
+            tp_Account_dgvAccount.Columns[10].HeaderText = "Họ tên";
         }
         #endregion
     }

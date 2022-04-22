@@ -1243,6 +1243,7 @@ namespace QuanLySach
             this.tp_Account_btnAdd.TabIndex = 6;
             this.tp_Account_btnAdd.Text = "Thêm mới";
             this.tp_Account_btnAdd.UseVisualStyleBackColor = false;
+            this.tp_Account_btnAdd.Click += new System.EventHandler(this.tp_Account_btnAdd_Click);
             // 
             // panel22
             // 
@@ -1272,6 +1273,7 @@ namespace QuanLySach
             this.tp_Account_btnReload.TabIndex = 5;
             this.tp_Account_btnReload.Text = "Tải lại danh sách";
             this.tp_Account_btnReload.UseVisualStyleBackColor = false;
+            this.tp_Account_btnReload.Click += new System.EventHandler(this.tp_Account_btnReload_Click);
             // 
             // panel23
             // 
