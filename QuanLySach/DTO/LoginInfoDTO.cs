@@ -19,8 +19,29 @@ namespace QuanLySach.DTO
 
         public LoginInfoDTO(DataRow row)
         {
-            NhanVienID = Convert.ToInt32(row["Id"]);
-            VaiTro = row["ROLENAME"].ToString();
+            try
+            {
+                NhanVienID = Convert.ToInt32(row["Id"]);
+            }
+            catch { }
+
+            try
+            {
+                VaiTro = row["ROLENAME"].ToString();
+            }
+            catch { }
+
+            try
+            {
+                NhanVienID = Convert.ToInt32(row["UserName"]);
+            }
+            catch { }
+
+            try
+            {
+                VaiTro = row["RoleName"].ToString();
+            }
+            catch { }
         }
     }
 }

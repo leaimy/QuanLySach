@@ -64,6 +64,31 @@ namespace QuanLySach
             RenderHoaDonDatagridview(BillController.Instance.GetBillsToday());
             #endregion
 
+            #region Tai Khoan 
+            tp_Account_cbRoles.DataSource = RoleController.Instance.GetRolesForCombobox();
+            tp_Account_cbRoles.ValueMember = "Code";
+            tp_Account_cbRoles.DisplayMember = "Title";
+            tp_Account_cbRoles.ResetText();
+
+            tp_Account_cbBranches.DataSource = BranchController.Instance.GetBranchesForCombobox();
+            tp_Account_cbBranches.ValueMember = "Code";
+            tp_Account_cbBranches.DisplayMember = "Title";
+
+            tp_Account_dgvAccount.DataSource = AccountController.Instance.FetchStaffs();
+            tp_Account_dgvAccount.Columns[1].Visible = false;
+            tp_Account_dgvAccount.Columns[3].Visible = false;
+            tp_Account_dgvAccount.Columns[4].Visible = false;
+            tp_Account_dgvAccount.Columns[5].Visible = false;
+            tp_Account_dgvAccount.Columns[6].Visible = false;
+            tp_Account_dgvAccount.Columns[7].Visible = false;
+            tp_Account_dgvAccount.Columns[8].Visible = false;
+
+            tp_Account_dgvAccount.Columns[0].HeaderText = "Mã NV";
+            tp_Account_dgvAccount.Columns[2].HeaderText = "Chức Vụ";
+            tp_Account_dgvAccount.Columns[9].HeaderText = "Tên CN";
+            tp_Account_dgvAccount.Columns[10].HeaderText = "Họ tên";
+            #endregion
+
             #region Thong Ke San Pham
             tp_ST_Product_cbCategory.DataSource = CategoryController.Instance.GetChildCategoriesForCombobox();
             tp_ST_Product_cbCategory.ValueMember = "MaLoaiSP";

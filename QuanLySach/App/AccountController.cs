@@ -1,0 +1,39 @@
+﻿using QuanLySach.DAO;
+using QuanLySach.DTO;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace QuanLySach.App
+{
+    internal class AccountController
+    {
+        private AccountController()
+        {
+            staffs = new List<NhanVienDTO>();
+        }
+
+        private static AccountController instance;
+        public static AccountController Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new AccountController();
+                return instance;
+            }
+        }
+
+        private List<NhanVienDTO> staffs;
+
+        public List<NhanVienDTO> FetchStaffs()
+        {
+            staffs = TaiKhoanDAO.Instance.GetAccounts();
+            return Clone();
+        }
+
+        public List<NhanVienDTO> Clone() => staffs.GetRange(0, staffs.Count);
+    }
+}

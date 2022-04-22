@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\AccountController.cs" />
     <Compile Include="App\AppManager.cs" />
     <Compile Include="App\BillController.cs" />
     <Compile Include="App\BranchController.cs" />
@@ -55,9 +56,12 @@
     <Compile Include="App\models\CartItem.cs" />
     <Compile Include="App\models\ChiNhanhEnum.cs" />
     <Compile Include="App\models\Customer.cs" />
+    <Compile Include="App\models\Role.cs" />
+    <Compile Include="App\models\RoleEnum.cs" />
     <Compile Include="App\models\User.cs" />
     <Compile Include="App\ProductController.cs" />
     <Compile Include="App\ProductStatisticController.cs" />
+    <Compile Include="App\RoleController.cs" />
     <Compile Include="App\StaffController.cs" />
     <Compile Include="App\UIController.cs" />
     <Compile Include="Common\CustomerFakeData.cs" />
@@ -70,6 +74,7 @@
     <Compile Include="DAO\LoaiSanPhamDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DAO\SanPhamDAO.cs" />
+    <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="DAO\ThongKeDAO.cs" />
     <Compile Include="DTO\ChiNhanhDTO.cs" />
     <Compile Include="DTO\ChiTietHoaDonDTO.cs" />
