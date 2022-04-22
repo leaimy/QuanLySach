@@ -17,6 +17,8 @@ namespace QuanLySach
 {
     public partial class frmQuanLySach : Form
     {
+        private bool isFirstLoad = true;
+
         public frmQuanLySach()
         {
             InitializeComponent();
@@ -61,6 +63,7 @@ namespace QuanLySach
             cbTenNV.DataSource = StaffController.Instance.GetStaffsForCombobox();
             cbTenNV.ValueMember = "MaNhanVien";
             cbTenNV.DisplayMember = "HoVaTen";
+            cbTenNV.SelectedIndex = -1;
 
             RenderHoaDonDatagridview(BillController.Instance.GetBillsToday());
             #endregion
@@ -69,11 +72,12 @@ namespace QuanLySach
             tp_Account_cbRoles.DataSource = RoleController.Instance.GetRolesForCombobox();
             tp_Account_cbRoles.ValueMember = "Code";
             tp_Account_cbRoles.DisplayMember = "Title";
-            tp_Account_cbRoles.ResetText();
+            tp_Account_cbRoles.SelectedIndex = -1;
 
             tp_Account_cbBranches.DataSource = BranchController.Instance.GetBranchesForCombobox();
             tp_Account_cbBranches.ValueMember = "Code";
             tp_Account_cbBranches.DisplayMember = "Title";
+            tp_Account_cbBranches.SelectedIndex = -1;
 
             RenderAccountDatagridview(AccountController.Instance.FetchStaffs());
             #endregion
@@ -82,13 +86,17 @@ namespace QuanLySach
             tp_ST_Product_cbCategory.DataSource = CategoryController.Instance.GetChildCategoriesForCombobox();
             tp_ST_Product_cbCategory.ValueMember = "MaLoaiSP";
             tp_ST_Product_cbCategory.DisplayMember = "TenLoaiSP";
+            tp_ST_Product_cbCategory.SelectedIndex = -1;
 
             tp_ST_Product_cbBranches.DataSource = BranchController.Instance.GetBranchesForCombobox();
             tp_ST_Product_cbBranches.ValueMember = "Code";
             tp_ST_Product_cbBranches.DisplayMember = "Title";
+            tp_ST_Product_cbBranches.SelectedIndex = -1;
 
             tp_ST_Product_txtVisibleNumber.Value = 10;
             #endregion
+
+            isFirstLoad = false;
         }
 
         #region Loai San Pham
@@ -483,7 +491,7 @@ namespace QuanLySach
 
         private void tp_Account_cbRoles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tp_Account_cbRoles.SelectedIndex == -1) return;
+            if (isFirstLoad) return;
 
             var selectedItem = tp_Account_cbRoles.SelectedItem as Role;
             RenderAccountDatagridview(AccountController.Instance.FilterByRole(selectedItem.Code));
@@ -491,7 +499,12 @@ namespace QuanLySach
 
         private void tp_Account_cbBranches_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return; 
 
+            var selectItem = tp_Account_cbBranches.SelectedItem as Branch;
+            DataProvider.Instance.SetRemoteAccount(selectItem.Code);
+
+            RenderAccountDatagridview(AccountController.Instance.FetchStaffs());
         }
         #endregion
 
