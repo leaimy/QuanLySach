@@ -30,7 +30,7 @@ namespace QuanLySach
             {
                 AppManager.Instance.IsNewLoggedInSession = false;
 
-                StaffController.Instance.FetchNew();
+                StaffController.Instance.GetStaffs();
             }
 
             UIController.Instance.DisplayStatusBar(tssLoginInfo);
@@ -53,6 +53,11 @@ namespace QuanLySach
             #endregion
 
             #region Nhan Vien 
+            cbChiNhanhNV.DataSource = BranchController.Instance.GetBranchesForCombobox();
+            cbChiNhanhNV.ValueMember = "Code";
+            cbChiNhanhNV.DisplayMember = "Title";
+            cbChiNhanhNV.SelectedIndex = -1;
+
             RenderNhanVienDatagridview(StaffController.Instance.GetStaffs());
             #endregion
 
@@ -260,6 +265,23 @@ namespace QuanLySach
             }
 
             RenderNhanVienDatagridview(StaffController.Instance.FilterByPhoneNumber(keyword));
+        }
+
+        private void cbChiNhanhNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isFirstLoad) return;
+
+            var selectItem = cbChiNhanhNV.SelectedItem as Branch;
+            DataProvider.Instance.SetRemoteAccount(selectItem.Code);
+
+            if (selectItem.Code == ChiNhanhEnum.CN_GOC)
+            {
+                RenderNhanVienDatagridview(StaffController.Instance.GetStaffsAllBranch());
+            }
+            else
+            {
+                RenderNhanVienDatagridview(StaffController.Instance.GetStaffs());
+            }
         }
         #endregion
 

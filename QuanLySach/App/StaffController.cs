@@ -29,7 +29,14 @@ namespace QuanLySach.App
 
         public List<NhanVienDTO> GetStaffs()
         {
-            return staffs.GetRange(0, staffs.Count);
+            staffs = NhanVienDAO.Instance.GetAllStaffWithBranch();
+            return Clone();
+        }
+
+        public List<NhanVienDTO> GetStaffsAllBranch()
+        {
+            staffs = NhanVienDAO.Instance.GetAllStaffAllBranch();
+            return Clone();
         }
 
         public List<NhanVienDTO> GetStaffsForCombobox()
@@ -51,9 +58,6 @@ namespace QuanLySach.App
             return staffs.Where(s => s.SDT.Contains(phone)).ToList();
         }
 
-        public void FetchNew()
-        {
-            staffs = NhanVienDAO.Instance.GetAllStaffWithBranch();
-        }
+        public List<NhanVienDTO> Clone() => staffs.GetRange(0, staffs.Count);
     }
 }
