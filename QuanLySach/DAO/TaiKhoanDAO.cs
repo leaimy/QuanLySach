@@ -43,6 +43,22 @@ namespace QuanLySach.DAO
             return accounts;
         }
 
+        public List<LoginInfoDTO> GetAccountsRawAllBranch()
+        {
+            List<LoginInfoDTO> accounts = new List<LoginInfoDTO>();
+
+            string query = "EXEC dbo.sp_GetLoginsAllBranch";
+
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow row in table.Rows)
+            {
+                accounts.Add(new LoginInfoDTO(row));
+            }
+
+            return accounts;
+        }
+
         public List<NhanVienDTO> GetAccounts()
         {
             List<NhanVienDTO> staffs = NhanVienDAO.Instance.GetAllStaffWithBranch();
@@ -51,6 +67,31 @@ namespace QuanLySach.DAO
             staffs.ForEach(s => lookup[s.MaNhanVien] = s);
 
             List<LoginInfoDTO> accounts = GetAccountsRaw();
+
+            foreach (LoginInfoDTO account in accounts)
+            {
+                try
+                {
+                    lookup[account.NhanVienID].ChucVu = account.VaiTro;
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+
+
+            return staffs;
+        }
+
+        public List<NhanVienDTO> GetAccountsAllBranch()
+        {
+            List<NhanVienDTO> staffs = NhanVienDAO.Instance.GetAllStaffAllBranch();
+
+            Dictionary<int, NhanVienDTO> lookup = new Dictionary<int, NhanVienDTO>();
+            staffs.ForEach(s => lookup[s.MaNhanVien] = s);
+
+            List<LoginInfoDTO> accounts = GetAccountsRawAllBranch();
 
             foreach (LoginInfoDTO account in accounts)
             {

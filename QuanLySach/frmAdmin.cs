@@ -142,6 +142,7 @@ namespace QuanLySach
 
         private void cbFilterLoaiSPCha_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return;
             if (cbFilterLoaiSPCha.SelectedIndex == -1) return;
 
             LoaiSanPhamDTO selected = cbFilterLoaiSPCha.SelectedItem as LoaiSanPhamDTO;
@@ -178,6 +179,7 @@ namespace QuanLySach
 
         private void cbLoaiSach_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return;
             if (cbLoaiSach.SelectedIndex == -1) return;
 
             var selected = cbLoaiSach.SelectedItem as LoaiSanPhamDTO;
@@ -314,6 +316,8 @@ namespace QuanLySach
 
         private void cbTenNV_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return;
+
             if (cbTenNV.SelectedIndex == -1) return;
 
             var selected = cbTenNV.SelectedItem as NhanVienDTO;
@@ -355,6 +359,8 @@ namespace QuanLySach
 
         private void tp_ST_Product_cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return;
+
             if (tp_ST_Product_cbCategory.SelectedIndex == -1)
                 return;
 
@@ -499,12 +505,19 @@ namespace QuanLySach
 
         private void tp_Account_cbBranches_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (isFirstLoad) return; 
+            if (isFirstLoad) return;
 
             var selectItem = tp_Account_cbBranches.SelectedItem as Branch;
             DataProvider.Instance.SetRemoteAccount(selectItem.Code);
 
-            RenderAccountDatagridview(AccountController.Instance.FetchStaffs());
+            if (selectItem.Code == ChiNhanhEnum.CN_GOC)
+            {
+                RenderAccountDatagridview(AccountController.Instance.FetchStaffsAllBranch());
+            }
+            else
+            {
+                RenderAccountDatagridview(AccountController.Instance.FetchStaffs());
+            }
         }
         #endregion
 

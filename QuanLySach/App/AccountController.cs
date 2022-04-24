@@ -35,6 +35,12 @@ namespace QuanLySach.App
             return Clone();
         }
 
+        public List<NhanVienDTO> FetchStaffsAllBranch()
+        {
+            staffs = TaiKhoanDAO.Instance.GetAccountsAllBranch();
+            return Clone();
+        }
+
         public List<NhanVienDTO> Clone() => staffs.GetRange(0, staffs.Count);
 
         public void CreateNewAccount(string loginName, string password, RoleEnum role, int staffID)
