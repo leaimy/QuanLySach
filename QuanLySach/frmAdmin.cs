@@ -274,6 +274,8 @@ namespace QuanLySach
             var selectItem = cbChiNhanhNV.SelectedItem as Branch;
             DataProvider.Instance.SetRemoteAccount(selectItem.Code);
 
+            AppManager.Instance.User.SetBranchName(selectItem.Code);
+
             if (selectItem.Code == ChiNhanhEnum.CN_GOC)
             {
                 RenderNhanVienDatagridview(StaffController.Instance.GetStaffsAllBranch());
@@ -531,6 +533,8 @@ namespace QuanLySach
 
             var selectItem = tp_Account_cbBranches.SelectedItem as Branch;
             DataProvider.Instance.SetRemoteAccount(selectItem.Code);
+
+            AppManager.Instance.User.SetBranchName(selectItem.Code);
 
             if (selectItem.Code == ChiNhanhEnum.CN_GOC)
             {
