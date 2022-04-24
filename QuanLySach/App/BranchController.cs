@@ -30,8 +30,8 @@ namespace QuanLySach.App
         {
             List<Branch> branches = new List<Branch>()
             {
-                new Branch() { Title = "Chi nhánh 01", Code = ChiNhanhEnum.CN_1 },
-                new Branch() { Title = "Chi nhánh 02", Code = ChiNhanhEnum.CN_2 },
+                new Branch() { Title = "Chi nhánh Đà Lạt", Code = ChiNhanhEnum.CN_1 },
+                new Branch() { Title = "Chi nhánh Bảo Lộc", Code = ChiNhanhEnum.CN_2 },
                 new Branch() { Title = "Tất cả", Code = ChiNhanhEnum.CN_GOC },
             };
 
