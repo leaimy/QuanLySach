@@ -70,6 +70,11 @@ namespace QuanLySach
             cbTenNV.DisplayMember = "HoVaTen";
             cbTenNV.SelectedIndex = -1;
 
+            cbChiNhanh.DataSource = BranchController.Instance.GetBranchesForCombobox();
+            cbChiNhanh.ValueMember = "Code";
+            cbChiNhanh.DisplayMember = "Title";
+            cbChiNhanh.SelectedIndex = -1;
+
             RenderHoaDonDatagridview(BillController.Instance.GetBillsToday());
             #endregion
 
@@ -352,6 +357,25 @@ namespace QuanLySach
         {
             var keyword = txtFilterBillByCPhone.Text.Trim();
             RenderHoaDonDatagridview(BillController.Instance.FilterByCustomerPhoneNumber(keyword));
+        }
+
+        private void cbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isFirstLoad) return;
+
+            var selectItem = cbChiNhanh.SelectedItem as Branch;
+            DataProvider.Instance.SetRemoteAccount(selectItem.Code);
+
+            AppManager.Instance.User.SetBranchName(selectItem.Code);
+
+            if (selectItem.Code == ChiNhanhEnum.CN_GOC)
+            {
+                RenderHoaDonDatagridview(BillController.Instance.GetBillsAllBranch());
+            }
+            else
+            {
+                RenderHoaDonDatagridview(BillController.Instance.Refetch());
+            }
         }
         #endregion
 

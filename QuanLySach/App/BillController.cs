@@ -120,6 +120,17 @@ namespace QuanLySach.App
             return Clone();
         }
 
+        public List<HoaDonDTO> Refetch()
+        {
+            return GetBillsInRange(From, To);
+        }
+
+        public List<HoaDonDTO> GetBillsAllBranch()
+        {
+            bills = HoaDonDAO.Instance.GetBillsInRangeAllBranch(From, To);
+            return Clone();
+        }
+
         public bool CreateBill()
         {
             int MaNV = AppManager.Instance.User.MaNhanVien;
