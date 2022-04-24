@@ -62,5 +62,42 @@ namespace QuanLySach.DAO
 
             return statistics;
         }
+
+        public List<TKSanPhamDTO> GetProductStatisticsAllBranch(DateTime From, DateTime To)
+        {
+            DateTime start = new DateTime(
+                From.Year,
+                From.Month,
+                From.Day,
+                0,
+                0,
+                0,
+                From.Kind
+            );
+
+            DateTime end = new DateTime(
+                To.Year,
+                To.Month,
+                To.Day,
+                23,
+                59,
+                59,
+                To.Kind
+            );
+
+            var statistics = new List<TKSanPhamDTO>();
+
+            var query = "EXEC dbo.sp_GetProductStatisticsAllBranch @From_Date , @To_Date";
+            object[] param = new object[] { start.ToString("yyyy-MM-dd HH:mm:ss"), end.ToString("yyyy-MM-dd HH:mm:ss") };
+
+            var table = DataProvider.Instance.ExecuteQuery(query, param);
+
+            foreach (DataRow item in table.Rows)
+            {
+                statistics.Add(new TKSanPhamDTO(item));
+            }
+
+            return statistics;
+        }
     }
 }

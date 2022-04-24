@@ -65,6 +65,12 @@ namespace QuanLySach.App
             return Take(VisibleLimit);
         }
 
+        public List<TKSanPhamDTO> Refetch()
+        {
+            FetchStatistics(FromDate, ToDate);
+            return Take(VisibleLimit);
+        }
+
         public List<TKSanPhamDTO> FetchStatisticsToDay()
         {
             FetchStatistics(DateTime.Now, DateTime.Now);
@@ -162,5 +168,11 @@ namespace QuanLySach.App
         }
 
         public int Count => statistics.Count;
+
+        public List<TKSanPhamDTO> FetchAllBranch()
+        {
+            statistics = ThongKeDAO.Instance.GetProductStatisticsAllBranch(FromDate, ToDate);
+            return Take(VisibleLimit);
+        }
     }
 }

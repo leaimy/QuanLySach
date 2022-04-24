@@ -470,6 +470,26 @@ namespace QuanLySach
             int visibleCount = Convert.ToInt32(tp_ST_Product_txtVisibleNumber.Value);
             RenderProductStatisticDataGridView(ProductStatisticController.Instance.Take(visibleCount));
         }
+
+        private void tp_ST_Product_cbBranches_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isFirstLoad) return;
+
+            var selectItem = tp_ST_Product_cbBranches.SelectedItem as Branch;
+            DataProvider.Instance.SetRemoteAccount(selectItem.Code);
+
+            AppManager.Instance.User.SetBranchName(selectItem.Code);
+
+            if (selectItem.Code == ChiNhanhEnum.CN_GOC)
+            {
+                RenderProductStatisticDataGridView(ProductStatisticController.Instance.FetchAllBranch());
+            }
+            else
+            {
+                RenderProductStatisticDataGridView(ProductStatisticController.Instance.Refetch());
+            }
+
+        }
         #endregion
 
         #region Tai Khoan

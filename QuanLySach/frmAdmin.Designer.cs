@@ -1241,6 +1241,7 @@ namespace QuanLySach
             this.tp_ST_Product_cbBranches.Name = "tp_ST_Product_cbBranches";
             this.tp_ST_Product_cbBranches.Size = new System.Drawing.Size(153, 25);
             this.tp_ST_Product_cbBranches.TabIndex = 1;
+            this.tp_ST_Product_cbBranches.SelectedIndexChanged += new System.EventHandler(this.tp_ST_Product_cbBranches_SelectedIndexChanged);
             // 
             // label17
             // 
