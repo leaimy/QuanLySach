@@ -72,9 +72,11 @@ namespace QuanLySach
                 frm.ShowDialog();
                 this.Show();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Đăng nhập không hợp lệ, vui lòng kiểm tra lại thông tin", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Hide();
+                this.Show();
             }
         }
 
