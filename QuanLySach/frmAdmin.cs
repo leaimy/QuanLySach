@@ -75,6 +75,8 @@ namespace QuanLySach
             cbChiNhanh.DisplayMember = "Title";
             cbChiNhanh.SelectedIndex = -1;
 
+            nmBillVisibleCounter.Value = 10;
+
             RenderHoaDonDatagridview(BillController.Instance.GetBillsToday());
             #endregion
 
@@ -340,7 +342,7 @@ namespace QuanLySach
             var toDate = dtpToDate.Value;
 
             BillController.Instance.GetBillsInRange(fromDate, toDate);
-            RenderHoaDonDatagridview(BillController.Instance.Clone());
+            RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
         }
 
         private void btnFilterMonthLastDate_Click(object sender, EventArgs e)
@@ -348,19 +350,19 @@ namespace QuanLySach
             var yesterday = DateTime.Today.AddDays(-1);
 
             BillController.Instance.GetBillsInRange(yesterday, yesterday);
-            RenderHoaDonDatagridview(BillController.Instance.Clone());
+            RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
         }
 
         private void btnFilterBillToday_Click(object sender, EventArgs e)
         {
             BillController.Instance.GetBillsToday();
-            RenderHoaDonDatagridview(BillController.Instance.Clone());
+            RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
         }
 
         private void btnFilterBillCurrentMonth_Click(object sender, EventArgs e)
         {
             BillController.Instance.GetBillsThisMonth();
-            RenderHoaDonDatagridview(BillController.Instance.Clone());
+            RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
         }
 
         private void cbTenNV_SelectedIndexChanged(object sender, EventArgs e)
@@ -392,11 +394,41 @@ namespace QuanLySach
 
             if (selectItem.Code == ChiNhanhEnum.CN_GOC)
             {
-                RenderHoaDonDatagridview(BillController.Instance.GetBillsAllBranch());
+                BillController.Instance.GetBillsAllBranch();
+                RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
             }
             else
             {
-                RenderHoaDonDatagridview(BillController.Instance.Refetch());
+                BillController.Instance.Refetch();
+                RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
+            }
+        }
+
+        private void btnBillResetFilter_Click(object sender, EventArgs e)
+        {
+            cbChiNhanh.SelectedIndex = -1;
+            cbTenNV.SelectedIndex = -1;
+            txtFilterBillByCPhone.ResetText();
+
+            RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
+        }
+
+        private void nmBillVisibleCounter_ValueChanged(object sender, EventArgs e)
+        {
+
+            RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
+        }
+
+        int getBillVisibleCount()
+        {
+            try
+            {
+                int visibleCount = Convert.ToInt32(nmBillVisibleCounter.Value);
+                return visibleCount > 0 ? visibleCount : 0;
+            }
+            catch
+            {
+                return 0;
             }
         }
         #endregion

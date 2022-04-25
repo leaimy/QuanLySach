@@ -32,6 +32,21 @@ namespace QuanLySach
             this.tcAdmin = new System.Windows.Forms.TabControl();
             this.tpHoaDon = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.panel30 = new System.Windows.Forms.Panel();
+            this.txtBillStaffCounter = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.txtBillCustomerCounter = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.txtBillNumberCounter = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.txtBillTotal = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.txtBillDiscountTotal = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtBillTotalExpected = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -139,24 +154,18 @@ namespace QuanLySach
             this.label8 = new System.Windows.Forms.Label();
             this.tpThongKeDoanhThu = new System.Windows.Forms.TabPage();
             this.tpThongKeNhanVien = new System.Windows.Forms.TabPage();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.txtBillDiscountTotal = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.txtBillTotal = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.txtBillNumberCounter = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.txtBillCustomerCounter = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.panel30 = new System.Windows.Forms.Panel();
-            this.txtBillStaffCounter = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
+            this.btnBillResetFilter = new System.Windows.Forms.Button();
+            this.panel31 = new System.Windows.Forms.Panel();
+            this.nmBillVisibleCounter = new System.Windows.Forms.NumericUpDown();
+            this.label31 = new System.Windows.Forms.Label();
             this.tcAdmin.SuspendLayout();
             this.tpHoaDon.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.panel30.SuspendLayout();
+            this.panel28.SuspendLayout();
+            this.panel26.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panel24.SuspendLayout();
             this.panel3.SuspendLayout();
             this.grBillContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
@@ -201,11 +210,8 @@ namespace QuanLySach
             ((System.ComponentModel.ISupportInitialize)(this.tp_ST_Product_txtVisibleNumber)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel24.SuspendLayout();
-            this.panel25.SuspendLayout();
-            this.panel26.SuspendLayout();
-            this.panel28.SuspendLayout();
-            this.panel30.SuspendLayout();
+            this.panel31.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmBillVisibleCounter)).BeginInit();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -254,6 +260,131 @@ namespace QuanLySach
             this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Số liệu thống kê";
+            // 
+            // panel30
+            // 
+            this.panel30.Controls.Add(this.txtBillStaffCounter);
+            this.panel30.Controls.Add(this.label30);
+            this.panel30.Location = new System.Drawing.Point(693, 64);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(326, 34);
+            this.panel30.TabIndex = 7;
+            // 
+            // txtBillStaffCounter
+            // 
+            this.txtBillStaffCounter.Location = new System.Drawing.Point(136, 5);
+            this.txtBillStaffCounter.Name = "txtBillStaffCounter";
+            this.txtBillStaffCounter.Size = new System.Drawing.Size(187, 25);
+            this.txtBillStaffCounter.TabIndex = 1;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(3, 8);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(118, 17);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "Lượng nhân viên";
+            // 
+            // panel28
+            // 
+            this.panel28.Controls.Add(this.txtBillCustomerCounter);
+            this.panel28.Controls.Add(this.label29);
+            this.panel28.Location = new System.Drawing.Point(348, 64);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(326, 34);
+            this.panel28.TabIndex = 6;
+            // 
+            // txtBillCustomerCounter
+            // 
+            this.txtBillCustomerCounter.Location = new System.Drawing.Point(136, 5);
+            this.txtBillCustomerCounter.Name = "txtBillCustomerCounter";
+            this.txtBillCustomerCounter.Size = new System.Drawing.Size(187, 25);
+            this.txtBillCustomerCounter.TabIndex = 1;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(3, 8);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(131, 17);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "Lượng khách hàng";
+            // 
+            // panel26
+            // 
+            this.panel26.Controls.Add(this.txtBillNumberCounter);
+            this.panel26.Controls.Add(this.label28);
+            this.panel26.Location = new System.Drawing.Point(6, 64);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(326, 34);
+            this.panel26.TabIndex = 5;
+            // 
+            // txtBillNumberCounter
+            // 
+            this.txtBillNumberCounter.Location = new System.Drawing.Point(136, 5);
+            this.txtBillNumberCounter.Name = "txtBillNumberCounter";
+            this.txtBillNumberCounter.Size = new System.Drawing.Size(187, 25);
+            this.txtBillNumberCounter.TabIndex = 1;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(3, 8);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(110, 17);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Lượng hóa đơn";
+            // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.txtBillTotal);
+            this.panel25.Controls.Add(this.label27);
+            this.panel25.Location = new System.Drawing.Point(693, 24);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(326, 34);
+            this.panel25.TabIndex = 5;
+            // 
+            // txtBillTotal
+            // 
+            this.txtBillTotal.Location = new System.Drawing.Point(136, 5);
+            this.txtBillTotal.Name = "txtBillTotal";
+            this.txtBillTotal.Size = new System.Drawing.Size(187, 25);
+            this.txtBillTotal.TabIndex = 1;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(3, 8);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(76, 17);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Thành tiền";
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.txtBillDiscountTotal);
+            this.panel24.Controls.Add(this.label26);
+            this.panel24.Location = new System.Drawing.Point(348, 24);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(326, 34);
+            this.panel24.TabIndex = 5;
+            // 
+            // txtBillDiscountTotal
+            // 
+            this.txtBillDiscountTotal.Location = new System.Drawing.Point(136, 5);
+            this.txtBillDiscountTotal.Name = "txtBillDiscountTotal";
+            this.txtBillDiscountTotal.Size = new System.Drawing.Size(187, 25);
+            this.txtBillDiscountTotal.TabIndex = 1;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(3, 8);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(127, 17);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Tổng tiền giảm giá";
             // 
             // panel3
             // 
@@ -327,6 +458,8 @@ namespace QuanLySach
             // 
             // panel13
             // 
+            this.panel13.Controls.Add(this.panel31);
+            this.panel13.Controls.Add(this.btnBillResetFilter);
             this.panel13.Controls.Add(this.btnFilterBillInRange);
             this.panel13.Controls.Add(this.btnFilterBillCurrentMonth);
             this.panel13.Controls.Add(this.btnFilterBillToday);
@@ -475,16 +608,16 @@ namespace QuanLySach
             // 
             this.panel19.Controls.Add(this.txtFilterBillByCPhone);
             this.panel19.Controls.Add(this.label7);
-            this.panel19.Location = new System.Drawing.Point(344, 3);
+            this.panel19.Location = new System.Drawing.Point(273, 3);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(322, 34);
+            this.panel19.Size = new System.Drawing.Size(228, 34);
             this.panel19.TabIndex = 3;
             // 
             // txtFilterBillByCPhone
             // 
             this.txtFilterBillByCPhone.Location = new System.Drawing.Point(88, 5);
             this.txtFilterBillByCPhone.Name = "txtFilterBillByCPhone";
-            this.txtFilterBillByCPhone.Size = new System.Drawing.Size(220, 25);
+            this.txtFilterBillByCPhone.Size = new System.Drawing.Size(135, 25);
             this.txtFilterBillByCPhone.TabIndex = 1;
             this.txtFilterBillByCPhone.TextChanged += new System.EventHandler(this.txtFilterBillByCPhone_TextChanged);
             // 
@@ -503,7 +636,7 @@ namespace QuanLySach
             this.panel21.Controls.Add(this.label18);
             this.panel21.Location = new System.Drawing.Point(16, 3);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(322, 34);
+            this.panel21.Size = new System.Drawing.Size(251, 34);
             this.panel21.TabIndex = 2;
             // 
             // cbTenNV
@@ -511,7 +644,7 @@ namespace QuanLySach
             this.cbTenNV.FormattingEnabled = true;
             this.cbTenNV.Location = new System.Drawing.Point(90, 5);
             this.cbTenNV.Name = "cbTenNV";
-            this.cbTenNV.Size = new System.Drawing.Size(229, 25);
+            this.cbTenNV.Size = new System.Drawing.Size(154, 25);
             this.cbTenNV.TabIndex = 1;
             this.cbTenNV.SelectedIndexChanged += new System.EventHandler(this.cbTenNV_SelectedIndexChanged);
             // 
@@ -1363,130 +1496,43 @@ namespace QuanLySach
             this.tpThongKeNhanVien.Text = "Thống kê nhân viên";
             this.tpThongKeNhanVien.UseVisualStyleBackColor = true;
             // 
-            // panel24
+            // btnBillResetFilter
             // 
-            this.panel24.Controls.Add(this.txtBillDiscountTotal);
-            this.panel24.Controls.Add(this.label26);
-            this.panel24.Location = new System.Drawing.Point(348, 24);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(326, 34);
-            this.panel24.TabIndex = 5;
+            this.btnBillResetFilter.BackColor = System.Drawing.Color.Transparent;
+            this.btnBillResetFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBillResetFilter.Location = new System.Drawing.Point(533, 43);
+            this.btnBillResetFilter.Name = "btnBillResetFilter";
+            this.btnBillResetFilter.Size = new System.Drawing.Size(119, 37);
+            this.btnBillResetFilter.TabIndex = 10;
+            this.btnBillResetFilter.Text = "Đặt lại bộ lọc";
+            this.btnBillResetFilter.UseVisualStyleBackColor = false;
+            this.btnBillResetFilter.Click += new System.EventHandler(this.btnBillResetFilter_Click);
             // 
-            // txtBillDiscountTotal
+            // panel31
             // 
-            this.txtBillDiscountTotal.Location = new System.Drawing.Point(136, 5);
-            this.txtBillDiscountTotal.Name = "txtBillDiscountTotal";
-            this.txtBillDiscountTotal.Size = new System.Drawing.Size(187, 25);
-            this.txtBillDiscountTotal.TabIndex = 1;
+            this.panel31.Controls.Add(this.nmBillVisibleCounter);
+            this.panel31.Controls.Add(this.label31);
+            this.panel31.Location = new System.Drawing.Point(507, 0);
+            this.panel31.Name = "panel31";
+            this.panel31.Size = new System.Drawing.Size(154, 39);
+            this.panel31.TabIndex = 11;
             // 
-            // label26
+            // nmBillVisibleCounter
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(3, 8);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(127, 17);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Tổng tiền giảm giá";
+            this.nmBillVisibleCounter.Location = new System.Drawing.Point(75, 5);
+            this.nmBillVisibleCounter.Name = "nmBillVisibleCounter";
+            this.nmBillVisibleCounter.Size = new System.Drawing.Size(70, 25);
+            this.nmBillVisibleCounter.TabIndex = 1;
+            this.nmBillVisibleCounter.ValueChanged += new System.EventHandler(this.nmBillVisibleCounter_ValueChanged);
             // 
-            // panel25
+            // label31
             // 
-            this.panel25.Controls.Add(this.txtBillTotal);
-            this.panel25.Controls.Add(this.label27);
-            this.panel25.Location = new System.Drawing.Point(693, 24);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(326, 34);
-            this.panel25.TabIndex = 5;
-            // 
-            // txtBillTotal
-            // 
-            this.txtBillTotal.Location = new System.Drawing.Point(136, 5);
-            this.txtBillTotal.Name = "txtBillTotal";
-            this.txtBillTotal.Size = new System.Drawing.Size(187, 25);
-            this.txtBillTotal.TabIndex = 1;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(3, 8);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(76, 17);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "Thành tiền";
-            // 
-            // panel26
-            // 
-            this.panel26.Controls.Add(this.txtBillNumberCounter);
-            this.panel26.Controls.Add(this.label28);
-            this.panel26.Location = new System.Drawing.Point(6, 64);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(326, 34);
-            this.panel26.TabIndex = 5;
-            // 
-            // txtBillNumberCounter
-            // 
-            this.txtBillNumberCounter.Location = new System.Drawing.Point(136, 5);
-            this.txtBillNumberCounter.Name = "txtBillNumberCounter";
-            this.txtBillNumberCounter.Size = new System.Drawing.Size(187, 25);
-            this.txtBillNumberCounter.TabIndex = 1;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(3, 8);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(110, 17);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Lượng hóa đơn";
-            // 
-            // panel28
-            // 
-            this.panel28.Controls.Add(this.txtBillCustomerCounter);
-            this.panel28.Controls.Add(this.label29);
-            this.panel28.Location = new System.Drawing.Point(348, 64);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(326, 34);
-            this.panel28.TabIndex = 6;
-            // 
-            // txtBillCustomerCounter
-            // 
-            this.txtBillCustomerCounter.Location = new System.Drawing.Point(136, 5);
-            this.txtBillCustomerCounter.Name = "txtBillCustomerCounter";
-            this.txtBillCustomerCounter.Size = new System.Drawing.Size(187, 25);
-            this.txtBillCustomerCounter.TabIndex = 1;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(3, 8);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(131, 17);
-            this.label29.TabIndex = 0;
-            this.label29.Text = "Lượng khách hàng";
-            // 
-            // panel30
-            // 
-            this.panel30.Controls.Add(this.txtBillStaffCounter);
-            this.panel30.Controls.Add(this.label30);
-            this.panel30.Location = new System.Drawing.Point(693, 64);
-            this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(326, 34);
-            this.panel30.TabIndex = 7;
-            // 
-            // txtBillStaffCounter
-            // 
-            this.txtBillStaffCounter.Location = new System.Drawing.Point(136, 5);
-            this.txtBillStaffCounter.Name = "txtBillStaffCounter";
-            this.txtBillStaffCounter.Size = new System.Drawing.Size(187, 25);
-            this.txtBillStaffCounter.TabIndex = 1;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(3, 8);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(118, 17);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "Lượng nhân viên";
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(3, 9);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(56, 17);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "Hiển thị";
             // 
             // frmQuanLySach
             // 
@@ -1503,6 +1549,16 @@ namespace QuanLySach
             this.tpHoaDon.ResumeLayout(false);
             this.tpHoaDon.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.panel30.ResumeLayout(false);
+            this.panel30.PerformLayout();
+            this.panel28.ResumeLayout(false);
+            this.panel28.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            this.panel26.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.grBillContainer.ResumeLayout(false);
@@ -1573,16 +1629,9 @@ namespace QuanLySach
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel24.ResumeLayout(false);
-            this.panel24.PerformLayout();
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
-            this.panel26.ResumeLayout(false);
-            this.panel26.PerformLayout();
-            this.panel28.ResumeLayout(false);
-            this.panel28.PerformLayout();
-            this.panel30.ResumeLayout(false);
-            this.panel30.PerformLayout();
+            this.panel31.ResumeLayout(false);
+            this.panel31.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmBillVisibleCounter)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1714,6 +1763,10 @@ namespace QuanLySach
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.TextBox txtBillDiscountTotal;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button btnBillResetFilter;
+        private System.Windows.Forms.Panel panel31;
+        private System.Windows.Forms.NumericUpDown nmBillVisibleCounter;
+        private System.Windows.Forms.Label label31;
     }
 }
 

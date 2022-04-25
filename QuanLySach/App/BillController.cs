@@ -66,7 +66,7 @@ namespace QuanLySach.App
         public List<HoaDonDTO> Take(int VisibleNumber)
         {
             this.VisibleNumber = VisibleNumber;
-            return bills.Take(VisibleNumber).ToList();
+            return billsFiltered.Take(VisibleNumber).ToList();
         }
 
         public List<HoaDonDTO> GetBillsInRange(DateTime from, DateTime to)
@@ -196,7 +196,7 @@ namespace QuanLySach.App
                 staffCount[b.MaNV] = b.TenNV;
             });
 
-            overview.TotalBill = bills.Count;
+            overview.TotalBill = billsFiltered.Count;
             overview.CustomerCount = customerCount.Count;
             overview.StaffCount = staffCount.Count;
             return overview;
