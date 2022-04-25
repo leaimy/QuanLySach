@@ -131,15 +131,15 @@ namespace QuanLySach
             this.grbKhachHang = new System.Windows.Forms.GroupBox();
             this.dtgvKhachHang = new System.Windows.Forms.DataGridView();
             this.btnTK = new System.Windows.Forms.Button();
-            this.panel20 = new System.Windows.Forms.Panel();
+            this.pnhaha125 = new System.Windows.Forms.Panel();
             this.dtpNgayKT = new System.Windows.Forms.DateTimePicker();
-            this.label23 = new System.Windows.Forms.Label();
-            this.panel22 = new System.Windows.Forms.Panel();
+            this.lbllalala125 = new System.Windows.Forms.Label();
+            this.pnhaha124 = new System.Windows.Forms.Panel();
             this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
-            this.label24 = new System.Windows.Forms.Label();
-            this.panel23 = new System.Windows.Forms.Panel();
+            this.lbllalala124 = new System.Windows.Forms.Label();
+            this.pnhaha123 = new System.Windows.Forms.Panel();
             this.cbCN = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
+            this.lbllalala123 = new System.Windows.Forms.Label();
             this.tpThongKeNhanVien = new System.Windows.Forms.TabPage();
             this.tcAdmin.SuspendLayout();
             this.tpHoaDon.SuspendLayout();
@@ -185,9 +185,9 @@ namespace QuanLySach
             this.tpThongKeKhachHang.SuspendLayout();
             this.grbKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).BeginInit();
-            this.panel20.SuspendLayout();
-            this.panel22.SuspendLayout();
-            this.panel23.SuspendLayout();
+            this.pnhaha125.SuspendLayout();
+            this.pnhaha124.SuspendLayout();
+            this.pnhaha123.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -1212,9 +1212,9 @@ namespace QuanLySach
             // 
             this.tpThongKeKhachHang.Controls.Add(this.grbKhachHang);
             this.tpThongKeKhachHang.Controls.Add(this.btnTK);
-            this.tpThongKeKhachHang.Controls.Add(this.panel20);
-            this.tpThongKeKhachHang.Controls.Add(this.panel22);
-            this.tpThongKeKhachHang.Controls.Add(this.panel23);
+            this.tpThongKeKhachHang.Controls.Add(this.pnhaha125);
+            this.tpThongKeKhachHang.Controls.Add(this.pnhaha124);
+            this.tpThongKeKhachHang.Controls.Add(this.pnhaha123);
             this.tpThongKeKhachHang.Location = new System.Drawing.Point(4, 26);
             this.tpThongKeKhachHang.Name = "tpThongKeKhachHang";
             this.tpThongKeKhachHang.Padding = new System.Windows.Forms.Padding(3);
@@ -1265,14 +1265,14 @@ namespace QuanLySach
             this.btnTK.UseVisualStyleBackColor = false;
             this.btnTK.Click += new System.EventHandler(this.btnTK_Click);
             // 
-            // panel20
+            // pnhaha125
             // 
-            this.panel20.Controls.Add(this.dtpNgayKT);
-            this.panel20.Controls.Add(this.label23);
-            this.panel20.Location = new System.Drawing.Point(578, 17);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(208, 39);
-            this.panel20.TabIndex = 15;
+            this.pnhaha125.Controls.Add(this.dtpNgayKT);
+            this.pnhaha125.Controls.Add(this.lbllalala125);
+            this.pnhaha125.Location = new System.Drawing.Point(578, 17);
+            this.pnhaha125.Name = "pnhaha125";
+            this.pnhaha125.Size = new System.Drawing.Size(208, 39);
+            this.pnhaha125.TabIndex = 15;
             // 
             // dtpNgayKT
             // 
@@ -1283,23 +1283,23 @@ namespace QuanLySach
             this.dtpNgayKT.Size = new System.Drawing.Size(111, 25);
             this.dtpNgayKT.TabIndex = 1;
             // 
-            // label23
+            // lbllalala125
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(3, 9);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(70, 17);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Đến ngày";
+            this.lbllalala125.AutoSize = true;
+            this.lbllalala125.Location = new System.Drawing.Point(3, 9);
+            this.lbllalala125.Name = "lbllalala125";
+            this.lbllalala125.Size = new System.Drawing.Size(70, 17);
+            this.lbllalala125.TabIndex = 0;
+            this.lbllalala125.Text = "Đến ngày";
             // 
-            // panel22
+            // pnhaha124
             // 
-            this.panel22.Controls.Add(this.dtpNgayBD);
-            this.panel22.Controls.Add(this.label24);
-            this.panel22.Location = new System.Drawing.Point(369, 17);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(203, 38);
-            this.panel22.TabIndex = 17;
+            this.pnhaha124.Controls.Add(this.dtpNgayBD);
+            this.pnhaha124.Controls.Add(this.lbllalala124);
+            this.pnhaha124.Location = new System.Drawing.Point(369, 17);
+            this.pnhaha124.Name = "pnhaha124";
+            this.pnhaha124.Size = new System.Drawing.Size(203, 38);
+            this.pnhaha124.TabIndex = 17;
             // 
             // dtpNgayBD
             // 
@@ -1310,23 +1310,23 @@ namespace QuanLySach
             this.dtpNgayBD.Size = new System.Drawing.Size(113, 25);
             this.dtpNgayBD.TabIndex = 1;
             // 
-            // label24
+            // lbllalala124
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(3, 8);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(62, 17);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Từ ngày";
+            this.lbllalala124.AutoSize = true;
+            this.lbllalala124.Location = new System.Drawing.Point(3, 8);
+            this.lbllalala124.Name = "lbllalala124";
+            this.lbllalala124.Size = new System.Drawing.Size(62, 17);
+            this.lbllalala124.TabIndex = 0;
+            this.lbllalala124.Text = "Từ ngày";
             // 
-            // panel23
+            // pnhaha123
             // 
-            this.panel23.Controls.Add(this.cbCN);
-            this.panel23.Controls.Add(this.label25);
-            this.panel23.Location = new System.Drawing.Point(120, 17);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(243, 34);
-            this.panel23.TabIndex = 16;
+            this.pnhaha123.Controls.Add(this.cbCN);
+            this.pnhaha123.Controls.Add(this.lbllalala123);
+            this.pnhaha123.Location = new System.Drawing.Point(120, 17);
+            this.pnhaha123.Name = "pnhaha123";
+            this.pnhaha123.Size = new System.Drawing.Size(243, 34);
+            this.pnhaha123.TabIndex = 16;
             // 
             // cbCN
             // 
@@ -1336,14 +1336,14 @@ namespace QuanLySach
             this.cbCN.Size = new System.Drawing.Size(153, 25);
             this.cbCN.TabIndex = 1;
             // 
-            // label25
+            // lbllalala123
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(3, 8);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(74, 17);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Chi nhánh";
+            this.lbllalala123.AutoSize = true;
+            this.lbllalala123.Location = new System.Drawing.Point(3, 8);
+            this.lbllalala123.Name = "lbllalala123";
+            this.lbllalala123.Size = new System.Drawing.Size(74, 17);
+            this.lbllalala123.TabIndex = 0;
+            this.lbllalala123.Text = "Chi nhánh";
             // 
             // tpThongKeNhanVien
             // 
@@ -1433,12 +1433,12 @@ namespace QuanLySach
             this.tpThongKeKhachHang.ResumeLayout(false);
             this.grbKhachHang.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).EndInit();
-            this.panel20.ResumeLayout(false);
-            this.panel20.PerformLayout();
-            this.panel22.ResumeLayout(false);
-            this.panel22.PerformLayout();
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
+            this.pnhaha125.ResumeLayout(false);
+            this.pnhaha125.PerformLayout();
+            this.pnhaha124.ResumeLayout(false);
+            this.pnhaha124.PerformLayout();
+            this.pnhaha123.ResumeLayout(false);
+            this.pnhaha123.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1548,15 +1548,15 @@ namespace QuanLySach
         private System.Windows.Forms.GroupBox grbKhachHang;
         private System.Windows.Forms.DataGridView dtgvKhachHang;
         private System.Windows.Forms.Button btnTK;
-        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel pnhaha125;
         private System.Windows.Forms.DateTimePicker dtpNgayKT;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Label lbllalala125;
+        private System.Windows.Forms.Panel pnhaha124;
         private System.Windows.Forms.DateTimePicker dtpNgayBD;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Label lbllalala124;
+        private System.Windows.Forms.Panel pnhaha123;
         private System.Windows.Forms.ComboBox cbCN;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lbllalala123;
     }
 }
 
