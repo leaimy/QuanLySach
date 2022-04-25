@@ -52,6 +52,7 @@
     <Compile Include="App\BranchController.cs" />
     <Compile Include="App\CategoryController.cs" />
     <Compile Include="App\models\BillOverview.cs" />
+    <Compile Include="App\CustomerController.cs" />
     <Compile Include="App\models\Branch.cs" />
     <Compile Include="App\models\Cart.cs" />
     <Compile Include="App\models\CartItem.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="DTO\LoginInfoDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\SanPhamDTO.cs" />
+    <Compile Include="DTO\ThongKeKhachHangDTO.cs" />
     <Compile Include="DTO\Statistics\TKSanPhamDTO.cs" />
     <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>

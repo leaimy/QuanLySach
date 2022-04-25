@@ -108,6 +108,12 @@ namespace QuanLySach
             tp_ST_Product_txtVisibleNumber.Value = 10;
             #endregion
 
+            #region Thong Ke Khach Hang
+            cbCN.DataSource = BranchController.Instance.GetBranchesForCombobox();
+            cbCN.ValueMember = "Code";
+            cbCN.DisplayMember = "Title";
+            #endregion
+
             isFirstLoad = false;
         }
 
@@ -574,6 +580,66 @@ namespace QuanLySach
         }
         #endregion
 
+        #region Thong Ke Khach Hang
+        private void btnTK_Click(object sender, EventArgs e)
+        {
+            var ngayBD = dtpNgayBD.Value;
+            var ngayKT = dtpNgayKT.Value;
+
+            dtgvKhachHang.DataSource = CustomerController.Instance.FetchCustomer(ngayBD, ngayKT);
+        }
+
+        private void RenderCustomerStaticDataGridView(List<ThongKeKhachHangDTO> customers)
+        {
+            dtgvKhachHang.DataSource = customers;
+
+            dtgvKhachHang.Columns[0].HeaderText = "SDT";
+            dtgvKhachHang.Columns[1].HeaderText = "Tên KH";
+            dtgvKhachHang.Columns[2].HeaderText = "Số lượng hoá đơn";
+            dtgvKhachHang.Columns[3].HeaderText = "Tổng tiền";
+            dtgvKhachHang.Columns[4].HeaderText = "Được giảm giá";
+            dtgvKhachHang.Columns[5].HeaderText = "Tiền phải trả";
+
+            string starting = $"Có {CustomerController.Instance.Count} thống kê ";
+            if (CustomerController.Instance.Count == 0)
+            {
+                starting = "Không có thống kê";
+            }
+
+            if (CustomerController.Instance.FromDate != null)
+            {
+                grbKhachHang.Text = starting + $"từ ngày {CustomerController.Instance.FromDate.ToString("dd-MM-yyyy HH:mm:ss")} đến ngày {CustomerController.Instance.ToDate.ToString("dd-MM-yyyy HH:mm:ss")}";
+            }
+        }
+        private void dtgvKhachHang_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case 2:
+                    CustomerController.Instance.SapXepTheoSoLuongHoaDon();
+                    break;
+                case 3:
+                    CustomerController.Instance.SapXepTheoTongTien();
+                    break;
+                case 4:
+                    CustomerController.Instance.SapXepTheoDuocGiamGia();
+                    break;
+                case 5:
+                    CustomerController.Instance.SapXepTheoTienPhaiTra();
+                    break;
+
+                default:
+                    return;
+
+            }
+
+            RenderCustomerStaticDataGridView(CustomerController.Instance.Clone());
+        }
+
+
+
+        #endregion
+
         #region Tai Khoan
         private void tp_Account_btnAdd_Click(object sender, EventArgs e)
         {
@@ -648,6 +714,5 @@ namespace QuanLySach
             }
         }
         #endregion
-
     }
 }
