@@ -22,6 +22,8 @@ namespace QuanLySach
         {
             var frm = new frmQuanLySach();
             frm.ShowDialog();
+
+            UIController.Instance.DisplayStatusBar(tssLabel);
         }
 
         private void frmSach_Load(object sender, EventArgs e)

@@ -12,157 +12,183 @@ namespace QuanLySach.DAO
 {
     internal class DataProvider
     {
-		private static DataProvider _instance;
-		private string connectionSTR;
+        private static DataProvider _instance;
+        private string connectionSTR;
 
-		private ChiNhanhEnum branch;
-		private string loginName;
-		private string password;
+        private ChiNhanhEnum branch;
+        private string loginName;
+        private string password;
 
-		public static DataProvider Instance
-		{
-			get
-			{
-				if (_instance == null)
-				{
-					_instance = new DataProvider();
-				}
-				return _instance;
-			}
-		}
+        private int who;
+        private DataProvider() { }
 
-		private DataProvider() { } 
-		public void InitConnectionString(ChiNhanhEnum branch, string loginName, string password, int who)
+        public static DataProvider Instance
         {
-			this.branch = branch;
-			this.loginName = loginName;
-			this.password = password;
-
-			if (who == 1)
+            get
             {
-				connectionSTR = $"Data Source=DALATHUB\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
+                if (_instance == null)
+                {
+                    _instance = new DataProvider();
+                }
+                return _instance;
+            }
+        }
 
-				if (branch == ChiNhanhEnum.CN_2)
-					connectionSTR = $"Data Source=DALATHUB\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
-			}
+        public void SetRemoteAccount(ChiNhanhEnum branch)
+        {
+            this.branch = branch;
+            loginName = "remoteLogin";
+            password = "remoteLogin";
 
-			else if (who == 2)
+            SetConnectionString();
+        }
+
+        public void SetDBAccount(ChiNhanhEnum branch, string loginName, string password)
+        {
+            this.branch = branch;
+            this.loginName = loginName;
+            this.password = password;
+
+            SetConnectionString();
+        }
+
+        private void SetConnectionString()
+        {
+            if (who == 1)
             {
-				connectionSTR = $"Data Source=DESKTOP-C27NP9T\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
+                connectionSTR = $"Data Source=DALATHUB\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
 
-				if (branch == ChiNhanhEnum.CN_2)
-					connectionSTR = $"Data Source=DESKTOP-C27NP9T\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
-			}
+                if (branch == ChiNhanhEnum.CN_2)
+                    connectionSTR = $"Data Source=DALATHUB\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
+            }
 
-			else if (who == 3)
+            else if (who == 2)
             {
-				connectionSTR = $"Data Source=DALATHUB\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
+                connectionSTR = $"Data Source=DESKTOP-C27NP9T\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
 
-				if (branch == ChiNhanhEnum.CN_2)
-					connectionSTR = $"Data Source=DALATHUB\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
-			}
-		}
+                if (branch == ChiNhanhEnum.CN_2)
+                    connectionSTR = $"Data Source=DESKTOP-C27NP9T\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
+            }
 
-		public DataTable ExecuteQuery(string query, object[] parameter = null)
-		{
-			DataTable data = new DataTable();
+            else if (who == 3)
+            {
+                connectionSTR = $"Data Source=DALATHUB\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
 
-			using (SqlConnection connection = new SqlConnection(connectionSTR))
-			{
-				connection.Open();
+                if (branch == ChiNhanhEnum.CN_2)
+                    connectionSTR = $"Data Source=DALATHUB\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
+            }
+        }
 
-				SqlCommand command = new SqlCommand(query, connection);
+        public void InitConnectionString(ChiNhanhEnum branch, string loginName, string password, int who)
+        {
+            this.branch = branch;
+            this.loginName = loginName;
+            this.password = password;
+            this.who = who;
 
-				if (parameter != null)
-				{
-					string[] listParams = query.Split(' ');
-					int i = 0;
+            SetConnectionString();
+        }
 
-					foreach (string item in listParams)
-					{
-						if (item.StartsWith("@"))
-						{
-							command.Parameters.AddWithValue(item, parameter[i]);
-							i += 1;
-						}
-					}
-				}
+        public DataTable ExecuteQuery(string query, object[] parameter = null)
+        {
+            DataTable data = new DataTable();
 
-				SqlDataAdapter adapter = new SqlDataAdapter(command);
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
+                connection.Open();
 
-				adapter.Fill(data);
+                SqlCommand command = new SqlCommand(query, connection);
 
-				connection.Close();
-			}
+                if (parameter != null)
+                {
+                    string[] listParams = query.Split(' ');
+                    int i = 0;
 
-			return data;
-		}
+                    foreach (string item in listParams)
+                    {
+                        if (item.StartsWith("@"))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i += 1;
+                        }
+                    }
+                }
 
-		public int ExecuteNonQuery(string query, object[] parameter = null)
-		{
-			int numRowEffected = 0;
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
 
-			using (SqlConnection connection = new SqlConnection(connectionSTR))
-			{
-				connection.Open();
+                adapter.Fill(data);
 
-				SqlCommand command = new SqlCommand(query, connection);
+                connection.Close();
+            }
 
-				if (parameter != null)
-				{
-					string[] listParams = query.Split(' ');
-					int i = 0;
+            return data;
+        }
 
-					foreach (string item in listParams)
-					{
-						if (item.StartsWith("@"))
-						{
-							command.Parameters.AddWithValue(item, parameter[i]);
-							i += 1;
-						}
-					}
-				}
+        public int ExecuteNonQuery(string query, object[] parameter = null)
+        {
+            int numRowEffected = 0;
 
-				numRowEffected = command.ExecuteNonQuery();
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
+                connection.Open();
 
-				connection.Close();
-			}
+                SqlCommand command = new SqlCommand(query, connection);
 
-			return numRowEffected;
-		}
+                if (parameter != null)
+                {
+                    string[] listParams = query.Split(' ');
+                    int i = 0;
 
-		public object ExecuteScalar(string query, object[] parameter = null)
-		{
-			object data = null;
+                    foreach (string item in listParams)
+                    {
+                        if (item.StartsWith("@"))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i += 1;
+                        }
+                    }
+                }
 
-			using (SqlConnection connection = new SqlConnection(connectionSTR))
-			{
-				connection.Open();
+                numRowEffected = command.ExecuteNonQuery();
 
-				SqlCommand command = new SqlCommand(query, connection);
+                connection.Close();
+            }
 
-				if (parameter != null)
-				{
-					string[] listParams = query.Split(' ');
-					int i = 0;
+            return numRowEffected;
+        }
 
-					foreach (string item in listParams)
-					{
-						if (item.StartsWith("@"))
-						{
-							command.Parameters.AddWithValue(item, parameter[i]);
-							i += 1;
-						}
-					}
-				}
+        public object ExecuteScalar(string query, object[] parameter = null)
+        {
+            object data = null;
 
-				data = command.ExecuteScalar();
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
+                connection.Open();
 
-				connection.Close();
-			}
+                SqlCommand command = new SqlCommand(query, connection);
 
-			return data;
-		}
+                if (parameter != null)
+                {
+                    string[] listParams = query.Split(' ');
+                    int i = 0;
 
-	}
+                    foreach (string item in listParams)
+                    {
+                        if (item.StartsWith("@"))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i += 1;
+                        }
+                    }
+                }
+
+                data = command.ExecuteScalar();
+
+                connection.Close();
+            }
+
+            return data;
+        }
+
+    }
 }

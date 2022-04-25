@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\AccountController.cs" />
     <Compile Include="App\AppManager.cs" />
     <Compile Include="App\BillController.cs" />
     <Compile Include="App\BranchController.cs" />
@@ -56,8 +57,12 @@
     <Compile Include="App\models\CartItem.cs" />
     <Compile Include="App\models\ChiNhanhEnum.cs" />
     <Compile Include="App\models\Customer.cs" />
+    <Compile Include="App\models\Role.cs" />
+    <Compile Include="App\models\RoleEnum.cs" />
     <Compile Include="App\models\User.cs" />
     <Compile Include="App\ProductController.cs" />
+    <Compile Include="App\ProductStatisticController.cs" />
+    <Compile Include="App\RoleController.cs" />
     <Compile Include="App\StaffController.cs" />
     <Compile Include="App\UIController.cs" />
     <Compile Include="Common\CustomerFakeData.cs" />
@@ -70,6 +75,8 @@
     <Compile Include="DAO\LoaiSanPhamDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DAO\SanPhamDAO.cs" />
+    <Compile Include="DAO\TaiKhoanDAO.cs" />
+    <Compile Include="DAO\ThongKeDAO.cs" />
     <Compile Include="DTO\ChiNhanhDTO.cs" />
     <Compile Include="DTO\ChiTietHoaDonDTO.cs" />
     <Compile Include="DTO\HoaDonDTO.cs" />
@@ -78,6 +85,7 @@
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\SanPhamDTO.cs" />
     <Compile Include="DTO\ThongKeKhachHangDTO.cs" />
+    <Compile Include="DTO\Statistics\TKSanPhamDTO.cs" />
     <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +140,12 @@
     <Compile Include="frmThemSach.Designer.cs">
       <DependentUpon>frmThemSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThemTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemTaiKhoan.Designer.cs">
+      <DependentUpon>frmThemTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemSach.resx">
       <DependentUpon>frmThemSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemTaiKhoan.resx">
+      <DependentUpon>frmThemTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -56,6 +56,21 @@ namespace QuanLySach.DAO
             return products;
         }
 
+        public List<NhanVienDTO> GetAllStaffAllBranch()
+        {
+            var products = new List<NhanVienDTO>();
+
+            var query = "EXEC dbo.sp_GetAllStaffAllBranch";
+            var table = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in table.Rows)
+            {
+                products.Add(new NhanVienDTO(item));
+            }
+            
+            return products;
+        }
+
         public NhanVienDTO GetNhanVienByID(int id)
         {
             string query = "EXEC sp_GetNhanVien_ByID @ID";

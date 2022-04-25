@@ -100,10 +100,22 @@ namespace QuanLySach
             this.txtFilterStaffByPhone = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.tpAccount = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tp_Account_dgvAccount = new System.Windows.Forms.DataGridView();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.tp_Account_btnAdd = new System.Windows.Forms.Button();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.tp_Account_cbRoles = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.tp_Account_btnReload = new System.Windows.Forms.Button();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.tp_Account_cbBranches = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.tpThongKeSanPham = new System.Windows.Forms.TabPage();
             this.tp_ST_Product_dgvContainer = new System.Windows.Forms.GroupBox();
             this.tp_ST_Product_dgvProduct = new System.Windows.Forms.DataGridView();
-            this.tp_ST_Product_btnAsc = new System.Windows.Forms.Button();
             this.tp_ST_Product_btnReset = new System.Windows.Forms.Button();
             this.tp_ST_Product_btnToday = new System.Windows.Forms.Button();
             this.tp_ST_Product_btnThisMonth = new System.Windows.Forms.Button();
@@ -117,7 +129,6 @@ namespace QuanLySach
             this.panel11 = new System.Windows.Forms.Panel();
             this.tp_ST_Product_cbBranches = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.tp_ST_Product_btnDesc = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tp_ST_Product_txtVisibleNumber = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
@@ -172,6 +183,12 @@ namespace QuanLySach
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
+            this.tpAccount.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tp_Account_dgvAccount)).BeginInit();
+            this.panel20.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel23.SuspendLayout();
             this.tpThongKeSanPham.SuspendLayout();
             this.tp_ST_Product_dgvContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tp_ST_Product_dgvProduct)).BeginInit();
@@ -196,6 +213,7 @@ namespace QuanLySach
             this.tcAdmin.Controls.Add(this.tpSach);
             this.tcAdmin.Controls.Add(this.tpLoaiSach);
             this.tcAdmin.Controls.Add(this.tpNhanVien);
+            this.tcAdmin.Controls.Add(this.tpAccount);
             this.tcAdmin.Controls.Add(this.tpThongKeSanPham);
             this.tcAdmin.Controls.Add(this.tpThongKeKhachHang);
             this.tcAdmin.Controls.Add(this.tpThongKeNhanVien);
@@ -679,7 +697,7 @@ namespace QuanLySach
             this.groupBox3.Controls.Add(this.dtgvLoaiSach);
             this.groupBox3.Location = new System.Drawing.Point(8, 148);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1040, 424);
+            this.groupBox3.Size = new System.Drawing.Size(1040, 495);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách loại sách";
@@ -697,7 +715,7 @@ namespace QuanLySach
             this.dtgvLoaiSach.ReadOnly = true;
             this.dtgvLoaiSach.RowHeadersWidth = 51;
             this.dtgvLoaiSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvLoaiSach.Size = new System.Drawing.Size(1034, 400);
+            this.dtgvLoaiSach.Size = new System.Drawing.Size(1034, 471);
             this.dtgvLoaiSach.TabIndex = 0;
             // 
             // panel9
@@ -866,6 +884,7 @@ namespace QuanLySach
             this.cbChiNhanhNV.Name = "cbChiNhanhNV";
             this.cbChiNhanhNV.Size = new System.Drawing.Size(229, 25);
             this.cbChiNhanhNV.TabIndex = 1;
+            this.cbChiNhanhNV.SelectedIndexChanged += new System.EventHandler(this.cbChiNhanhNV_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -933,10 +952,148 @@ namespace QuanLySach
             this.label16.Size = new System.Drawing.Size(0, 17);
             this.label16.TabIndex = 0;
             // 
+            // tpAccount
+            // 
+            this.tpAccount.Controls.Add(this.groupBox1);
+            this.tpAccount.Controls.Add(this.panel20);
+            this.tpAccount.Location = new System.Drawing.Point(4, 26);
+            this.tpAccount.Name = "tpAccount";
+            this.tpAccount.Padding = new System.Windows.Forms.Padding(3);
+            this.tpAccount.Size = new System.Drawing.Size(1056, 651);
+            this.tpAccount.TabIndex = 9;
+            this.tpAccount.Text = "Tài khoản";
+            this.tpAccount.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.tp_Account_dgvAccount);
+            this.groupBox1.Location = new System.Drawing.Point(6, 149);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1040, 494);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh sách tài khoản trong hệ thống";
+            // 
+            // tp_Account_dgvAccount
+            // 
+            this.tp_Account_dgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tp_Account_dgvAccount.BackgroundColor = System.Drawing.Color.White;
+            this.tp_Account_dgvAccount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tp_Account_dgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tp_Account_dgvAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tp_Account_dgvAccount.Location = new System.Drawing.Point(3, 21);
+            this.tp_Account_dgvAccount.MultiSelect = false;
+            this.tp_Account_dgvAccount.Name = "tp_Account_dgvAccount";
+            this.tp_Account_dgvAccount.ReadOnly = true;
+            this.tp_Account_dgvAccount.RowHeadersWidth = 51;
+            this.tp_Account_dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tp_Account_dgvAccount.Size = new System.Drawing.Size(1034, 470);
+            this.tp_Account_dgvAccount.TabIndex = 0;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.tp_Account_btnAdd);
+            this.panel20.Controls.Add(this.panel22);
+            this.panel20.Controls.Add(this.tp_Account_btnReload);
+            this.panel20.Controls.Add(this.panel23);
+            this.panel20.Controls.Add(this.label25);
+            this.panel20.Location = new System.Drawing.Point(8, 6);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(1040, 137);
+            this.panel20.TabIndex = 5;
+            // 
+            // tp_Account_btnAdd
+            // 
+            this.tp_Account_btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.tp_Account_btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tp_Account_btnAdd.Location = new System.Drawing.Point(650, 20);
+            this.tp_Account_btnAdd.Name = "tp_Account_btnAdd";
+            this.tp_Account_btnAdd.Size = new System.Drawing.Size(141, 37);
+            this.tp_Account_btnAdd.TabIndex = 6;
+            this.tp_Account_btnAdd.Text = "Thêm mới";
+            this.tp_Account_btnAdd.UseVisualStyleBackColor = false;
+            this.tp_Account_btnAdd.Click += new System.EventHandler(this.tp_Account_btnAdd_Click);
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.tp_Account_cbRoles);
+            this.panel22.Controls.Add(this.label23);
+            this.panel22.Location = new System.Drawing.Point(176, 78);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(355, 39);
+            this.panel22.TabIndex = 3;
+            // 
+            // tp_Account_cbRoles
+            // 
+            this.tp_Account_cbRoles.FormattingEnabled = true;
+            this.tp_Account_cbRoles.Location = new System.Drawing.Point(120, 9);
+            this.tp_Account_cbRoles.Name = "tp_Account_cbRoles";
+            this.tp_Account_cbRoles.Size = new System.Drawing.Size(229, 25);
+            this.tp_Account_cbRoles.TabIndex = 2;
+            this.tp_Account_cbRoles.SelectedIndexChanged += new System.EventHandler(this.tp_Account_cbRoles_SelectedIndexChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(10, 9);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(48, 17);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Vai trò";
+            // 
+            // tp_Account_btnReload
+            // 
+            this.tp_Account_btnReload.BackColor = System.Drawing.Color.Transparent;
+            this.tp_Account_btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tp_Account_btnReload.Location = new System.Drawing.Point(650, 80);
+            this.tp_Account_btnReload.Name = "tp_Account_btnReload";
+            this.tp_Account_btnReload.Size = new System.Drawing.Size(141, 37);
+            this.tp_Account_btnReload.TabIndex = 5;
+            this.tp_Account_btnReload.Text = "Tải lại danh sách";
+            this.tp_Account_btnReload.UseVisualStyleBackColor = false;
+            this.tp_Account_btnReload.Click += new System.EventHandler(this.tp_Account_btnReload_Click);
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.tp_Account_cbBranches);
+            this.panel23.Controls.Add(this.label24);
+            this.panel23.Location = new System.Drawing.Point(176, 20);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(355, 39);
+            this.panel23.TabIndex = 2;
+            // 
+            // tp_Account_cbBranches
+            // 
+            this.tp_Account_cbBranches.FormattingEnabled = true;
+            this.tp_Account_cbBranches.Location = new System.Drawing.Point(120, 5);
+            this.tp_Account_cbBranches.Name = "tp_Account_cbBranches";
+            this.tp_Account_cbBranches.Size = new System.Drawing.Size(229, 25);
+            this.tp_Account_cbBranches.TabIndex = 1;
+            this.tp_Account_cbBranches.SelectedIndexChanged += new System.EventHandler(this.tp_Account_cbBranches_SelectedIndexChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(10, 9);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(74, 17);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Chi nhánh";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(205, 20);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(0, 17);
+            this.label25.TabIndex = 0;
+            // 
             // tpThongKeSanPham
             // 
             this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_dgvContainer);
-            this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnAsc);
             this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnReset);
             this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnToday);
             this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnThisMonth);
@@ -944,7 +1101,6 @@ namespace QuanLySach
             this.tpThongKeSanPham.Controls.Add(this.panel17);
             this.tpThongKeSanPham.Controls.Add(this.panel14);
             this.tpThongKeSanPham.Controls.Add(this.panel11);
-            this.tpThongKeSanPham.Controls.Add(this.tp_ST_Product_btnDesc);
             this.tpThongKeSanPham.Controls.Add(this.panel8);
             this.tpThongKeSanPham.Controls.Add(this.panel7);
             this.tpThongKeSanPham.Controls.Add(this.panel6);
@@ -984,17 +1140,7 @@ namespace QuanLySach
             this.tp_ST_Product_dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tp_ST_Product_dgvProduct.Size = new System.Drawing.Size(1034, 506);
             this.tp_ST_Product_dgvProduct.TabIndex = 0;
-            // 
-            // tp_ST_Product_btnAsc
-            // 
-            this.tp_ST_Product_btnAsc.BackColor = System.Drawing.Color.Transparent;
-            this.tp_ST_Product_btnAsc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tp_ST_Product_btnAsc.Location = new System.Drawing.Point(678, 64);
-            this.tp_ST_Product_btnAsc.Name = "tp_ST_Product_btnAsc";
-            this.tp_ST_Product_btnAsc.Size = new System.Drawing.Size(60, 37);
-            this.tp_ST_Product_btnAsc.TabIndex = 18;
-            this.tp_ST_Product_btnAsc.Text = "A-Z";
-            this.tp_ST_Product_btnAsc.UseVisualStyleBackColor = false;
+            this.tp_ST_Product_dgvProduct.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tp_ST_Product_dgvProduct_ColumnHeaderMouseClick);
             // 
             // tp_ST_Product_btnReset
             // 
@@ -1006,6 +1152,7 @@ namespace QuanLySach
             this.tp_ST_Product_btnReset.TabIndex = 17;
             this.tp_ST_Product_btnReset.Text = "Đặt lại";
             this.tp_ST_Product_btnReset.UseVisualStyleBackColor = false;
+            this.tp_ST_Product_btnReset.Click += new System.EventHandler(this.tp_ST_Product_btnReset_Click);
             // 
             // tp_ST_Product_btnToday
             // 
@@ -1017,6 +1164,7 @@ namespace QuanLySach
             this.tp_ST_Product_btnToday.TabIndex = 16;
             this.tp_ST_Product_btnToday.Text = "Hôm nay";
             this.tp_ST_Product_btnToday.UseVisualStyleBackColor = false;
+            this.tp_ST_Product_btnToday.Click += new System.EventHandler(this.tp_ST_Product_btnToday_Click);
             // 
             // tp_ST_Product_btnThisMonth
             // 
@@ -1028,6 +1176,7 @@ namespace QuanLySach
             this.tp_ST_Product_btnThisMonth.TabIndex = 15;
             this.tp_ST_Product_btnThisMonth.Text = "Tháng này";
             this.tp_ST_Product_btnThisMonth.UseVisualStyleBackColor = false;
+            this.tp_ST_Product_btnThisMonth.Click += new System.EventHandler(this.tp_ST_Product_btnThisMonth_Click);
             // 
             // tp_ST_Product_btnST
             // 
@@ -1111,6 +1260,7 @@ namespace QuanLySach
             this.tp_ST_Product_cbBranches.Name = "tp_ST_Product_cbBranches";
             this.tp_ST_Product_cbBranches.Size = new System.Drawing.Size(153, 25);
             this.tp_ST_Product_cbBranches.TabIndex = 1;
+            this.tp_ST_Product_cbBranches.SelectedIndexChanged += new System.EventHandler(this.tp_ST_Product_cbBranches_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -1120,17 +1270,6 @@ namespace QuanLySach
             this.label17.Size = new System.Drawing.Size(74, 17);
             this.label17.TabIndex = 0;
             this.label17.Text = "Chi nhánh";
-            // 
-            // tp_ST_Product_btnDesc
-            // 
-            this.tp_ST_Product_btnDesc.BackColor = System.Drawing.Color.Transparent;
-            this.tp_ST_Product_btnDesc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tp_ST_Product_btnDesc.Location = new System.Drawing.Point(744, 64);
-            this.tp_ST_Product_btnDesc.Name = "tp_ST_Product_btnDesc";
-            this.tp_ST_Product_btnDesc.Size = new System.Drawing.Size(60, 37);
-            this.tp_ST_Product_btnDesc.TabIndex = 11;
-            this.tp_ST_Product_btnDesc.Text = "Z-A";
-            this.tp_ST_Product_btnDesc.UseVisualStyleBackColor = false;
             // 
             // panel8
             // 
@@ -1147,6 +1286,7 @@ namespace QuanLySach
             this.tp_ST_Product_txtVisibleNumber.Name = "tp_ST_Product_txtVisibleNumber";
             this.tp_ST_Product_txtVisibleNumber.Size = new System.Drawing.Size(87, 25);
             this.tp_ST_Product_txtVisibleNumber.TabIndex = 1;
+            this.tp_ST_Product_txtVisibleNumber.ValueChanged += new System.EventHandler(this.tp_ST_Product_txtVisibleNumber_ValueChanged);
             // 
             // label15
             // 
@@ -1172,6 +1312,7 @@ namespace QuanLySach
             this.tp_ST_Product_txtBookname.Name = "tp_ST_Product_txtBookname";
             this.tp_ST_Product_txtBookname.Size = new System.Drawing.Size(153, 25);
             this.tp_ST_Product_txtBookname.TabIndex = 1;
+            this.tp_ST_Product_txtBookname.TextChanged += new System.EventHandler(this.tp_ST_Product_txtBookname_TextChanged);
             // 
             // label12
             // 
@@ -1198,6 +1339,7 @@ namespace QuanLySach
             this.tp_ST_Product_cbCategory.Name = "tp_ST_Product_cbCategory";
             this.tp_ST_Product_cbCategory.Size = new System.Drawing.Size(153, 25);
             this.tp_ST_Product_cbCategory.TabIndex = 1;
+            this.tp_ST_Product_cbCategory.SelectedIndexChanged += new System.EventHandler(this.tp_ST_Product_cbCategory_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -1414,6 +1556,15 @@ namespace QuanLySach
             this.panel16.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
+            this.tpAccount.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tp_Account_dgvAccount)).EndInit();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
             this.tpThongKeSanPham.ResumeLayout(false);
             this.tp_ST_Product_dgvContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tp_ST_Product_dgvProduct)).EndInit();
@@ -1528,7 +1679,6 @@ namespace QuanLySach
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.NumericUpDown tp_ST_Product_txtVisibleNumber;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button tp_ST_Product_btnDesc;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.ComboBox tp_ST_Product_cbBranches;
         private System.Windows.Forms.Label label17;
@@ -1542,7 +1692,6 @@ namespace QuanLySach
         private System.Windows.Forms.Button tp_ST_Product_btnToday;
         private System.Windows.Forms.Button tp_ST_Product_btnThisMonth;
         private System.Windows.Forms.Button tp_ST_Product_btnST;
-        private System.Windows.Forms.Button tp_ST_Product_btnAsc;
         private System.Windows.Forms.GroupBox tp_ST_Product_dgvContainer;
         private System.Windows.Forms.DataGridView tp_ST_Product_dgvProduct;
         private System.Windows.Forms.GroupBox grbKhachHang;
@@ -1557,6 +1706,19 @@ namespace QuanLySach
         private System.Windows.Forms.Panel pnhaha123;
         private System.Windows.Forms.ComboBox cbCN;
         private System.Windows.Forms.Label lbllalala123;
+        private System.Windows.Forms.TabPage tpAccount;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView tp_Account_dgvAccount;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Button tp_Account_btnAdd;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button tp_Account_btnReload;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.ComboBox tp_Account_cbBranches;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ComboBox tp_Account_cbRoles;
     }
 }
 

@@ -30,7 +30,7 @@ namespace QuanLySach.DTO
 
         public NhanVienDTO()
         {
-
+            ChucVu = "N/A";
         }
 
         public NhanVienDTO(int MaNhanVien, int ChiNhanh, string ChucVu, string Ten, string HoDem, DateTime NgaySinh, string DiaChi, string SDT, decimal Luong)

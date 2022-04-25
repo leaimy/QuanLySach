@@ -70,5 +70,38 @@ namespace QuanLySach.App.models
                 }
             }
         }
+
+        private void SetBranchDalat()
+        {
+            ChiNhanh.Ten = "Đà Lạt";
+        }
+
+        private void SetBranchBaoLoc()
+        {
+            ChiNhanh.Ten = "Bảo Lộc";
+        }
+
+        private void SetBranchAll()
+        {
+            ChiNhanh.Ten = "Toàn bộ công ty";
+        }
+
+        public void SetBranchName(ChiNhanhEnum b)
+        {
+            switch (b)
+            {
+                case ChiNhanhEnum.CN_1:
+                    SetBranchDalat();
+                    break;
+
+                case ChiNhanhEnum.CN_2:
+                    SetBranchBaoLoc();
+                    break;
+
+                case ChiNhanhEnum.CN_GOC:
+                    SetBranchAll();
+                    break;
+            }
+        }
     }
 }

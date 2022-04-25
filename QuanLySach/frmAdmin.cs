@@ -1,6 +1,8 @@
 ﻿using QuanLySach.App;
+using QuanLySach.App.models;
 using QuanLySach.DAO;
 using QuanLySach.DTO;
+using QuanLySach.DTO.Statistics;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +17,8 @@ namespace QuanLySach
 {
     public partial class frmQuanLySach : Form
     {
+        private bool isFirstLoad = true;
+
         public frmQuanLySach()
         {
             InitializeComponent();
@@ -26,7 +30,7 @@ namespace QuanLySach
             {
                 AppManager.Instance.IsNewLoggedInSession = false;
 
-                StaffController.Instance.FetchNew();
+                StaffController.Instance.GetStaffs();
             }
 
             UIController.Instance.DisplayStatusBar(tssLoginInfo);
@@ -49,6 +53,11 @@ namespace QuanLySach
             #endregion
 
             #region Nhan Vien 
+            cbChiNhanhNV.DataSource = BranchController.Instance.GetBranchesForCombobox();
+            cbChiNhanhNV.ValueMember = "Code";
+            cbChiNhanhNV.DisplayMember = "Title";
+            cbChiNhanhNV.SelectedIndex = -1;
+
             RenderNhanVienDatagridview(StaffController.Instance.GetStaffs());
             #endregion
 
@@ -59,28 +68,46 @@ namespace QuanLySach
             cbTenNV.DataSource = StaffController.Instance.GetStaffsForCombobox();
             cbTenNV.ValueMember = "MaNhanVien";
             cbTenNV.DisplayMember = "HoVaTen";
+            cbTenNV.SelectedIndex = -1;
 
             RenderHoaDonDatagridview(BillController.Instance.GetBillsToday());
+            #endregion
+
+            #region Tai Khoan 
+            tp_Account_cbRoles.DataSource = RoleController.Instance.GetRolesForCombobox();
+            tp_Account_cbRoles.ValueMember = "Code";
+            tp_Account_cbRoles.DisplayMember = "Title";
+            tp_Account_cbRoles.SelectedIndex = -1;
+
+            tp_Account_cbBranches.DataSource = BranchController.Instance.GetBranchesForCombobox();
+            tp_Account_cbBranches.ValueMember = "Code";
+            tp_Account_cbBranches.DisplayMember = "Title";
+            tp_Account_cbBranches.SelectedIndex = -1;
+
+            RenderAccountDatagridview(AccountController.Instance.FetchStaffs());
             #endregion
 
             #region Thong Ke San Pham
             tp_ST_Product_cbCategory.DataSource = CategoryController.Instance.GetChildCategoriesForCombobox();
             tp_ST_Product_cbCategory.ValueMember = "MaLoaiSP";
             tp_ST_Product_cbCategory.DisplayMember = "TenLoaiSP";
+            tp_ST_Product_cbCategory.SelectedIndex = -1;
 
             tp_ST_Product_cbBranches.DataSource = BranchController.Instance.GetBranchesForCombobox();
             tp_ST_Product_cbBranches.ValueMember = "Code";
             tp_ST_Product_cbBranches.DisplayMember = "Title";
+            tp_ST_Product_cbBranches.SelectedIndex = -1;
 
             tp_ST_Product_txtVisibleNumber.Value = 10;
             #endregion
-
 
             #region Thong Ke Khach Hang
             cbCN.DataSource = BranchController.Instance.GetBranchesForCombobox();
             cbCN.ValueMember = "Code";
             cbCN.DisplayMember = "Title";
             #endregion
+
+            isFirstLoad = false;
         }
 
         #region Loai San Pham
@@ -126,6 +153,7 @@ namespace QuanLySach
 
         private void cbFilterLoaiSPCha_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return;
             if (cbFilterLoaiSPCha.SelectedIndex == -1) return;
 
             LoaiSanPhamDTO selected = cbFilterLoaiSPCha.SelectedItem as LoaiSanPhamDTO;
@@ -162,6 +190,7 @@ namespace QuanLySach
 
         private void cbLoaiSach_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return;
             if (cbLoaiSach.SelectedIndex == -1) return;
 
             var selected = cbLoaiSach.SelectedItem as LoaiSanPhamDTO;
@@ -243,6 +272,25 @@ namespace QuanLySach
 
             RenderNhanVienDatagridview(StaffController.Instance.FilterByPhoneNumber(keyword));
         }
+
+        private void cbChiNhanhNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isFirstLoad) return;
+
+            var selectItem = cbChiNhanhNV.SelectedItem as Branch;
+            DataProvider.Instance.SetRemoteAccount(selectItem.Code);
+
+            AppManager.Instance.User.SetBranchName(selectItem.Code);
+
+            if (selectItem.Code == ChiNhanhEnum.CN_GOC)
+            {
+                RenderNhanVienDatagridview(StaffController.Instance.GetStaffsAllBranch());
+            }
+            else
+            {
+                RenderNhanVienDatagridview(StaffController.Instance.GetStaffs());
+            }
+        }
         #endregion
 
         #region Hoa Don 
@@ -298,6 +346,8 @@ namespace QuanLySach
 
         private void cbTenNV_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return;
+
             if (cbTenNV.SelectedIndex == -1) return;
 
             var selected = cbTenNV.SelectedItem as NhanVienDTO;
@@ -331,11 +381,122 @@ namespace QuanLySach
 
         private void tp_ST_Product_btnST_Click(object sender, EventArgs e)
         {
+            DateTime from = tp_ST_Product_dtpFrom.Value;
+            DateTime to = tp_ST_Product_dtpTo.Value;
 
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.FetchStatistics(from, to));
         }
 
-        #endregion
+        private void tp_ST_Product_cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isFirstLoad) return;
 
+            if (tp_ST_Product_cbCategory.SelectedIndex == -1)
+                return;
+
+            LoaiSanPhamDTO item = tp_ST_Product_cbCategory.SelectedItem as LoaiSanPhamDTO;
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.FilterByCategory(item.MaLoaiSP));
+        }
+
+        private void tp_ST_Product_txtBookname_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = tp_ST_Product_txtBookname.Text;
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.FilterByName(keyword));
+        }
+
+        private void tp_ST_Product_txtVisibleNumber_ValueChanged(object sender, EventArgs e)
+        {
+            int visibleCount = Convert.ToInt32(tp_ST_Product_txtVisibleNumber.Value);
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.Take(visibleCount));
+        }
+
+        private void RenderProductStatisticDataGridView(List<TKSanPhamDTO> statistics)
+        {
+            tp_ST_Product_dgvProduct.DataSource = statistics;
+
+            tp_ST_Product_dgvProduct.Columns[0].Visible = false;
+            tp_ST_Product_dgvProduct.Columns[2].Visible = false;
+
+            tp_ST_Product_dgvProduct.Columns[1].HeaderText = "Tên SP";
+            tp_ST_Product_dgvProduct.Columns[3].HeaderText = "Thể loại";
+            tp_ST_Product_dgvProduct.Columns[4].HeaderText = "SL Bán";
+            tp_ST_Product_dgvProduct.Columns[5].HeaderText = "Giá";
+            tp_ST_Product_dgvProduct.Columns[6].HeaderText = "Ước Tính";
+
+            string starting = $"Có {ProductStatisticController.Instance.Count} thống kê ";
+            if (ProductStatisticController.Instance.Count == 0)
+            {
+                starting = "Không có thống kê ";
+            }
+
+            if (ProductStatisticController.Instance.FromDate != null)
+            {
+                tp_ST_Product_dgvContainer.Text = starting + $"từ ngày {ProductStatisticController.Instance.FromDate.ToString("dd-MM-yyyy HH:mm:ss")} đến ngày {ProductStatisticController.Instance.ToDate.ToString("dd-MM-yyyy HH:mm:ss")}";
+            }
+        }
+        private void tp_ST_Product_btnToday_Click(object sender, EventArgs e)
+        {
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.FetchStatisticsToDay());
+        }
+
+        private void tp_ST_Product_btnThisMonth_Click(object sender, EventArgs e)
+        {
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.FetchStatisticsThisMonth());
+        }
+
+        private void tp_ST_Product_btnReset_Click(object sender, EventArgs e)
+        {
+            int visibleCount = Convert.ToInt32(tp_ST_Product_txtVisibleNumber.Value);
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.Take(visibleCount));
+
+            tp_ST_Product_txtBookname.ResetText();
+            tp_ST_Product_cbCategory.ResetText();
+        }
+
+        private void tp_ST_Product_dgvProduct_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case 4:
+                    ProductStatisticController.Instance.ToggleSortQuantity();
+                    break;
+
+                case 5:
+                    ProductStatisticController.Instance.ToggleSortPrice();
+                    break;
+
+                case 6:
+                    ProductStatisticController.Instance.ToggleSortTotal();
+                    break;
+
+                default:
+                    return;
+            }
+
+            int visibleCount = Convert.ToInt32(tp_ST_Product_txtVisibleNumber.Value);
+            RenderProductStatisticDataGridView(ProductStatisticController.Instance.Take(visibleCount));
+        }
+
+        private void tp_ST_Product_cbBranches_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isFirstLoad) return;
+
+            var selectItem = tp_ST_Product_cbBranches.SelectedItem as Branch;
+            DataProvider.Instance.SetRemoteAccount(selectItem.Code);
+
+            AppManager.Instance.User.SetBranchName(selectItem.Code);
+
+            if (selectItem.Code == ChiNhanhEnum.CN_GOC)
+            {
+                RenderProductStatisticDataGridView(ProductStatisticController.Instance.FetchAllBranch());
+            }
+            else
+            {
+                RenderProductStatisticDataGridView(ProductStatisticController.Instance.Refetch());
+            }
+
+        }
+        #endregion
 
         #region Thong Ke Khach Hang
         private void btnTK_Click(object sender, EventArgs e)
@@ -396,6 +557,80 @@ namespace QuanLySach
 
 
         #endregion
-    }
 
+        #region Tai Khoan
+        private void tp_Account_btnAdd_Click(object sender, EventArgs e)
+        {
+            var frm = new frmThemTaiKhoan();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                string loginName = frm.LoginName;
+                string password = frm.Password;
+                RoleEnum role = frm.Role;
+                int userID = frm.UserID;
+
+                try
+                {
+                    AccountController.Instance.CreateNewAccount(loginName, password, role, userID);
+                    RenderAccountDatagridview(AccountController.Instance.Clone());
+
+                    MessageBox.Show("Tạo tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void tp_Account_btnReload_Click(object sender, EventArgs e)
+        {
+            RenderAccountDatagridview(AccountController.Instance.Clone());
+        }
+
+        private void RenderAccountDatagridview(List<NhanVienDTO> staffs)
+        {
+            tp_Account_dgvAccount.DataSource = staffs;
+            tp_Account_dgvAccount.Columns[1].Visible = false;
+            tp_Account_dgvAccount.Columns[3].Visible = false;
+            tp_Account_dgvAccount.Columns[4].Visible = false;
+            tp_Account_dgvAccount.Columns[5].Visible = false;
+            tp_Account_dgvAccount.Columns[6].Visible = false;
+            tp_Account_dgvAccount.Columns[7].Visible = false;
+            tp_Account_dgvAccount.Columns[8].Visible = false;
+
+            tp_Account_dgvAccount.Columns[0].HeaderText = "Mã NV";
+            tp_Account_dgvAccount.Columns[2].HeaderText = "Chức Vụ";
+            tp_Account_dgvAccount.Columns[9].HeaderText = "Tên CN";
+            tp_Account_dgvAccount.Columns[10].HeaderText = "Họ tên";
+        }
+
+        private void tp_Account_cbRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isFirstLoad) return;
+
+            var selectedItem = tp_Account_cbRoles.SelectedItem as Role;
+            RenderAccountDatagridview(AccountController.Instance.FilterByRole(selectedItem.Code));
+        }
+
+        private void tp_Account_cbBranches_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isFirstLoad) return;
+
+            var selectItem = tp_Account_cbBranches.SelectedItem as Branch;
+            DataProvider.Instance.SetRemoteAccount(selectItem.Code);
+
+            AppManager.Instance.User.SetBranchName(selectItem.Code);
+
+            if (selectItem.Code == ChiNhanhEnum.CN_GOC)
+            {
+                RenderAccountDatagridview(AccountController.Instance.FetchStaffsAllBranch());
+            }
+            else
+            {
+                RenderAccountDatagridview(AccountController.Instance.FetchStaffs());
+            }
+        }
+        #endregion
+    }
 }
