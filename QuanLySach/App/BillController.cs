@@ -12,11 +12,12 @@ namespace QuanLySach.App
     internal class BillController
     {
         private List<HoaDonDTO> bills;
-        private List<HoaDonDTO> billsFiltered; // temporary list 
 
         public DateTime From { get; set; }
         public DateTime To { get; set; }
         public int VisibleNumber { get; set; }
+
+        public BillOverview StatOverview { get; set; }
 
         private BillController()
         {
@@ -44,7 +45,7 @@ namespace QuanLySach.App
             );
 
             bills = new List<HoaDonDTO>();
-            billsFiltered = new List<HoaDonDTO>();
+            StatOverview = GetOverviewStatistic(bills);
         }
 
         private static BillController instance;
@@ -66,7 +67,9 @@ namespace QuanLySach.App
         public List<HoaDonDTO> Take(int VisibleNumber)
         {
             this.VisibleNumber = VisibleNumber;
-            return billsFiltered.Take(VisibleNumber).ToList();
+            var filtered = bills.Take(VisibleNumber).ToList();
+
+            return filtered;
         }
 
         public List<HoaDonDTO> GetBillsInRange(DateTime from, DateTime to)
@@ -92,19 +95,13 @@ namespace QuanLySach.App
             );
 
             bills = HoaDonDAO.Instance.GetBillsInRange(from, to);
-            UpdateBillFiltered();
+            StatOverview = GetOverviewStatistic(bills);
             return Take(VisibleNumber);
-        }
-
-        void UpdateBillFiltered()
-        {
-            billsFiltered = bills;
         }
 
         public List<HoaDonDTO> GetBillsToday()
         {
             bills = HoaDonDAO.Instance.GetBillsInRange(From, To);
-            UpdateBillFiltered();
             return Take(VisibleNumber);
         }
 
@@ -134,7 +131,6 @@ namespace QuanLySach.App
             );
 
             bills = HoaDonDAO.Instance.GetBillsInRange(From, To);
-            UpdateBillFiltered();
             return Take(VisibleNumber);
         }
 
@@ -146,7 +142,6 @@ namespace QuanLySach.App
         public List<HoaDonDTO> GetBillsAllBranch()
         {
             bills = HoaDonDAO.Instance.GetBillsInRangeAllBranch(From, To);
-            UpdateBillFiltered();
             return Take(VisibleNumber);
         }
 
@@ -166,28 +161,34 @@ namespace QuanLySach.App
             AppManager.Instance.Cart.Clear();
             AppManager.Instance.Customer = null;
 
+            bills.Add(hoaDon);
+            StatOverview = GetOverviewStatistic(bills);
+
             return true;
         }
 
         public List<HoaDonDTO> FilterByStaff(int StaffID)
         {
-            billsFiltered = bills.Where(s => s.MaNV == StaffID).ToList();
-            return billsFiltered.Take(VisibleNumber).ToList();
+            var filterd = bills.Where(s => s.MaNV == StaffID).ToList();
+            StatOverview = GetOverviewStatistic(filterd);
+            return filterd;
         }
 
         public List<HoaDonDTO> FilterByCustomerPhoneNumber(string phone)
         {
-            billsFiltered = bills.Where(s => s.SDT.Contains(phone)).ToList();
-            return billsFiltered.Take(VisibleNumber).ToList();
+            var filtered = bills.Where(s => s.SDT.Contains(phone)).ToList();
+            StatOverview = GetOverviewStatistic(filtered);
+
+            return filtered;
         }
 
-        public BillOverview GetOverviewStatistic()
+        public BillOverview GetOverviewStatistic(List<HoaDonDTO> bills)
         {
             BillOverview overview = new BillOverview();
             Dictionary<string, string> customerCount = new Dictionary<string, string>();
             Dictionary<int, string> staffCount = new Dictionary<int, string>();
 
-            billsFiltered.ForEach(b =>
+            bills.ForEach(b =>
             {
                 overview.Subtotal += b.TongTien;
                 overview.DiscountTotal += (b.TongTien * (b.GiamGia / 100));
@@ -196,7 +197,7 @@ namespace QuanLySach.App
                 staffCount[b.MaNV] = b.TenNV;
             });
 
-            overview.TotalBill = billsFiltered.Count;
+            overview.TotalBill = bills.Count;
             overview.CustomerCount = customerCount.Count;
             overview.StaffCount = staffCount.Count;
             return overview;

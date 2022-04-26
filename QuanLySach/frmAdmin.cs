@@ -346,7 +346,7 @@ namespace QuanLySach
 
         void RenderBillStatisticOverview()
         {
-            BillOverview overview = BillController.Instance.GetOverviewStatistic();
+            BillOverview overview = BillController.Instance.StatOverview;
 
             txtBillTotalExpected.Text = overview.Subtotal.ToString();
             txtBillDiscountTotal.Text = overview.DiscountTotal.ToString();
@@ -408,6 +408,8 @@ namespace QuanLySach
             if (isFirstLoad) return;
 
             var selectItem = cbChiNhanh.SelectedItem as Branch;
+            if (selectItem == null) return;
+
             DataProvider.Instance.SetRemoteAccount(selectItem.Code);
 
             AppManager.Instance.User.SetBranchName(selectItem.Code);
