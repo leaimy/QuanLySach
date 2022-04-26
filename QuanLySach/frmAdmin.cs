@@ -112,6 +112,14 @@ namespace QuanLySach
             cbCN.DataSource = BranchController.Instance.GetBranchesForCombobox();
             cbCN.ValueMember = "Code";
             cbCN.DisplayMember = "Title";
+            cbCN.SelectedIndex = -1;
+            #endregion
+
+            #region Thong Ke Nhan Vien
+            tp_ST_Staff_cbBranch.DataSource = BranchController.Instance.GetBranchesForCombobox();
+            tp_ST_Staff_cbBranch.ValueMember = "Code";
+            tp_ST_Staff_cbBranch.DisplayMember = "Title";
+            tp_ST_Staff_cbBranch.SelectedIndex = -1;
             #endregion
 
             isFirstLoad = false;
@@ -712,6 +720,82 @@ namespace QuanLySach
             {
                 RenderAccountDatagridview(AccountController.Instance.FetchStaffs());
             }
+        }
+        #endregion
+
+        #region Thong Ke Nhan Vien
+        private void tp_ST_Staff_cbBranch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isFirstLoad) return;
+
+            var selectItem = tp_ST_Staff_cbBranch.SelectedItem as Branch;
+            if (selectItem == null) return;
+
+            DataProvider.Instance.SetRemoteAccount(selectItem.Code);
+
+            AppManager.Instance.User.SetBranchName(selectItem.Code);
+
+            if (selectItem.Code == ChiNhanhEnum.CN_GOC)
+            {
+                RenderStaffStatisticDataGridView(StaffStatisticController.Instance.FetchAllBranch());
+            }
+            else
+            {
+                RenderStaffStatisticDataGridView(StaffStatisticController.Instance.Refetch());
+            }
+        }
+
+        private void tp_ST_Staff_btnSubmit_Click(object sender, EventArgs e)
+        {
+            DateTime from = tp_ST_Staff_dtpFrom.Value;
+            DateTime to = tp_ST_Staff_dtpTo.Value;
+
+            RenderStaffStatisticDataGridView(StaffStatisticController.Instance.FetchStatistics(from, to));
+        }
+
+        private void tp_ST_Staff_btnReload_Click(object sender, EventArgs e)
+        {
+            tp_ST_Staff_cbBranch.SelectedIndex = -1;
+
+            RenderStaffStatisticDataGridView(StaffStatisticController.Instance.Clone());
+        }
+
+        void RenderStaffStatisticDataGridView(List<TKNhanVienDTO> staffs)
+        {
+            tp_ST_Staff_dgvStaff.DataSource = staffs;
+
+            tp_ST_Staff_dgvStaff.Columns[1].Visible = false;
+            tp_ST_Staff_dgvStaff.Columns[2].Visible = false;
+            tp_ST_Staff_dgvStaff.Columns[4].Visible = false;
+
+            tp_ST_Staff_dgvStaff.Columns[0].HeaderText = "Mã NV";
+            tp_ST_Staff_dgvStaff.Columns[3].HeaderText = "Họ Tên";
+            tp_ST_Staff_dgvStaff.Columns[5].HeaderText = "CN";
+            tp_ST_Staff_dgvStaff.Columns[6].HeaderText = "SL Bán";
+            tp_ST_Staff_dgvStaff.Columns[7].HeaderText = "Tổng Tiên";
+        }
+
+        private void tp_ST_Staff_dgvStaff_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case 0:
+                    StaffStatisticController.Instance.ToggleSortStaffID();
+                    break;
+
+                case 6:
+                    StaffStatisticController.Instance.ToggleSortSoleQuantity();
+                    break;
+
+                case 7:
+                    StaffStatisticController.Instance.ToggleSortTotalQuantity();
+                    break;
+
+                default:
+                    return;
+            }
+
+            RenderStaffStatisticDataGridView(StaffStatisticController.Instance.Clone());
         }
         #endregion
     }

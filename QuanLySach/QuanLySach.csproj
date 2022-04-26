@@ -65,6 +65,7 @@
     <Compile Include="App\ProductStatisticController.cs" />
     <Compile Include="App\RoleController.cs" />
     <Compile Include="App\StaffController.cs" />
+    <Compile Include="App\StaffStatisticController.cs" />
     <Compile Include="App\UIController.cs" />
     <Compile Include="Common\CustomerFakeData.cs" />
     <Compile Include="Common\MoneyHelper.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="DTO\LoginInfoDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\SanPhamDTO.cs" />
+    <Compile Include="DTO\Statistics\TKNhanVienDTO.cs" />
     <Compile Include="DTO\ThongKeKhachHangDTO.cs" />
     <Compile Include="DTO\Statistics\TKSanPhamDTO.cs" />
     <Compile Include="frmAdmin.cs">

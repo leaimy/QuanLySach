@@ -170,19 +170,19 @@ namespace QuanLySach
             this.cbCN = new System.Windows.Forms.ComboBox();
             this.lbllalala123 = new System.Windows.Forms.Label();
             this.tpThongKeNhanVien = new System.Windows.Forms.TabPage();
-            this.absgsgageesegseg123 = new System.Windows.Forms.GroupBox();
-            this.tp_ST_Staff_dgvStaff = new System.Windows.Forms.DataGridView();
-            this.pnthongkenhanvien1 = new System.Windows.Forms.Panel();
-            this.tp_ST_Staff_cbBranch = new System.Windows.Forms.ComboBox();
-            this.lblThongkenhanvien1 = new System.Windows.Forms.Label();
-            this.pnthongkenhanvien2 = new System.Windows.Forms.Panel();
-            this.tp_ST_Staff_dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.lblThongkenhanvien2 = new System.Windows.Forms.Label();
+            this.tp_ST_Staff_btnReload = new System.Windows.Forms.Button();
+            this.tp_ST_Staff_btnSubmit = new System.Windows.Forms.Button();
             this.pnthongkenhanvien3 = new System.Windows.Forms.Panel();
             this.tp_ST_Staff_dtpTo = new System.Windows.Forms.DateTimePicker();
             this.lblThongkenhanvien3 = new System.Windows.Forms.Label();
-            this.tp_ST_Staff_btnSubmit = new System.Windows.Forms.Button();
-            this.tp_ST_Staff_btnReload = new System.Windows.Forms.Button();
+            this.pnthongkenhanvien2 = new System.Windows.Forms.Panel();
+            this.tp_ST_Staff_dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.lblThongkenhanvien2 = new System.Windows.Forms.Label();
+            this.pnthongkenhanvien1 = new System.Windows.Forms.Panel();
+            this.tp_ST_Staff_cbBranch = new System.Windows.Forms.ComboBox();
+            this.lblThongkenhanvien1 = new System.Windows.Forms.Label();
+            this.absgsgageesegseg123 = new System.Windows.Forms.GroupBox();
+            this.tp_ST_Staff_dgvStaff = new System.Windows.Forms.DataGridView();
             this.tcAdmin.SuspendLayout();
             this.tpHoaDon.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -244,11 +244,11 @@ namespace QuanLySach
             this.pnhaha124.SuspendLayout();
             this.pnhaha123.SuspendLayout();
             this.tpThongKeNhanVien.SuspendLayout();
+            this.pnthongkenhanvien3.SuspendLayout();
+            this.pnthongkenhanvien2.SuspendLayout();
+            this.pnthongkenhanvien1.SuspendLayout();
             this.absgsgageesegseg123.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tp_ST_Staff_dgvStaff)).BeginInit();
-            this.pnthongkenhanvien1.SuspendLayout();
-            this.pnthongkenhanvien2.SuspendLayout();
-            this.pnthongkenhanvien3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -1705,87 +1705,29 @@ namespace QuanLySach
             this.tpThongKeNhanVien.Text = "Thống kê nhân viên";
             this.tpThongKeNhanVien.UseVisualStyleBackColor = true;
             // 
-            // absgsgageesegseg123
+            // tp_ST_Staff_btnReload
             // 
-            this.absgsgageesegseg123.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.absgsgageesegseg123.Controls.Add(this.tp_ST_Staff_dgvStaff);
-            this.absgsgageesegseg123.Location = new System.Drawing.Point(8, 113);
-            this.absgsgageesegseg123.Name = "absgsgageesegseg123";
-            this.absgsgageesegseg123.Size = new System.Drawing.Size(1040, 530);
-            this.absgsgageesegseg123.TabIndex = 20;
-            this.absgsgageesegseg123.TabStop = false;
-            this.absgsgageesegseg123.Text = "Danh sách nhân viên";
+            this.tp_ST_Staff_btnReload.BackColor = System.Drawing.Color.Transparent;
+            this.tp_ST_Staff_btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tp_ST_Staff_btnReload.Location = new System.Drawing.Point(846, 29);
+            this.tp_ST_Staff_btnReload.Name = "tp_ST_Staff_btnReload";
+            this.tp_ST_Staff_btnReload.Size = new System.Drawing.Size(129, 37);
+            this.tp_ST_Staff_btnReload.TabIndex = 25;
+            this.tp_ST_Staff_btnReload.Text = "Tải lại danh sách";
+            this.tp_ST_Staff_btnReload.UseVisualStyleBackColor = false;
+            this.tp_ST_Staff_btnReload.Click += new System.EventHandler(this.tp_ST_Staff_btnReload_Click);
             // 
-            // tp_ST_Staff_dgvStaff
+            // tp_ST_Staff_btnSubmit
             // 
-            this.tp_ST_Staff_dgvStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tp_ST_Staff_dgvStaff.BackgroundColor = System.Drawing.Color.White;
-            this.tp_ST_Staff_dgvStaff.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tp_ST_Staff_dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tp_ST_Staff_dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tp_ST_Staff_dgvStaff.Location = new System.Drawing.Point(3, 21);
-            this.tp_ST_Staff_dgvStaff.MultiSelect = false;
-            this.tp_ST_Staff_dgvStaff.Name = "tp_ST_Staff_dgvStaff";
-            this.tp_ST_Staff_dgvStaff.ReadOnly = true;
-            this.tp_ST_Staff_dgvStaff.RowHeadersWidth = 51;
-            this.tp_ST_Staff_dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tp_ST_Staff_dgvStaff.Size = new System.Drawing.Size(1034, 506);
-            this.tp_ST_Staff_dgvStaff.TabIndex = 0;
-            // 
-            // pnthongkenhanvien1
-            // 
-            this.pnthongkenhanvien1.Controls.Add(this.tp_ST_Staff_cbBranch);
-            this.pnthongkenhanvien1.Controls.Add(this.lblThongkenhanvien1);
-            this.pnthongkenhanvien1.Location = new System.Drawing.Point(75, 27);
-            this.pnthongkenhanvien1.Name = "pnthongkenhanvien1";
-            this.pnthongkenhanvien1.Size = new System.Drawing.Size(243, 34);
-            this.pnthongkenhanvien1.TabIndex = 21;
-            // 
-            // tp_ST_Staff_cbBranch
-            // 
-            this.tp_ST_Staff_cbBranch.FormattingEnabled = true;
-            this.tp_ST_Staff_cbBranch.Location = new System.Drawing.Point(82, 5);
-            this.tp_ST_Staff_cbBranch.Name = "tp_ST_Staff_cbBranch";
-            this.tp_ST_Staff_cbBranch.Size = new System.Drawing.Size(153, 25);
-            this.tp_ST_Staff_cbBranch.TabIndex = 1;
-            // 
-            // lblThongkenhanvien1
-            // 
-            this.lblThongkenhanvien1.AutoSize = true;
-            this.lblThongkenhanvien1.Location = new System.Drawing.Point(3, 8);
-            this.lblThongkenhanvien1.Name = "lblThongkenhanvien1";
-            this.lblThongkenhanvien1.Size = new System.Drawing.Size(74, 17);
-            this.lblThongkenhanvien1.TabIndex = 0;
-            this.lblThongkenhanvien1.Text = "Chi nhánh";
-            // 
-            // pnthongkenhanvien2
-            // 
-            this.pnthongkenhanvien2.Controls.Add(this.tp_ST_Staff_dtpFrom);
-            this.pnthongkenhanvien2.Controls.Add(this.lblThongkenhanvien2);
-            this.pnthongkenhanvien2.Location = new System.Drawing.Point(324, 27);
-            this.pnthongkenhanvien2.Name = "pnthongkenhanvien2";
-            this.pnthongkenhanvien2.Size = new System.Drawing.Size(203, 38);
-            this.pnthongkenhanvien2.TabIndex = 22;
-            // 
-            // tp_ST_Staff_dtpFrom
-            // 
-            this.tp_ST_Staff_dtpFrom.CustomFormat = "dd/MM/yyyy";
-            this.tp_ST_Staff_dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.tp_ST_Staff_dtpFrom.Location = new System.Drawing.Point(82, 6);
-            this.tp_ST_Staff_dtpFrom.Name = "tp_ST_Staff_dtpFrom";
-            this.tp_ST_Staff_dtpFrom.Size = new System.Drawing.Size(113, 25);
-            this.tp_ST_Staff_dtpFrom.TabIndex = 1;
-            // 
-            // lblThongkenhanvien2
-            // 
-            this.lblThongkenhanvien2.AutoSize = true;
-            this.lblThongkenhanvien2.Location = new System.Drawing.Point(3, 8);
-            this.lblThongkenhanvien2.Name = "lblThongkenhanvien2";
-            this.lblThongkenhanvien2.Size = new System.Drawing.Size(62, 17);
-            this.lblThongkenhanvien2.TabIndex = 0;
-            this.lblThongkenhanvien2.Text = "Từ ngày";
+            this.tp_ST_Staff_btnSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.tp_ST_Staff_btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tp_ST_Staff_btnSubmit.Location = new System.Drawing.Point(747, 29);
+            this.tp_ST_Staff_btnSubmit.Name = "tp_ST_Staff_btnSubmit";
+            this.tp_ST_Staff_btnSubmit.Size = new System.Drawing.Size(93, 37);
+            this.tp_ST_Staff_btnSubmit.TabIndex = 24;
+            this.tp_ST_Staff_btnSubmit.Text = "Thống kê";
+            this.tp_ST_Staff_btnSubmit.UseVisualStyleBackColor = false;
+            this.tp_ST_Staff_btnSubmit.Click += new System.EventHandler(this.tp_ST_Staff_btnSubmit_Click);
             // 
             // pnthongkenhanvien3
             // 
@@ -1814,27 +1756,89 @@ namespace QuanLySach
             this.lblThongkenhanvien3.TabIndex = 0;
             this.lblThongkenhanvien3.Text = "Đến ngày";
             // 
-            // tp_ST_Staff_btnSubmit
+            // pnthongkenhanvien2
             // 
-            this.tp_ST_Staff_btnSubmit.BackColor = System.Drawing.Color.Transparent;
-            this.tp_ST_Staff_btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tp_ST_Staff_btnSubmit.Location = new System.Drawing.Point(747, 29);
-            this.tp_ST_Staff_btnSubmit.Name = "tp_ST_Staff_btnSubmit";
-            this.tp_ST_Staff_btnSubmit.Size = new System.Drawing.Size(93, 37);
-            this.tp_ST_Staff_btnSubmit.TabIndex = 24;
-            this.tp_ST_Staff_btnSubmit.Text = "Thống kê";
-            this.tp_ST_Staff_btnSubmit.UseVisualStyleBackColor = false;
+            this.pnthongkenhanvien2.Controls.Add(this.tp_ST_Staff_dtpFrom);
+            this.pnthongkenhanvien2.Controls.Add(this.lblThongkenhanvien2);
+            this.pnthongkenhanvien2.Location = new System.Drawing.Point(324, 27);
+            this.pnthongkenhanvien2.Name = "pnthongkenhanvien2";
+            this.pnthongkenhanvien2.Size = new System.Drawing.Size(203, 38);
+            this.pnthongkenhanvien2.TabIndex = 22;
             // 
-            // tp_ST_Staff_btnReload
+            // tp_ST_Staff_dtpFrom
             // 
-            this.tp_ST_Staff_btnReload.BackColor = System.Drawing.Color.Transparent;
-            this.tp_ST_Staff_btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tp_ST_Staff_btnReload.Location = new System.Drawing.Point(846, 29);
-            this.tp_ST_Staff_btnReload.Name = "tp_ST_Staff_btnReload";
-            this.tp_ST_Staff_btnReload.Size = new System.Drawing.Size(129, 37);
-            this.tp_ST_Staff_btnReload.TabIndex = 25;
-            this.tp_ST_Staff_btnReload.Text = "Tải lại danh sách";
-            this.tp_ST_Staff_btnReload.UseVisualStyleBackColor = false;
+            this.tp_ST_Staff_dtpFrom.CustomFormat = "dd/MM/yyyy";
+            this.tp_ST_Staff_dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.tp_ST_Staff_dtpFrom.Location = new System.Drawing.Point(82, 6);
+            this.tp_ST_Staff_dtpFrom.Name = "tp_ST_Staff_dtpFrom";
+            this.tp_ST_Staff_dtpFrom.Size = new System.Drawing.Size(113, 25);
+            this.tp_ST_Staff_dtpFrom.TabIndex = 1;
+            // 
+            // lblThongkenhanvien2
+            // 
+            this.lblThongkenhanvien2.AutoSize = true;
+            this.lblThongkenhanvien2.Location = new System.Drawing.Point(3, 8);
+            this.lblThongkenhanvien2.Name = "lblThongkenhanvien2";
+            this.lblThongkenhanvien2.Size = new System.Drawing.Size(62, 17);
+            this.lblThongkenhanvien2.TabIndex = 0;
+            this.lblThongkenhanvien2.Text = "Từ ngày";
+            // 
+            // pnthongkenhanvien1
+            // 
+            this.pnthongkenhanvien1.Controls.Add(this.tp_ST_Staff_cbBranch);
+            this.pnthongkenhanvien1.Controls.Add(this.lblThongkenhanvien1);
+            this.pnthongkenhanvien1.Location = new System.Drawing.Point(75, 27);
+            this.pnthongkenhanvien1.Name = "pnthongkenhanvien1";
+            this.pnthongkenhanvien1.Size = new System.Drawing.Size(243, 34);
+            this.pnthongkenhanvien1.TabIndex = 21;
+            // 
+            // tp_ST_Staff_cbBranch
+            // 
+            this.tp_ST_Staff_cbBranch.FormattingEnabled = true;
+            this.tp_ST_Staff_cbBranch.Location = new System.Drawing.Point(82, 5);
+            this.tp_ST_Staff_cbBranch.Name = "tp_ST_Staff_cbBranch";
+            this.tp_ST_Staff_cbBranch.Size = new System.Drawing.Size(153, 25);
+            this.tp_ST_Staff_cbBranch.TabIndex = 1;
+            this.tp_ST_Staff_cbBranch.SelectedIndexChanged += new System.EventHandler(this.tp_ST_Staff_cbBranch_SelectedIndexChanged);
+            // 
+            // lblThongkenhanvien1
+            // 
+            this.lblThongkenhanvien1.AutoSize = true;
+            this.lblThongkenhanvien1.Location = new System.Drawing.Point(3, 8);
+            this.lblThongkenhanvien1.Name = "lblThongkenhanvien1";
+            this.lblThongkenhanvien1.Size = new System.Drawing.Size(74, 17);
+            this.lblThongkenhanvien1.TabIndex = 0;
+            this.lblThongkenhanvien1.Text = "Chi nhánh";
+            // 
+            // absgsgageesegseg123
+            // 
+            this.absgsgageesegseg123.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.absgsgageesegseg123.Controls.Add(this.tp_ST_Staff_dgvStaff);
+            this.absgsgageesegseg123.Location = new System.Drawing.Point(8, 113);
+            this.absgsgageesegseg123.Name = "absgsgageesegseg123";
+            this.absgsgageesegseg123.Size = new System.Drawing.Size(1040, 530);
+            this.absgsgageesegseg123.TabIndex = 20;
+            this.absgsgageesegseg123.TabStop = false;
+            this.absgsgageesegseg123.Text = "Danh sách nhân viên";
+            // 
+            // tp_ST_Staff_dgvStaff
+            // 
+            this.tp_ST_Staff_dgvStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tp_ST_Staff_dgvStaff.BackgroundColor = System.Drawing.Color.White;
+            this.tp_ST_Staff_dgvStaff.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tp_ST_Staff_dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tp_ST_Staff_dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tp_ST_Staff_dgvStaff.Location = new System.Drawing.Point(3, 21);
+            this.tp_ST_Staff_dgvStaff.MultiSelect = false;
+            this.tp_ST_Staff_dgvStaff.Name = "tp_ST_Staff_dgvStaff";
+            this.tp_ST_Staff_dgvStaff.ReadOnly = true;
+            this.tp_ST_Staff_dgvStaff.RowHeadersWidth = 51;
+            this.tp_ST_Staff_dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tp_ST_Staff_dgvStaff.Size = new System.Drawing.Size(1034, 506);
+            this.tp_ST_Staff_dgvStaff.TabIndex = 0;
+            this.tp_ST_Staff_dgvStaff.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tp_ST_Staff_dgvStaff_ColumnHeaderMouseClick);
             // 
             // frmQuanLySach
             // 
@@ -1944,14 +1948,14 @@ namespace QuanLySach
             this.pnhaha123.ResumeLayout(false);
             this.pnhaha123.PerformLayout();
             this.tpThongKeNhanVien.ResumeLayout(false);
-            this.absgsgageesegseg123.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tp_ST_Staff_dgvStaff)).EndInit();
-            this.pnthongkenhanvien1.ResumeLayout(false);
-            this.pnthongkenhanvien1.PerformLayout();
-            this.pnthongkenhanvien2.ResumeLayout(false);
-            this.pnthongkenhanvien2.PerformLayout();
             this.pnthongkenhanvien3.ResumeLayout(false);
             this.pnthongkenhanvien3.PerformLayout();
+            this.pnthongkenhanvien2.ResumeLayout(false);
+            this.pnthongkenhanvien2.PerformLayout();
+            this.pnthongkenhanvien1.ResumeLayout(false);
+            this.pnthongkenhanvien1.PerformLayout();
+            this.absgsgageesegseg123.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tp_ST_Staff_dgvStaff)).EndInit();
             this.ResumeLayout(false);
 
         }
