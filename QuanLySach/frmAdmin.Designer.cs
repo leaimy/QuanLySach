@@ -1117,6 +1117,7 @@ namespace QuanLySach
             this.btnCreateStaff.TabIndex = 4;
             this.btnCreateStaff.Text = "Thêm mới";
             this.btnCreateStaff.UseVisualStyleBackColor = false;
+            this.btnCreateStaff.Click += new System.EventHandler(this.btnCreateStaff_Click);
             // 
             // panel18
             // 

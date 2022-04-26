@@ -312,6 +312,12 @@ namespace QuanLySach
                 RenderNhanVienDatagridview(StaffController.Instance.GetStaffs());
             }
         }
+
+        private void btnCreateStaff_Click(object sender, EventArgs e)
+        {
+            var frm = new frmThemNhanVien();
+            frm.ShowDialog();
+        }
         #endregion
 
         #region Hoa Don 
@@ -782,5 +788,6 @@ namespace QuanLySach
             RenderStaffStatisticDataGridView(StaffStatisticController.Instance.Clone());
         }
         #endregion
+
     }
 }
