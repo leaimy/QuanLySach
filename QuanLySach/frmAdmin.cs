@@ -447,22 +447,6 @@ namespace QuanLySach
         }
         #endregion
 
-        private void tcAdmin_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void tpLoaiSach_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void btnCreateStaff_Click(object sender, EventArgs e)
-        {
-            var frm = new frmThemNhanVien();
-            frm.ShowDialog();
-        }
-
         #region Thong Ke San Pham
 
         private void tp_ST_Product_btnST_Click(object sender, EventArgs e)

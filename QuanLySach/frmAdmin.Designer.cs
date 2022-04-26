@@ -267,7 +267,6 @@ namespace QuanLySach
             this.tcAdmin.SelectedIndex = 0;
             this.tcAdmin.Size = new System.Drawing.Size(1064, 681);
             this.tcAdmin.TabIndex = 0;
-            this.tcAdmin.SelectedIndexChanged += new System.EventHandler(this.tcAdmin_SelectedIndexChanged);
             // 
             // tpHoaDon
             // 
@@ -890,7 +889,6 @@ namespace QuanLySach
             this.tpLoaiSach.TabIndex = 3;
             this.tpLoaiSach.Text = "Loại Sách";
             this.tpLoaiSach.UseVisualStyleBackColor = true;
-            this.tpLoaiSach.Click += new System.EventHandler(this.tpLoaiSach_Click);
             // 
             // groupBox3
             // 
@@ -1119,7 +1117,6 @@ namespace QuanLySach
             this.btnCreateStaff.TabIndex = 4;
             this.btnCreateStaff.Text = "Thêm mới";
             this.btnCreateStaff.UseVisualStyleBackColor = false;
-            this.btnCreateStaff.Click += new System.EventHandler(this.btnCreateStaff_Click);
             // 
             // panel18
             // 
