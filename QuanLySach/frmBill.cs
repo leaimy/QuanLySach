@@ -26,6 +26,8 @@ namespace QuanLySach
             lbBill_TongTien.Text = AppManager.Instance.Cart.TotalWithoutDiscount.ToString();
             lbBill_Discount.Text = AppManager.Instance.Cart.Discount.ToString() + "%";
             lbBill_ThanhToan.Text = AppManager.Instance.Cart.TotalWithDiscount.ToString();
+
+            UIController.Instance.DisplayCart(dtgvBill);
         }
 
         private void btnBill_ThanhToan_Click(object sender, EventArgs e)
