@@ -3,7 +3,7 @@ using System.Data;
 
 namespace QuanLySach.DTO
 {
-    internal class NhanVienDTO
+    public class NhanVienDTO
     {
         private int _MaNhanVien;
         private int _ChiNhanh;

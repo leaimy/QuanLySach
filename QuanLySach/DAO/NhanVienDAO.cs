@@ -101,5 +101,13 @@ namespace QuanLySach.DAO
 
             return null;
         }
+
+        public void TrashByID(int id)
+        {
+            string query = "EXEC dbo.sp_TrashStaffByID @ID";
+            object[] param = new object[] { id };
+
+            DataProvider.Instance.ExecuteQuery(query, param);
+        }
     }
 }

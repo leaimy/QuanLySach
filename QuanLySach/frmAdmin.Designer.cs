@@ -29,6 +29,7 @@ namespace QuanLySach
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tcAdmin = new System.Windows.Forms.TabControl();
             this.tpHoaDon = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -183,6 +184,8 @@ namespace QuanLySach
             this.lblThongkenhanvien1 = new System.Windows.Forms.Label();
             this.absgsgageesegseg123 = new System.Windows.Forms.GroupBox();
             this.tp_ST_Staff_dgvStaff = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.changeStaffBranch = new System.Windows.Forms.ToolStripMenuItem();
             this.tcAdmin.SuspendLayout();
             this.tpHoaDon.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -249,6 +252,7 @@ namespace QuanLySach
             this.pnthongkenhanvien1.SuspendLayout();
             this.absgsgageesegseg123.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tp_ST_Staff_dgvStaff)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -1048,6 +1052,7 @@ namespace QuanLySach
             this.dtgvNV.BackgroundColor = System.Drawing.Color.White;
             this.dtgvNV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvNV.ContextMenuStrip = this.contextMenuStrip1;
             this.dtgvNV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvNV.Location = new System.Drawing.Point(3, 21);
             this.dtgvNV.MultiSelect = false;
@@ -1840,6 +1845,20 @@ namespace QuanLySach
             this.tp_ST_Staff_dgvStaff.TabIndex = 0;
             this.tp_ST_Staff_dgvStaff.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tp_ST_Staff_dgvStaff_ColumnHeaderMouseClick);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changeStaffBranch});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            // 
+            // changeStaffBranch
+            // 
+            this.changeStaffBranch.Name = "changeStaffBranch";
+            this.changeStaffBranch.Size = new System.Drawing.Size(180, 22);
+            this.changeStaffBranch.Text = "Chuyển chi nhánh";
+            this.changeStaffBranch.Click += new System.EventHandler(this.changeStaffBranch_Click);
+            // 
             // frmQuanLySach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1956,6 +1975,7 @@ namespace QuanLySach
             this.pnthongkenhanvien1.PerformLayout();
             this.absgsgageesegseg123.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tp_ST_Staff_dgvStaff)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2116,6 +2136,8 @@ namespace QuanLySach
         private System.Windows.Forms.Panel pnthongkenhanvien1;
         private System.Windows.Forms.ComboBox tp_ST_Staff_cbBranch;
         private System.Windows.Forms.Label lblThongkenhanvien1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem changeStaffBranch;
     }
 }
 

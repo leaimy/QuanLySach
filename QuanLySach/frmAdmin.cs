@@ -318,6 +318,36 @@ namespace QuanLySach
             var frm = new frmThemNhanVien();
             frm.ShowDialog();
         }
+
+        private void changeStaffBranch_Click(object sender, EventArgs e)
+        {
+            if (isFirstLoad) return;
+
+            NhanVienDTO selectedItem = dtgvNV.SelectedRows[0].DataBoundItem as NhanVienDTO;
+            if (selectedItem == null) return;
+
+            var frm = new frmChangeStaffBranch(selectedItem);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                string ten = frm.Ten;
+                string hoDem = frm.HoDem;
+                string diaChi = frm.DiaChi;
+                string sdt = frm.SDT;
+                decimal luong = frm.Luong;
+                DateTime ngaySinh = frm.NgaySinh;
+                Branch branch = frm.branch;
+                Role role = frm.role;
+
+                string userName = frm.UserName;
+                string password = frm.Password;
+
+                StaffController.Instance.TransferStaff(selectedItem.MaNhanVien, ten, hoDem, diaChi, sdt, luong, ngaySinh, branch, role, userName, password);
+
+                MessageBox.Show("Chuyển nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                cbChiNhanhNV.SelectedItem = branch;
+            }
+        }
         #endregion
 
         #region Hoa Don 

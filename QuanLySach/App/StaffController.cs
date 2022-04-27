@@ -1,4 +1,5 @@
-﻿using QuanLySach.DAO;
+﻿using QuanLySach.App.models;
+using QuanLySach.DAO;
 using QuanLySach.DTO;
 using System;
 using System.Collections.Generic;
@@ -59,5 +60,33 @@ namespace QuanLySach.App
         }
 
         public List<NhanVienDTO> Clone() => staffs.GetRange(0, staffs.Count);
+
+        public void TrashStaffByID(int id)
+        {
+            NhanVienDAO.Instance.TrashByID(id);
+        }
+
+        public NhanVienDTO CreateNewStaff(string ten, string hoDem, string diaChi, string sdt, decimal luong, DateTime ngaySinh, ChiNhanhEnum branch)
+        {
+            if (branch == ChiNhanhEnum.CN_1)
+                return NhanVienDAO.Instance.Create(1, ten, hoDem, ngaySinh, diaChi, sdt, luong);
+
+            return NhanVienDAO.Instance.Create(2, ten, hoDem, ngaySinh, diaChi, sdt, luong);
+        }
+
+        public void TransferStaff(int id, string ten, string hoDem, string diaChi, string sdt, decimal luong, DateTime ngaySinh, Branch branch, Role role, string username, string password)
+        {
+            // Delete staff at current branch 
+            TrashStaffByID(id);
+
+            // Change connection string to new branch
+            DataProvider.Instance.SetRemoteAccount(branch.Code);
+
+            // Create new staff with the given information
+            NhanVienDTO newStaff = CreateNewStaff(ten, hoDem, diaChi, sdt, luong, ngaySinh, branch.Code);
+
+            // Create new account for staff to login
+            AccountController.Instance.CreateNewAccount(username, password, role.Code, newStaff.MaNhanVien);
+        }
     }
 }
