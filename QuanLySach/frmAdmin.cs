@@ -456,7 +456,13 @@ namespace QuanLySach
 
         private void dtgvBill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (isFirstLoad) return;
 
+            var selectedItem = dtgvBill.SelectedRows[0].DataBoundItem as HoaDonDTO;
+            if (selectedItem == null) return;
+
+            var frm = new frmBillDetail(selectedItem);
+            frm.Show();
         }
         #endregion
 

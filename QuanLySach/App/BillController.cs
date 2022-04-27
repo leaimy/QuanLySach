@@ -202,5 +202,10 @@ namespace QuanLySach.App
             overview.StaffCount = staffCount.Count;
             return overview;
         }
+
+        public List<ChiTietHoaDonDTO> GetBillDetails(int billID)
+        {
+            return HoaDonDAO.Instance.GetBillDetails(billID);
+        }
     }
 }

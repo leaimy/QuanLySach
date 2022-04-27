@@ -193,5 +193,23 @@ namespace QuanLySach.DAO
 
             return customers;
         }
+
+        public List<ChiTietHoaDonDTO> GetBillDetails(int billId)
+        {
+            var details = new List<ChiTietHoaDonDTO>();
+
+            var query = "EXECUTE dbo.sp_GetBillDetails_ByID @Bill_ID ";
+
+            object[] param = new object[] { billId };
+
+            var table = DataProvider.Instance.ExecuteQuery(query, param);
+
+            foreach (DataRow item in table.Rows)
+            {
+                details.Add(new ChiTietHoaDonDTO(item));
+            }
+
+            return details;
+        }
     }
 }
