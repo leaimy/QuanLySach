@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App.models
 {
-    internal enum ChiNhanhEnum
+    public enum ChiNhanhEnum
     {
         CN_1,
         CN_2,

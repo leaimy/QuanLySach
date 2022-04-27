@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App.models
 {
-    internal class Role
+    public class Role
     {
         public RoleEnum Code { get; set; }
         public string Title { get; set; }
