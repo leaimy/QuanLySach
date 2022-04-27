@@ -155,5 +155,43 @@ namespace QuanLySach.DAO
 
             return customers;
         }
+
+        public List<ThongKeKhachHangDTO> ThongKeTatCaKhachHang(DateTime From, DateTime To)
+        {
+            var customers = new List<ThongKeKhachHangDTO>();
+
+            DateTime start = new DateTime(
+               From.Year,
+               From.Month,
+               From.Day,
+               0,
+               0,
+               0,
+               From.Kind
+           );
+
+            DateTime end = new DateTime(
+                To.Year,
+                To.Month,
+                To.Day,
+                23,
+                59,
+                59,
+                To.Kind
+            );
+
+            var query = "EXECUTE dbo.sp_DSKhachHangCungSoTien_TheoThoiGian_All @ngayBD , @ngayKT ";
+
+            object[] param = new object[] { start.ToString("yyyy-MM-dd HH:mm:ss"), end.ToString("yyyy-MM-dd HH:mm:ss") };
+
+            var table = DataProvider.Instance.ExecuteQuery(query, param);
+
+            foreach (DataRow item in table.Rows)
+            {
+                customers.Add(new ThongKeKhachHangDTO(item));
+            }
+
+            return customers;
+        }
     }
 }

@@ -126,5 +126,17 @@ namespace QuanLySach.App
         }
 
         public int Count => customers.Count;
+
+        public List<ThongKeKhachHangDTO> FetchAllCustomer()
+        {
+            customers = HoaDonDAO.Instance.ThongKeTatCaKhachHang(FromDate, ToDate);
+            return Clone();
+        }
+
+        public List<ThongKeKhachHangDTO> Refetch()
+        {
+            FetchCustomer(FromDate, ToDate);
+            return Clone();
+        }
     }
 }
