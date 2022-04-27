@@ -51,6 +51,7 @@
     <Compile Include="App\BillController.cs" />
     <Compile Include="App\BranchController.cs" />
     <Compile Include="App\CategoryController.cs" />
+    <Compile Include="App\models\BillOverview.cs" />
     <Compile Include="App\CustomerController.cs" />
     <Compile Include="App\models\Branch.cs" />
     <Compile Include="App\models\Cart.cs" />

@@ -70,6 +70,13 @@ namespace QuanLySach
             cbTenNV.DisplayMember = "HoVaTen";
             cbTenNV.SelectedIndex = -1;
 
+            cbChiNhanh.DataSource = BranchController.Instance.GetBranchesForCombobox();
+            cbChiNhanh.ValueMember = "Code";
+            cbChiNhanh.DisplayMember = "Title";
+            cbChiNhanh.SelectedIndex = -1;
+
+            nmBillVisibleCounter.Value = 10;
+
             RenderHoaDonDatagridview(BillController.Instance.GetBillsToday());
             #endregion
 
@@ -145,6 +152,8 @@ namespace QuanLySach
 
         private void txtTenLoai_TextChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return;
+
             string keyword = txtTenLoai.Text.Trim().ToLower();
             if (string.IsNullOrEmpty(keyword)) return;
 
@@ -199,6 +208,8 @@ namespace QuanLySach
 
         private void txtFilterProductByName_TextChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return;
+
             string keyword = txtFilterProductByName.Text.Trim().ToLower();
             if (string.IsNullOrEmpty(keyword))
             {
@@ -262,6 +273,8 @@ namespace QuanLySach
 
         private void txtFilterStaffByPhone_TextChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return;
+
             var keyword = txtFilterStaffByPhone.Text.Trim();
 
             if (string.IsNullOrEmpty(keyword))
@@ -313,6 +326,20 @@ namespace QuanLySach
             dtgvBill.Columns[11].HeaderText = "NV";
 
             grBillContainer.Text = "Danh sách hóa đơn từ ngày: " + BillController.Instance.From.ToString("dd-MM-yyyy HH:mm:ss") + " đến ngày " + BillController.Instance.To.ToString("dd-MM-yyyy HH:mm:ss");
+
+            RenderBillStatisticOverview();
+        }
+
+        void RenderBillStatisticOverview()
+        {
+            BillOverview overview = BillController.Instance.GetOverviewStatistic();
+
+            txtBillTotalExpected.Text = overview.Subtotal.ToString();
+            txtBillDiscountTotal.Text = overview.DiscountTotal.ToString();
+            txtBillTotal.Text = overview.Total.ToString();
+            txtBillNumberCounter.Text = overview.TotalBill.ToString();
+            txtBillCustomerCounter.Text = overview.CustomerCount.ToString();
+            txtBillStaffCounter.Text = overview.StaffCount.ToString();
         }
 
         private void btnFilterBillInRange_Click(object sender, EventArgs e)
@@ -321,7 +348,7 @@ namespace QuanLySach
             var toDate = dtpToDate.Value;
 
             BillController.Instance.GetBillsInRange(fromDate, toDate);
-            RenderHoaDonDatagridview(BillController.Instance.Clone());
+            RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
         }
 
         private void btnFilterMonthLastDate_Click(object sender, EventArgs e)
@@ -329,19 +356,19 @@ namespace QuanLySach
             var yesterday = DateTime.Today.AddDays(-1);
 
             BillController.Instance.GetBillsInRange(yesterday, yesterday);
-            RenderHoaDonDatagridview(BillController.Instance.Clone());
+            RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
         }
 
         private void btnFilterBillToday_Click(object sender, EventArgs e)
         {
             BillController.Instance.GetBillsToday();
-            RenderHoaDonDatagridview(BillController.Instance.Clone());
+            RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
         }
 
         private void btnFilterBillCurrentMonth_Click(object sender, EventArgs e)
         {
             BillController.Instance.GetBillsThisMonth();
-            RenderHoaDonDatagridview(BillController.Instance.Clone());
+            RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
         }
 
         private void cbTenNV_SelectedIndexChanged(object sender, EventArgs e)
@@ -356,8 +383,59 @@ namespace QuanLySach
 
         private void txtFilterBillByCPhone_TextChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return;
+
             var keyword = txtFilterBillByCPhone.Text.Trim();
             RenderHoaDonDatagridview(BillController.Instance.FilterByCustomerPhoneNumber(keyword));
+        }
+
+        private void cbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isFirstLoad) return;
+
+            var selectItem = cbChiNhanh.SelectedItem as Branch;
+            DataProvider.Instance.SetRemoteAccount(selectItem.Code);
+
+            AppManager.Instance.User.SetBranchName(selectItem.Code);
+
+            if (selectItem.Code == ChiNhanhEnum.CN_GOC)
+            {
+                BillController.Instance.GetBillsAllBranch();
+                RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
+            }
+            else
+            {
+                BillController.Instance.Refetch();
+                RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
+            }
+        }
+
+        private void btnBillResetFilter_Click(object sender, EventArgs e)
+        {
+            cbChiNhanh.SelectedIndex = -1;
+            cbTenNV.SelectedIndex = -1;
+            txtFilterBillByCPhone.ResetText();
+
+            RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
+        }
+
+        private void nmBillVisibleCounter_ValueChanged(object sender, EventArgs e)
+        {
+
+            RenderHoaDonDatagridview(BillController.Instance.Take(getBillVisibleCount()));
+        }
+
+        int getBillVisibleCount()
+        {
+            try
+            {
+                int visibleCount = Convert.ToInt32(nmBillVisibleCounter.Value);
+                return visibleCount > 0 ? visibleCount : 0;
+            }
+            catch
+            {
+                return 0;
+            }
         }
         #endregion
 
@@ -400,12 +478,16 @@ namespace QuanLySach
 
         private void tp_ST_Product_txtBookname_TextChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return;
+
             string keyword = tp_ST_Product_txtBookname.Text;
             RenderProductStatisticDataGridView(ProductStatisticController.Instance.FilterByName(keyword));
         }
 
         private void tp_ST_Product_txtVisibleNumber_ValueChanged(object sender, EventArgs e)
         {
+            if (isFirstLoad) return;
+
             int visibleCount = Convert.ToInt32(tp_ST_Product_txtVisibleNumber.Value);
             RenderProductStatisticDataGridView(ProductStatisticController.Instance.Take(visibleCount));
         }

@@ -29,46 +29,53 @@ namespace QuanLySach
 
         private void btnLocHD_Click(object sender, EventArgs e)
         {
-            string userName = txtLoginName.Text;
-            string password = txtPassword.Text;
-            string branch = cbChiNhanh.SelectedItem.ToString();
-
-            int who = 1;
-            if (rdHa.Checked) who = 2;
-
-            if (branch == "Chi nhánh 01")
+            try
             {
-                DataProvider.Instance.InitConnectionString(ChiNhanhEnum.CN_1, userName, password, who);
+                string userName = txtLoginName.Text;
+                string password = txtPassword.Text;
+                string branch = cbChiNhanh.SelectedItem.ToString();
+
+                int who = 1;
+                if (rdHa.Checked) who = 2;
+
+                if (branch == "Chi nhánh 01")
+                {
+                    DataProvider.Instance.InitConnectionString(ChiNhanhEnum.CN_1, userName, password, who);
+                }
+                else
+                {
+                    DataProvider.Instance.InitConnectionString(ChiNhanhEnum.CN_2, userName, password, who);
+                }
+
+                LoginInfoDTO loginInfo = AuthDAO.Instance.GetLoginInfo(userName);
+                NhanVienDTO nhanVien = NhanVienDAO.Instance.GetNhanVienByID(loginInfo.NhanVienID);
+
+                AppManager.Instance.User = new App.models.User()
+                {
+                    TenDangNhap = userName,
+                    MatKhau = password,
+                    ChiNhanhID = nhanVien.ChiNhanh,
+                    ChucVu = loginInfo.VaiTro,
+                    DiaChi = nhanVien.DiaChi,
+                    HoDem = nhanVien.HoDem,
+                    Luong = nhanVien.Luong,
+                    MaNhanVien = nhanVien.MaNhanVien,
+                    NgaySinh = nhanVien.NgaySinh,
+                    SDT = nhanVien.SDT,
+                    Ten = nhanVien.Ten
+                };
+                AppManager.Instance.IsNewLoggedInSession = true;
+
+                var frm = new frmSach();
+
+                this.Hide();
+                frm.ShowDialog();
+                this.Show();
             }
-            else
+            catch
             {
-                DataProvider.Instance.InitConnectionString(ChiNhanhEnum.CN_2, userName, password, who);
+                MessageBox.Show("Đăng nhập không hợp lệ, vui lòng kiểm tra lại thông tin", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            LoginInfoDTO loginInfo = AuthDAO.Instance.GetLoginInfo(userName);
-            NhanVienDTO nhanVien = NhanVienDAO.Instance.GetNhanVienByID(loginInfo.NhanVienID);
-
-            AppManager.Instance.User = new App.models.User()
-            {
-                TenDangNhap = userName,
-                MatKhau = password,
-                ChiNhanhID = nhanVien.ChiNhanh,
-                ChucVu = loginInfo.VaiTro,
-                DiaChi = nhanVien.DiaChi,
-                HoDem = nhanVien.HoDem,
-                Luong = nhanVien.Luong,
-                MaNhanVien = nhanVien.MaNhanVien,
-                NgaySinh = nhanVien.NgaySinh,
-                SDT = nhanVien.SDT,
-                Ten = nhanVien.Ten
-            };
-            AppManager.Instance.IsNewLoggedInSession = true;
-
-            var frm = new frmSach();
-
-            this.Hide();
-            frm.ShowDialog();
-            this.Show();
         }
 
         private void cbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)

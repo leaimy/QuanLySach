@@ -1,4 +1,5 @@
-﻿using QuanLySach.DAO;
+﻿using QuanLySach.App.models;
+using QuanLySach.DAO;
 using QuanLySach.DTO;
 using System;
 using System.Collections.Generic;
@@ -11,12 +12,16 @@ namespace QuanLySach.App
     internal class BillController
     {
         private List<HoaDonDTO> bills;
+        private List<HoaDonDTO> billsFiltered; // temporary list 
+
         public DateTime From { get; set; }
         public DateTime To { get; set; }
+        public int VisibleNumber { get; set; }
 
         private BillController()
         {
             var now = DateTime.Now;
+            VisibleNumber = 10;
 
             From = new DateTime(
                 now.Year,
@@ -39,6 +44,7 @@ namespace QuanLySach.App
             );
 
             bills = new List<HoaDonDTO>();
+            billsFiltered = new List<HoaDonDTO>();
         }
 
         private static BillController instance;
@@ -55,6 +61,12 @@ namespace QuanLySach.App
         public List<HoaDonDTO> Clone()
         {
             return bills.GetRange(0, bills.Count);
+        }
+
+        public List<HoaDonDTO> Take(int VisibleNumber)
+        {
+            this.VisibleNumber = VisibleNumber;
+            return billsFiltered.Take(VisibleNumber).ToList();
         }
 
         public List<HoaDonDTO> GetBillsInRange(DateTime from, DateTime to)
@@ -80,15 +92,20 @@ namespace QuanLySach.App
             );
 
             bills = HoaDonDAO.Instance.GetBillsInRange(from, to);
-            return Clone();
+            UpdateBillFiltered();
+            return Take(VisibleNumber);
+        }
+
+        void UpdateBillFiltered()
+        {
+            billsFiltered = bills;
         }
 
         public List<HoaDonDTO> GetBillsToday()
         {
-            var now = DateTime.Now;
-
             bills = HoaDonDAO.Instance.GetBillsInRange(From, To);
-            return Clone();
+            UpdateBillFiltered();
+            return Take(VisibleNumber);
         }
 
         public List<HoaDonDTO> GetBillsThisMonth()
@@ -117,7 +134,20 @@ namespace QuanLySach.App
             );
 
             bills = HoaDonDAO.Instance.GetBillsInRange(From, To);
-            return Clone();
+            UpdateBillFiltered();
+            return Take(VisibleNumber);
+        }
+
+        public List<HoaDonDTO> Refetch()
+        {
+            return GetBillsInRange(From, To);
+        }
+
+        public List<HoaDonDTO> GetBillsAllBranch()
+        {
+            bills = HoaDonDAO.Instance.GetBillsInRangeAllBranch(From, To);
+            UpdateBillFiltered();
+            return Take(VisibleNumber);
         }
 
         public bool CreateBill()
@@ -141,12 +171,35 @@ namespace QuanLySach.App
 
         public List<HoaDonDTO> FilterByStaff(int StaffID)
         {
-            return bills.Where(s => s.MaNV == StaffID).ToList();
+            billsFiltered = bills.Where(s => s.MaNV == StaffID).ToList();
+            return billsFiltered.Take(VisibleNumber).ToList();
         }
 
         public List<HoaDonDTO> FilterByCustomerPhoneNumber(string phone)
         {
-            return bills.Where(s => s.SDT.Contains(phone)).ToList();
+            billsFiltered = bills.Where(s => s.SDT.Contains(phone)).ToList();
+            return billsFiltered.Take(VisibleNumber).ToList();
+        }
+
+        public BillOverview GetOverviewStatistic()
+        {
+            BillOverview overview = new BillOverview();
+            Dictionary<string, string> customerCount = new Dictionary<string, string>();
+            Dictionary<int, string> staffCount = new Dictionary<int, string>();
+
+            billsFiltered.ForEach(b =>
+            {
+                overview.Subtotal += b.TongTien;
+                overview.DiscountTotal += (b.TongTien * (b.GiamGia / 100));
+
+                customerCount[b.SDT] = b.TenKH;
+                staffCount[b.MaNV] = b.TenNV;
+            });
+
+            overview.TotalBill = billsFiltered.Count;
+            overview.CustomerCount = customerCount.Count;
+            overview.StaffCount = staffCount.Count;
+            return overview;
         }
     }
 }
