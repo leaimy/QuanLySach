@@ -1477,6 +1477,7 @@ namespace QuanLySach
             this.cbCN.Name = "cbCN";
             this.cbCN.Size = new System.Drawing.Size(153, 25);
             this.cbCN.TabIndex = 1;
+            this.cbCN.SelectedIndexChanged += new System.EventHandler(this.cbCN_SelectedIndexChanged);
             // 
             // lbllalala123
             // 

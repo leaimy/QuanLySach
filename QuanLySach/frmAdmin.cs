@@ -554,7 +554,24 @@ namespace QuanLySach
             RenderCustomerStaticDataGridView(CustomerController.Instance.Clone());
         }
 
+        private void cbCN_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isFirstLoad) return;
 
+            var selectItem = cbCN.SelectedItem as Branch;
+            DataProvider.Instance.SetRemoteAccount(selectItem.Code);
+
+            AppManager.Instance.User.SetBranchName(selectItem.Code);
+
+            if (selectItem.Code == ChiNhanhEnum.CN_GOC)
+            {
+                RenderCustomerStaticDataGridView(CustomerController.Instance.FetchAllCustomer());
+            }
+            else
+            {
+                RenderCustomerStaticDataGridView(CustomerController.Instance.Refetch());
+            }
+        }
 
         #endregion
 
@@ -631,6 +648,9 @@ namespace QuanLySach
                 RenderAccountDatagridview(AccountController.Instance.FetchStaffs());
             }
         }
+
         #endregion
+
+
     }
 }
