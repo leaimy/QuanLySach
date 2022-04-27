@@ -475,6 +475,7 @@ namespace QuanLySach
             this.dtgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvBill.Size = new System.Drawing.Size(1034, 385);
             this.dtgvBill.TabIndex = 0;
+            this.dtgvBill.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvBill_CellDoubleClick);
             // 
             // statusStrip1
             // 

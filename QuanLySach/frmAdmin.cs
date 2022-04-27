@@ -453,6 +453,11 @@ namespace QuanLySach
                 return 0;
             }
         }
+
+        private void dtgvBill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         #endregion
 
         #region Thong Ke San Pham
