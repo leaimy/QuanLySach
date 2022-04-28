@@ -142,6 +142,7 @@ namespace QuanLySach.App
         public List<HoaDonDTO> GetBillsAllBranch()
         {
             bills = HoaDonDAO.Instance.GetBillsInRangeAllBranch(From, To);
+            StatOverview = GetOverviewStatistic(bills);
             return Take(VisibleNumber);
         }
 
