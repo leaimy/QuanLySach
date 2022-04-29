@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App
 {
-    internal class BillController
+    public class BillController
     {
         private List<HoaDonDTO> bills;
 

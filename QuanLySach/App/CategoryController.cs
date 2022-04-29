@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App
 {
-    internal class CategoryController
+    public class CategoryController
     {
         private List<LoaiSanPhamDTO> categories;
         private CategoryController()

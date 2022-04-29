@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace QuanLySach.App.models
 {
-    internal class Cart
+    public class Cart
     {
         public Cart()
         {

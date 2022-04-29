@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App.models
 {
-    internal class BillOverview
+    public class BillOverview
     {
         public int CustomerCount { get; set; }
         public int StaffCount { get; set; }

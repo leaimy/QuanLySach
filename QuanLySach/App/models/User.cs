@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App.models
 {
-    internal class User
+    public class User
     {
         // Database login info
         public string TenDangNhap { get; set; }

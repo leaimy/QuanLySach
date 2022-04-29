@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App
 {
-    internal class RoleController
+    public class RoleController
     {
         private RoleController()
         {

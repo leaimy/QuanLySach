@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.DAO
 {
-    internal class TaiKhoanDAO
+    public class TaiKhoanDAO
     {
         private TaiKhoanDAO()
         {

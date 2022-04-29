@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App
 {
-    internal class StaffController
+    public class StaffController
     {
         private List<NhanVienDTO> staffs;
         private StaffController()

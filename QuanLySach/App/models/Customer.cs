@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App.models
 {
-    internal class Customer
+    public class Customer
     {
         public string HoTen { get; set; }
         public string SDT { get; set; }

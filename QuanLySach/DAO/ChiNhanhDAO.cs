@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.DAO
 {
-    internal class ChiNhanhDAO
+    public class ChiNhanhDAO
     {
         private ChiNhanhDAO()
         {

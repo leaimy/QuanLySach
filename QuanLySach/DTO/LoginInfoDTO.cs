@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.DTO
 {
-    internal class LoginInfoDTO
+    public class LoginInfoDTO
     {
         public int NhanVienID { get; set; }
         public string VaiTro { get; set; }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.DAO
 {
-    internal class DataProvider
+    public class DataProvider
     {
         private static DataProvider _instance;
         private string connectionSTR;

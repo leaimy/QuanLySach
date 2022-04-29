@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.Common
 {
-    internal class CustomerFakeData
+    public class CustomerFakeData
     {
         public Dictionary<string, string> GetRandomPair()
         {

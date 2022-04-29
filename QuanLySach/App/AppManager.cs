@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App
 {
-    internal class AppManager
+    public class AppManager
     {
         private AppManager() 
         {

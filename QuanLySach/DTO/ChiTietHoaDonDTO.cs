@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.DTO
 {
-    internal class ChiTietHoaDonDTO
+    public class ChiTietHoaDonDTO
     {
         public int MaSP { get; set; }
         public string TenSP { get; set; }

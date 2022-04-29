@@ -3,7 +3,7 @@ using System.Data;
 
 namespace QuanLySach.DTO
 {
-    internal class SanPhamDTO
+    public class SanPhamDTO
     {
         private int _MaSP;
         private string _TenSP;

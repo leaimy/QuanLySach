@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App
 {
-    internal class StaffStatisticController
+    public class StaffStatisticController
     {
         List<TKNhanVienDTO> staffs;
         public DateTime FromDate { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App.models
 {
-    internal class CartItem
+    public class CartItem
     {
         public int MaSP { get; set; }
         public string TenSP { get; set; }

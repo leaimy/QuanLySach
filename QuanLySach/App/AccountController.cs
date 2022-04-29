@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App
 {
-    internal class AccountController
+    public class AccountController
     {
         private AccountController()
         {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App
 {
-    internal class ProductController
+    public class ProductController
     {
         private ProductController()
         {

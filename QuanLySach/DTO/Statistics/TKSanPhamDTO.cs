@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.DTO.Statistics
 {
-    internal class TKSanPhamDTO
+    public class TKSanPhamDTO
     {
         public int MaSP { get; set; }
         public string TenSP { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App
 {
-    internal class BranchController
+    public class BranchController
     {
         private BranchController()
         {

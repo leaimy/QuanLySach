@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySach.App
 {
-    class CustomerController
+    public class CustomerController
     {
         public DateTime FromDate { get; set; }
         public DateTime ToDate { get; set; }

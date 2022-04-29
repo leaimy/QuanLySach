@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace QuanLySach.App
 {
-    internal class UIController
+    public class UIController
     {
         private UIController()
         {
