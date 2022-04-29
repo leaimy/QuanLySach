@@ -35,16 +35,13 @@ namespace QuanLySach
                 string password = txtPassword.Text;
                 string branch = cbChiNhanh.SelectedItem.ToString();
 
-                int who = 1;
-                if (rdHa.Checked) who = 2;
-
                 if (branch == "Chi nhánh 01")
                 {
-                    DataProvider.Instance.InitConnectionString(ChiNhanhEnum.CN_1, userName, password, who);
+                    DataProvider.Instance.InitConnectionString(ChiNhanhEnum.CN_1, userName, password);
                 }
                 else
                 {
-                    DataProvider.Instance.InitConnectionString(ChiNhanhEnum.CN_2, userName, password, who);
+                    DataProvider.Instance.InitConnectionString(ChiNhanhEnum.CN_2, userName, password);
                 }
 
                 LoginInfoDTO loginInfo = AuthDAO.Instance.GetLoginInfo(userName);

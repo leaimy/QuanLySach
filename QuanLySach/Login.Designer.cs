@@ -39,8 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLocHD = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.rdHieu = new System.Windows.Forms.RadioButton();
-            this.rdHa = new System.Windows.Forms.RadioButton();
             this.panel21.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -150,37 +148,11 @@
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // rdHieu
-            // 
-            this.rdHieu.AutoSize = true;
-            this.rdHieu.Location = new System.Drawing.Point(152, 11);
-            this.rdHieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.rdHieu.Name = "rdHieu";
-            this.rdHieu.Size = new System.Drawing.Size(47, 17);
-            this.rdHieu.TabIndex = 9;
-            this.rdHieu.TabStop = true;
-            this.rdHieu.Text = "Hieu";
-            this.rdHieu.UseVisualStyleBackColor = true;
-            // 
-            // rdHa
-            // 
-            this.rdHa.AutoSize = true;
-            this.rdHa.Location = new System.Drawing.Point(208, 11);
-            this.rdHa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.rdHa.Name = "rdHa";
-            this.rdHa.Size = new System.Drawing.Size(39, 17);
-            this.rdHa.TabIndex = 10;
-            this.rdHa.TabStop = true;
-            this.rdHa.Text = "Ha";
-            this.rdHa.UseVisualStyleBackColor = true;
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 305);
-            this.Controls.Add(this.rdHa);
-            this.Controls.Add(this.rdHieu);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLocHD);
             this.Controls.Add(this.panel2);
@@ -198,7 +170,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -215,7 +186,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLocHD;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton rdHieu;
-        private System.Windows.Forms.RadioButton rdHa;
     }
 }

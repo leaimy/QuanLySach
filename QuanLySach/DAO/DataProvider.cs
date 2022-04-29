@@ -19,7 +19,6 @@ namespace QuanLySach.DAO
         private string loginName;
         private string password;
 
-        private int who;
         private DataProvider() { }
 
         public static DataProvider Instance
@@ -54,37 +53,17 @@ namespace QuanLySach.DAO
 
         private void SetConnectionString()
         {
-            if (who == 1)
-            {
-                connectionSTR = $"Data Source=DALATHUB\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
+            connectionSTR = $"Data Source=DALATHUB\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
 
-                if (branch == ChiNhanhEnum.CN_2)
-                    connectionSTR = $"Data Source=DALATHUB\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
-            }
-
-            else if (who == 2)
-            {
-                connectionSTR = $"Data Source=DESKTOP-C27NP9T\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
-
-                if (branch == ChiNhanhEnum.CN_2)
-                    connectionSTR = $"Data Source=DESKTOP-C27NP9T\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
-            }
-
-            else if (who == 3)
-            {
-                connectionSTR = $"Data Source=DALATHUB\\QLSACH1;Initial Catalog=QLSACH;User id={loginName}; password={password}";
-
-                if (branch == ChiNhanhEnum.CN_2)
-                    connectionSTR = $"Data Source=DALATHUB\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
-            }
+            if (branch == ChiNhanhEnum.CN_2)
+                connectionSTR = $"Data Source=DALATHUB\\QLSACH2;Initial Catalog=QLSACH;User id={loginName}; password={password}";
         }
 
-        public void InitConnectionString(ChiNhanhEnum branch, string loginName, string password, int who)
+        public void InitConnectionString(ChiNhanhEnum branch, string loginName, string password)
         {
             this.branch = branch;
             this.loginName = loginName;
             this.password = password;
-            this.who = who;
 
             SetConnectionString();
         }
